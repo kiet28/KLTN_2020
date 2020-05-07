@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.dateTimePickerChonNgay = new System.Windows.Forms.DateTimePicker();
@@ -79,6 +80,11 @@
             this.lblTen103 = new System.Windows.Forms.Label();
             this.lblTen104 = new System.Windows.Forms.Label();
             this.lblTen105 = new System.Windows.Forms.Label();
+            this.contextMenuPhong = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ItemDatPhong = new System.Windows.Forms.ToolStripMenuItem();
+            this.ItemThuePhongDatTruoc = new System.Windows.Forms.ToolStripMenuItem();
+            this.ItemThuePhongTrucTiep = new System.Windows.Forms.ToolStripMenuItem();
+            this.ItemTraPhong = new System.Windows.Forms.ToolStripMenuItem();
             this.panel11.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -94,6 +100,7 @@
             this.panel10.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelP301.SuspendLayout();
+            this.contextMenuPhong.SuspendLayout();
             this.SuspendLayout();
             // 
             // label20
@@ -156,12 +163,14 @@
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.LightBlue;
+            this.panel11.ContextMenuStrip = this.contextMenuPhong;
             this.panel11.Controls.Add(this.lblTen105);
             this.panel11.Controls.Add(this.label18);
             this.panel11.Location = new System.Drawing.Point(798, 386);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(140, 88);
             this.panel11.TabIndex = 23;
+            this.panel11.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label18
             // 
@@ -176,12 +185,14 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.LightBlue;
+            this.panel6.ContextMenuStrip = this.contextMenuPhong;
             this.panel6.Controls.Add(this.lblTen205);
             this.panel6.Controls.Add(this.label13);
             this.panel6.Location = new System.Drawing.Point(798, 252);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(140, 88);
             this.panel6.TabIndex = 24;
+            this.panel6.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label13
             // 
@@ -196,12 +207,14 @@
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.DarkGray;
+            this.panel12.ContextMenuStrip = this.contextMenuPhong;
             this.panel12.Controls.Add(this.lblTen104);
             this.panel12.Controls.Add(this.label17);
             this.panel12.Location = new System.Drawing.Point(652, 386);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(140, 88);
             this.panel12.TabIndex = 25;
+            this.panel12.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label17
             // 
@@ -216,12 +229,14 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.LightBlue;
+            this.panel5.ContextMenuStrip = this.contextMenuPhong;
             this.panel5.Controls.Add(this.lblTen305);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Location = new System.Drawing.Point(798, 120);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(140, 88);
             this.panel5.TabIndex = 17;
+            this.panel5.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label8
             // 
@@ -236,12 +251,14 @@
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.Khaki;
+            this.panel13.ContextMenuStrip = this.contextMenuPhong;
             this.panel13.Controls.Add(this.lblTen103);
             this.panel13.Controls.Add(this.label16);
             this.panel13.Location = new System.Drawing.Point(506, 386);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(140, 88);
             this.panel13.TabIndex = 28;
+            this.panel13.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label16
             // 
@@ -256,12 +273,14 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.DarkGray;
+            this.panel7.ContextMenuStrip = this.contextMenuPhong;
             this.panel7.Controls.Add(this.lblTen204);
             this.panel7.Controls.Add(this.label12);
             this.panel7.Location = new System.Drawing.Point(652, 252);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(140, 88);
             this.panel7.TabIndex = 26;
+            this.panel7.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label12
             // 
@@ -276,12 +295,14 @@
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.Crimson;
+            this.panel14.ContextMenuStrip = this.contextMenuPhong;
             this.panel14.Controls.Add(this.lblTen102);
             this.panel14.Controls.Add(this.label15);
             this.panel14.Location = new System.Drawing.Point(360, 386);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(140, 88);
             this.panel14.TabIndex = 22;
+            this.panel14.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label15
             // 
@@ -296,12 +317,14 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkGray;
+            this.panel4.ContextMenuStrip = this.contextMenuPhong;
             this.panel4.Controls.Add(this.lblTen304);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Location = new System.Drawing.Point(652, 120);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(140, 88);
             this.panel4.TabIndex = 18;
+            this.panel4.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label7
             // 
@@ -316,12 +339,14 @@
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.LightGreen;
+            this.panel15.ContextMenuStrip = this.contextMenuPhong;
             this.panel15.Controls.Add(this.lblTen101);
             this.panel15.Controls.Add(this.label14);
             this.panel15.Location = new System.Drawing.Point(214, 386);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(140, 88);
             this.panel15.TabIndex = 20;
+            this.panel15.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label14
             // 
@@ -336,12 +361,14 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Khaki;
+            this.panel8.ContextMenuStrip = this.contextMenuPhong;
             this.panel8.Controls.Add(this.lblTen203);
             this.panel8.Controls.Add(this.label11);
             this.panel8.Location = new System.Drawing.Point(506, 252);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(140, 88);
             this.panel8.TabIndex = 27;
+            this.panel8.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label11
             // 
@@ -356,12 +383,14 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Khaki;
+            this.panel3.ContextMenuStrip = this.contextMenuPhong;
             this.panel3.Controls.Add(this.lblTen303);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Location = new System.Drawing.Point(506, 120);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(140, 88);
             this.panel3.TabIndex = 16;
+            this.panel3.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label6
             // 
@@ -376,12 +405,14 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.Crimson;
+            this.panel9.ContextMenuStrip = this.contextMenuPhong;
             this.panel9.Controls.Add(this.lblTen202);
             this.panel9.Controls.Add(this.label10);
             this.panel9.Location = new System.Drawing.Point(360, 252);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(140, 88);
             this.panel9.TabIndex = 21;
+            this.panel9.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label10
             // 
@@ -396,12 +427,14 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.LightGreen;
+            this.panel10.ContextMenuStrip = this.contextMenuPhong;
             this.panel10.Controls.Add(this.lblTen201);
             this.panel10.Controls.Add(this.label9);
             this.panel10.Location = new System.Drawing.Point(214, 252);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(140, 88);
             this.panel10.TabIndex = 19;
+            this.panel10.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label9
             // 
@@ -416,12 +449,14 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Crimson;
+            this.panel2.ContextMenuStrip = this.contextMenuPhong;
             this.panel2.Controls.Add(this.lblTen302);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(360, 120);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(140, 88);
             this.panel2.TabIndex = 15;
+            this.panel2.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label5
             // 
@@ -436,6 +471,7 @@
             // panelP301
             // 
             this.panelP301.BackColor = System.Drawing.Color.LightGreen;
+            this.panelP301.ContextMenuStrip = this.contextMenuPhong;
             this.panelP301.Controls.Add(this.lblTen301);
             this.panelP301.Controls.Add(this.label4);
             this.panelP301.Location = new System.Drawing.Point(214, 120);
@@ -443,6 +479,7 @@
             this.panelP301.Size = new System.Drawing.Size(140, 88);
             this.panelP301.TabIndex = 14;
             this.panelP301.Click += new System.EventHandler(this.panel1_Click);
+            this.panelP301.DoubleClick += new System.EventHandler(this.panelP301_DoubleClick);
             // 
             // label4
             // 
@@ -619,6 +656,47 @@
             this.lblTen105.TabIndex = 27;
             this.lblTen105.Text = "Tên KH";
             // 
+            // contextMenuPhong
+            // 
+            this.contextMenuPhong.BackColor = System.Drawing.Color.Black;
+            this.contextMenuPhong.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuPhong.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ItemDatPhong,
+            this.ItemThuePhongDatTruoc,
+            this.ItemThuePhongTrucTiep,
+            this.ItemTraPhong});
+            this.contextMenuPhong.Name = "contextMenuPhong";
+            this.contextMenuPhong.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.contextMenuPhong.Size = new System.Drawing.Size(199, 92);
+            // 
+            // ItemDatPhong
+            // 
+            this.ItemDatPhong.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.ItemDatPhong.Name = "ItemDatPhong";
+            this.ItemDatPhong.Size = new System.Drawing.Size(198, 22);
+            this.ItemDatPhong.Text = "Đặt phòng";
+            // 
+            // ItemThuePhongDatTruoc
+            // 
+            this.ItemThuePhongDatTruoc.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.ItemThuePhongDatTruoc.Name = "ItemThuePhongDatTruoc";
+            this.ItemThuePhongDatTruoc.Size = new System.Drawing.Size(198, 22);
+            this.ItemThuePhongDatTruoc.Text = "Thuê phòng đặt trước";
+            // 
+            // ItemThuePhongTrucTiep
+            // 
+            this.ItemThuePhongTrucTiep.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.ItemThuePhongTrucTiep.Name = "ItemThuePhongTrucTiep";
+            this.ItemThuePhongTrucTiep.Size = new System.Drawing.Size(198, 22);
+            this.ItemThuePhongTrucTiep.Text = "Thuê phòng trực tiếp";
+            // 
+            // ItemTraPhong
+            // 
+            this.ItemTraPhong.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.ItemTraPhong.Name = "ItemTraPhong";
+            this.ItemTraPhong.Size = new System.Drawing.Size(198, 22);
+            this.ItemTraPhong.Text = "Trả phòng";
+            // 
             // UCTrangChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -676,6 +754,7 @@
             this.panel2.PerformLayout();
             this.panelP301.ResumeLayout(false);
             this.panelP301.PerformLayout();
+            this.contextMenuPhong.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -734,5 +813,10 @@
         private System.Windows.Forms.Label lblTen202;
         private System.Windows.Forms.Label lblTen201;
         private System.Windows.Forms.Label lblTen302;
+        private System.Windows.Forms.ContextMenuStrip contextMenuPhong;
+        private System.Windows.Forms.ToolStripMenuItem ItemDatPhong;
+        private System.Windows.Forms.ToolStripMenuItem ItemThuePhongDatTruoc;
+        private System.Windows.Forms.ToolStripMenuItem ItemThuePhongTrucTiep;
+        private System.Windows.Forms.ToolStripMenuItem ItemTraPhong;
     }
 }

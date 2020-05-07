@@ -39,7 +39,7 @@
             this.panelHeader = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.panelNav = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picUser = new System.Windows.Forms.PictureBox();
             this.labelUserName = new System.Windows.Forms.Label();
             this.timerTime = new System.Windows.Forms.Timer(this.components);
             this.labelDate = new System.Windows.Forms.Label();
@@ -47,11 +47,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelControl = new System.Windows.Forms.Panel();
+            this.contextMenuUser = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ItemDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
+            this.ItemDangXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.dragControl1 = new DOAN.DragControl();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
+            this.contextMenuUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -168,15 +172,16 @@
             this.panelNav.Size = new System.Drawing.Size(1050, 25);
             this.panelNav.TabIndex = 9;
             // 
-            // pictureBox1
+            // picUser
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(320, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 42);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.picUser.ContextMenuStrip = this.contextMenuUser;
+            this.picUser.Image = ((System.Drawing.Image)(resources.GetObject("picUser.Image")));
+            this.picUser.Location = new System.Drawing.Point(320, 26);
+            this.picUser.Name = "picUser";
+            this.picUser.Size = new System.Drawing.Size(47, 42);
+            this.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picUser.TabIndex = 10;
+            this.picUser.TabStop = false;
             // 
             // labelUserName
             // 
@@ -245,6 +250,34 @@
             this.panelControl.Size = new System.Drawing.Size(1050, 570);
             this.panelControl.TabIndex = 16;
             // 
+            // contextMenuUser
+            // 
+            this.contextMenuUser.BackColor = System.Drawing.Color.Black;
+            this.contextMenuUser.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuUser.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ItemDoiMatKhau,
+            this.ItemDangXuat});
+            this.contextMenuUser.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.contextMenuUser.Name = "contextMenuUser";
+            this.contextMenuUser.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.contextMenuUser.Size = new System.Drawing.Size(153, 70);
+            // 
+            // ItemDoiMatKhau
+            // 
+            this.ItemDoiMatKhau.BackColor = System.Drawing.Color.Transparent;
+            this.ItemDoiMatKhau.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.ItemDoiMatKhau.Name = "ItemDoiMatKhau";
+            this.ItemDoiMatKhau.Size = new System.Drawing.Size(152, 22);
+            this.ItemDoiMatKhau.Text = "Đổi mật khẩu";
+            // 
+            // ItemDangXuat
+            // 
+            this.ItemDangXuat.BackColor = System.Drawing.Color.Transparent;
+            this.ItemDangXuat.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.ItemDangXuat.Name = "ItemDangXuat";
+            this.ItemDangXuat.Size = new System.Drawing.Size(152, 22);
+            this.ItemDangXuat.Text = "Đăng xuất";
+            // 
             // dragControl1
             // 
             this.dragControl1.SelectControl = this.panelHeader;
@@ -260,7 +293,7 @@
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.labelDate);
             this.Controls.Add(this.labelUserName);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picUser);
             this.Controls.Add(this.panelNav);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panelHeader);
@@ -274,7 +307,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
+            this.contextMenuUser.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,7 +323,7 @@
         private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.Label labelHome;
         private System.Windows.Forms.Panel panelNav;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picUser;
         private System.Windows.Forms.Label labelUserName;
         private System.Windows.Forms.Timer timerTime;
         private System.Windows.Forms.Label labelDate;
@@ -300,5 +334,8 @@
         private System.Windows.Forms.Button btnQuanLyNhanVien;
         private System.Windows.Forms.Button btnQuanLyPhong;
         private System.Windows.Forms.Button btnThongKeDoanhThu;
+        private System.Windows.Forms.ContextMenuStrip contextMenuUser;
+        private System.Windows.Forms.ToolStripMenuItem ItemDoiMatKhau;
+        private System.Windows.Forms.ToolStripMenuItem ItemDangXuat;
     }
 }
