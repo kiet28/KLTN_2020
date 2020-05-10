@@ -31,13 +31,13 @@ namespace DOAN
         }
 
         //
-        // pic Menu
+        // icon Menu
         //
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            FormDangNhap dn = new FormDangNhap();
-            dn.Show();
-            this.Visible = false;
+            //FormDangNhap dn = new FormDangNhap();
+            //dn.Show();
+            //this.Visible = false;
         }
 
         //
@@ -76,6 +76,21 @@ namespace DOAN
         {
             UCTrangChinh tc = new UCTrangChinh();
             AddControlToPanel(tc);
+        }
+
+        private void ItemDangXuat_Click(object sender, EventArgs e)
+        {
+            FormDangNhap dn = new FormDangNhap();
+            dn.Show();
+            this.Visible = false;
+        }
+
+        private void ItemDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            using (FormDoiMatKhau dmk = new FormDoiMatKhau())
+            {
+                dmk.ShowDialog();
+            }
         }
     }
 }

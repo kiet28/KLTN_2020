@@ -19,3 +19,6 @@ E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.Properties.Resources.resou
 E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN_GUI.csproj.GenerateResource.Cache
 E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.UCTrangChinh.resources
 E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormThongTinPhong.resources
+E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormDoiMatKhau.resources
+E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormDatPhong.resources
+E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormThuePhongDatTruoc.resources

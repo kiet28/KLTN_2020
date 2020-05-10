@@ -34,7 +34,6 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenPhong = new System.Windows.Forms.TextBox();
             this.txtTenLoaiPhong = new System.Windows.Forms.TextBox();
@@ -49,6 +48,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblNgayPhong = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,17 +97,6 @@
             this.label20.Size = new System.Drawing.Size(236, 32);
             this.label20.TabIndex = 35;
             this.label20.Text = "Thông tin phòng";
-            // 
-            // btnClose
-            // 
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(463, 16);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(40, 37);
-            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnClose.TabIndex = 36;
-            this.btnClose.TabStop = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label1
             // 
@@ -268,6 +257,17 @@
             this.lblNgayPhong.Size = new System.Drawing.Size(122, 22);
             this.lblNgayPhong.TabIndex = 50;
             this.lblNgayPhong.Text = "dd/MM/yyyy";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(463, 16);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(40, 37);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClose.TabIndex = 36;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // FormThongTinPhong
             // 
