@@ -42,13 +42,20 @@ namespace DOAN
         //
         private void ItemDatPhong_Click(object sender, EventArgs e)
         {
-            if(panelP101.BackColor == Color.LightGreen)
+            ToolStripItem item = (sender as ToolStripItem);
+
+            ContextMenuStrip owner = item.Owner as ContextMenuStrip;
+            if (owner.SourceControl.BackColor == Color.LightGreen || owner.SourceControl.BackColor == Color.DarkGray)
             {
                 using (FormDatPhong dp = new FormDatPhong())
                 {
                     dp.ShowDialog();
                 }
             }
+            else
+                MessageBox.Show("Phòng này không thể đặt!");
+
+
         }
 
         //
@@ -56,7 +63,19 @@ namespace DOAN
         //
         private void ItemThuePhongDatTruoc_Click(object sender, EventArgs e)
         {
+            ToolStripItem item = (sender as ToolStripItem);
 
+            ContextMenuStrip owner = item.Owner as ContextMenuStrip;
+            if (owner.SourceControl.BackColor == Color.Khaki)
+            {
+                using (FormThuePhongDatTruoc tpdt = new FormThuePhongDatTruoc())
+                {
+                    tpdt.ShowDialog();
+                }
+            }
+            else
+                MessageBox.Show("Phòng này chưa đặt trước!");
+            
         }
 
         //
@@ -64,36 +83,12 @@ namespace DOAN
         //
         private void HienThiChucNang()
         {
-        //    Panel[] listPanel = new Panel[15] {panelP101, panelP102, panelP103, panelP104, panelP105, panelP201, panelP202, panelP203, panelP204, panelP205, panelP301, panelP302, panelP303, panelP304, panelP305 };
-        //    for(int i = 0; i <  15; i++)
-        //    {
-        //        if (listPanel[i].BackColor == Color.LightGreen)
-        //        {
-        //            ItemDatPhong.Enabled = true;
-        //            ItemThuePhongTrucTiep.Enabled = true;
-        //            ItemThuePhongDatTruoc.Enabled = false;
-        //            ItemTraPhong.Enabled = false;
-        //        }
-        //        if (listPanel[i].BackColor == Color.Crimson)
-        //        {
-        //            ItemDatPhong.Enabled = false;
-        //            ItemThuePhongTrucTiep.Enabled = false;
-        //            ItemThuePhongDatTruoc.Enabled = false;
-        //            ItemTraPhong.Enabled = true;
-        //        }
-        //        if (listPanel[i].BackColor == Color.Khaki)
-        //        {
-        //            ItemDatPhong.Enabled = false;
-        //            ItemThuePhongTrucTiep.Enabled = false;
-        //            ItemThuePhongDatTruoc.Enabled = true;
-        //            ItemTraPhong.Enabled = false;
-        //        }
-        //    }
+
         }
 
         private void UCTrangChinh_Load(object sender, EventArgs e)
         {
-            HienThiChucNang();
+            
         }
     }
 }

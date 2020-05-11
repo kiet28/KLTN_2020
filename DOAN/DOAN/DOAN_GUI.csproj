@@ -79,6 +79,12 @@
     <Compile Include="FormThuePhongDatTruoc.Designer.cs">
       <DependentUpon>FormThuePhongDatTruoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThuePhongTrucTiep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThuePhongTrucTiep.Designer.cs">
+      <DependentUpon>FormThuePhongTrucTiep.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTrangChinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormThuePhongDatTruoc.resx">
       <DependentUpon>FormThuePhongDatTruoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThuePhongTrucTiep.resx">
+      <DependentUpon>FormThuePhongTrucTiep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTrangChinh.resx">
       <DependentUpon>FormTrangChinh.cs</DependentUpon>
