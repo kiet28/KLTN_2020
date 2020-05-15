@@ -13,7 +13,6 @@ E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.pdb
 E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\bin\Debug\DOAN.exe
 E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\bin\Debug\DOAN.pdb
 E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormDangNhap.resources
-E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormTrangChinh.resources
 E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.Properties.Resources.resources
 E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN_GUI.csproj.GenerateResource.Cache
 E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.UCTrangChinh.resources
@@ -23,3 +22,5 @@ E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormDatPhong.resources
 E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormThuePhongDatTruoc.resources
 E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN_GUI.csprojResolveAssemblyReference.cache
 E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormThuePhongTrucTiep.resources
+E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormTrangChinh.resources
+E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.UCDanhSachPhong.resources

@@ -37,5 +37,13 @@ namespace DOAN
             tc.Show();
             this.Visible = false;
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            using (FormDoiMatKhau dmk = new FormDoiMatKhau())
+            {
+                dmk.ShowDialog();
+            }
+        }
     }
 }

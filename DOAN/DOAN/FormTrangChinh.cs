@@ -120,8 +120,12 @@ namespace DOAN
         private void ItemDangXuat_Click(object sender, EventArgs e)
         {
             FormDangNhap dn = new FormDangNhap();
-            dn.Show();
-            this.Visible = false;
+            DialogResult dialog = MessageBox.Show("Bạn có chắc muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                dn.Show();
+                this.Hide();
+            }
         }
 
         private void ItemDoiMatKhau_Click(object sender, EventArgs e)
@@ -132,11 +136,17 @@ namespace DOAN
             }
         }
 
+        //
+        // button Thue Phong
+        //
         private void btnThuePhong_Click(object sender, EventArgs e)
         {
             ShowSubMenu(panelThuePhong);
         }
 
+        //
+        // button thue phong truc tiep
+        //
         private void btnThuePhongTrucTiep_Click(object sender, EventArgs e)
         {
             HideSubMenu();
@@ -147,6 +157,9 @@ namespace DOAN
             
         }
 
+        //
+        // button thue phong dat truoc
+        //
         private void btnThuePhongDatTruoc_Click(object sender, EventArgs e)
         {
             HideSubMenu();
@@ -154,6 +167,108 @@ namespace DOAN
             {
                 tpdt.ShowDialog();
             }
+        }
+
+        //
+        // button tra phong
+        //
+        private void btnTraPhong_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        //
+        // button thống kê
+        //
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(panelThongKeSubMenu);
+        }
+
+        //
+        //thống kê doanh thu
+        //
+        private void btnThongKeDoanhThu_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            //code chức năng
+        }
+
+        //
+        //thống kê phòng đã đặt
+        //
+        private void btnThongKePhongDaDat_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        //
+        //thống kê phòng còn trống
+        //
+        private void btnThongKePhongConTrong_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        //
+        // button quản lí phòng
+        //
+        private void btnQuanLiPhong_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(panelQuanLiPhongSubMenu);
+        }
+
+        //
+        // thêm phòng
+        //
+        private void btnThemPhong_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        //
+        //cập nhật phòng
+        //
+        private void btnCapNhatPhong_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnQuanLiKhachHang_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(panelQuanLiKhachHangSubMenu);
+        }
+
+        private void btnThemKhachHang_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnCapNhatKhachHang_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnQuanLiNhanVien_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(panelQuanLiNhanVienSubMenu);
+        }
+
+        private void btnThemNhanVien_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnCapNhatNhanVien_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnXemDanhSachPhong_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            UCDanhSachPhong dsp = new UCDanhSachPhong();
+            AddControlToPanel(dsp);
         }
     }
 }
