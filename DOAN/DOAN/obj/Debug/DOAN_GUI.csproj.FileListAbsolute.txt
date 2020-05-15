@@ -20,7 +20,11 @@ E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormThongTinPhong.resource
 E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormDoiMatKhau.resources
 E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormDatPhong.resources
 E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormThuePhongDatTruoc.resources
-E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN_GUI.csprojResolveAssemblyReference.cache
 E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormThuePhongTrucTiep.resources
 E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormTrangChinh.resources
 E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.UCDanhSachPhong.resources
+E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\bin\Debug\MetroFramework.Design.dll
+E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\bin\Debug\MetroFramework.dll
+E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\bin\Debug\MetroFramework.Fonts.dll
+E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.UCThuePhong.resources
+E:\OnThi\DOAN_2020\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.UCDanhSachDichVu.resources

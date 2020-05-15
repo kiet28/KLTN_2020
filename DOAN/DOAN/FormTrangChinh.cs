@@ -163,10 +163,8 @@ namespace DOAN
         private void btnThuePhongDatTruoc_Click(object sender, EventArgs e)
         {
             HideSubMenu();
-            using (FormThuePhongDatTruoc tpdt = new FormThuePhongDatTruoc())
-            {
-                tpdt.ShowDialog();
-            }
+            UCThuePhong tp = new UCThuePhong();
+            AddControlToPanel(tp);
         }
 
         //
@@ -269,6 +267,13 @@ namespace DOAN
             HideSubMenu();
             UCDanhSachPhong dsp = new UCDanhSachPhong();
             AddControlToPanel(dsp);
+        }
+
+        private void btnXemDanhSachDichVu_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            UCDanhSachDichVu dsdv = new UCDanhSachDichVu();
+            AddControlToPanel(dsdv);
         }
     }
 }

@@ -56,6 +56,7 @@
             this.btnThuePhong = new System.Windows.Forms.Button();
             this.btnXemDanhSachPhong = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.contextMenuUser = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ItemDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,7 +72,6 @@
             this.panelHeader = new System.Windows.Forms.Panel();
             this.btnThoat = new System.Windows.Forms.Button();
             this.dragControl1 = new DOAN.DragControl();
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.panelSideMenu.SuspendLayout();
             this.panelQuanLiNhanVienSubMenu.SuspendLayout();
             this.panelQuanLiKhachHangSubMenu.SuspendLayout();
@@ -79,10 +79,10 @@
             this.panelThongKeSubMenu.SuspendLayout();
             this.panelThuePhong.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.contextMenuUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -397,6 +397,7 @@
             this.btnXemDanhSachDichVu.Text = "Xem danh sách dịch vụ";
             this.btnXemDanhSachDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXemDanhSachDichVu.UseVisualStyleBackColor = false;
+            this.btnXemDanhSachDichVu.Click += new System.EventHandler(this.btnXemDanhSachDichVu_Click);
             // 
             // btnTraPhong
             // 
@@ -509,6 +510,17 @@
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(186, 107);
             this.panelLogo.TabIndex = 0;
+            // 
+            // picLogo
+            // 
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Location = new System.Drawing.Point(30, 39);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(123, 62);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 23;
+            this.picLogo.TabStop = false;
+            this.picLogo.Click += new System.EventHandler(this.labelHome_Click);
             // 
             // panel1
             // 
@@ -665,17 +677,6 @@
             // 
             this.dragControl1.SelectControl = this.panelHeader;
             // 
-            // picLogo
-            // 
-            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.Location = new System.Drawing.Point(30, 39);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(123, 62);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 23;
-            this.picLogo.TabStop = false;
-            this.picLogo.Click += new System.EventHandler(this.labelHome_Click);
-            // 
             // FormTrangChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -703,10 +704,10 @@
             this.panelThongKeSubMenu.ResumeLayout(false);
             this.panelThuePhong.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.contextMenuUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
             this.panelHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

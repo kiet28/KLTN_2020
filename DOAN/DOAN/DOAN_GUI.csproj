@@ -33,6 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -93,11 +105,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCDanhSachDichVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDanhSachDichVu.Designer.cs">
+      <DependentUpon>UCDanhSachDichVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCDanhSachPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCDanhSachPhong.Designer.cs">
       <DependentUpon>UCDanhSachPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCThuePhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCThuePhong.Designer.cs">
+      <DependentUpon>UCThuePhong.cs</DependentUpon>
     </Compile>
     <Compile Include="UCTrangChinh.cs">
       <SubType>UserControl</SubType>
@@ -136,12 +160,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UCDanhSachDichVu.resx">
+      <DependentUpon>UCDanhSachDichVu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCDanhSachPhong.resx">
       <DependentUpon>UCDanhSachPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCThuePhong.resx">
+      <DependentUpon>UCThuePhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCTrangChinh.resx">
       <DependentUpon>UCTrangChinh.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

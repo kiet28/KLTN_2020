@@ -934,6 +934,7 @@
             this.panelP405.Name = "panelP405";
             this.panelP405.Size = new System.Drawing.Size(92, 67);
             this.panelP405.TabIndex = 42;
+            this.panelP405.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label23
             // 
@@ -973,6 +974,7 @@
             this.panelP505.Name = "panelP505";
             this.panelP505.Size = new System.Drawing.Size(92, 67);
             this.panelP505.TabIndex = 38;
+            this.panelP505.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label25
             // 
@@ -1010,6 +1012,7 @@
             this.panelP404.Name = "panelP404";
             this.panelP404.Size = new System.Drawing.Size(92, 67);
             this.panelP404.TabIndex = 43;
+            this.panelP404.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label27
             // 
@@ -1049,6 +1052,7 @@
             this.panelP504.Name = "panelP504";
             this.panelP504.Size = new System.Drawing.Size(92, 67);
             this.panelP504.TabIndex = 39;
+            this.panelP504.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label29
             // 
@@ -1086,6 +1090,7 @@
             this.panelP403.Name = "panelP403";
             this.panelP403.Size = new System.Drawing.Size(92, 67);
             this.panelP403.TabIndex = 44;
+            this.panelP403.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label31
             // 
@@ -1125,6 +1130,7 @@
             this.panelP503.Name = "panelP503";
             this.panelP503.Size = new System.Drawing.Size(92, 67);
             this.panelP503.TabIndex = 37;
+            this.panelP503.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label33
             // 
@@ -1162,6 +1168,7 @@
             this.panelP402.Name = "panelP402";
             this.panelP402.Size = new System.Drawing.Size(92, 67);
             this.panelP402.TabIndex = 41;
+            this.panelP402.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label35
             // 
@@ -1200,6 +1207,7 @@
             this.panelP401.Name = "panelP401";
             this.panelP401.Size = new System.Drawing.Size(92, 67);
             this.panelP401.TabIndex = 40;
+            this.panelP401.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label37
             // 
@@ -1239,6 +1247,7 @@
             this.panelP502.Name = "panelP502";
             this.panelP502.Size = new System.Drawing.Size(92, 67);
             this.panelP502.TabIndex = 36;
+            this.panelP502.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label39
             // 
@@ -1277,6 +1286,7 @@
             this.panelP501.Name = "panelP501";
             this.panelP501.Size = new System.Drawing.Size(92, 67);
             this.panelP501.TabIndex = 35;
+            this.panelP501.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label41
             // 
@@ -1312,6 +1322,7 @@
             this.panelP408.Name = "panelP408";
             this.panelP408.Size = new System.Drawing.Size(92, 67);
             this.panelP408.TabIndex = 57;
+            this.panelP408.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label43
             // 
@@ -1351,6 +1362,7 @@
             this.panelP508.Name = "panelP508";
             this.panelP508.Size = new System.Drawing.Size(92, 67);
             this.panelP508.TabIndex = 55;
+            this.panelP508.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label45
             // 
@@ -1388,6 +1400,7 @@
             this.panelP407.Name = "panelP407";
             this.panelP407.Size = new System.Drawing.Size(92, 67);
             this.panelP407.TabIndex = 58;
+            this.panelP407.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label47
             // 
@@ -1427,6 +1440,7 @@
             this.panelP507.Name = "panelP507";
             this.panelP507.Size = new System.Drawing.Size(92, 67);
             this.panelP507.TabIndex = 56;
+            this.panelP507.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label49
             // 
@@ -1464,6 +1478,7 @@
             this.panelP406.Name = "panelP406";
             this.panelP406.Size = new System.Drawing.Size(92, 67);
             this.panelP406.TabIndex = 59;
+            this.panelP406.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label51
             // 
@@ -1503,6 +1518,7 @@
             this.panelP506.Name = "panelP506";
             this.panelP506.Size = new System.Drawing.Size(92, 67);
             this.panelP506.TabIndex = 54;
+            this.panelP506.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label53
             // 
@@ -1540,6 +1556,7 @@
             this.panelP108.Name = "panelP108";
             this.panelP108.Size = new System.Drawing.Size(92, 67);
             this.panelP108.TabIndex = 48;
+            this.panelP108.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label55
             // 
@@ -1578,6 +1595,7 @@
             this.panelP208.Name = "panelP208";
             this.panelP208.Size = new System.Drawing.Size(92, 67);
             this.panelP208.TabIndex = 49;
+            this.panelP208.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label57
             // 
@@ -1616,6 +1634,7 @@
             this.panelP107.Name = "panelP107";
             this.panelP107.Size = new System.Drawing.Size(92, 67);
             this.panelP107.TabIndex = 50;
+            this.panelP107.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label59
             // 
@@ -1655,6 +1674,7 @@
             this.panelP308.Name = "panelP308";
             this.panelP308.Size = new System.Drawing.Size(92, 67);
             this.panelP308.TabIndex = 46;
+            this.panelP308.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label61
             // 
@@ -1692,6 +1712,7 @@
             this.panelP106.Name = "panelP106";
             this.panelP106.Size = new System.Drawing.Size(92, 67);
             this.panelP106.TabIndex = 53;
+            this.panelP106.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label63
             // 
@@ -1730,6 +1751,7 @@
             this.panelP207.Name = "panelP207";
             this.panelP207.Size = new System.Drawing.Size(92, 67);
             this.panelP207.TabIndex = 51;
+            this.panelP207.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label65
             // 
@@ -1769,6 +1791,7 @@
             this.panelP307.Name = "panelP307";
             this.panelP307.Size = new System.Drawing.Size(92, 67);
             this.panelP307.TabIndex = 47;
+            this.panelP307.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label67
             // 
@@ -1806,6 +1829,7 @@
             this.panelP206.Name = "panelP206";
             this.panelP206.Size = new System.Drawing.Size(92, 67);
             this.panelP206.TabIndex = 52;
+            this.panelP206.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label69
             // 
@@ -1845,6 +1869,7 @@
             this.panelP306.Name = "panelP306";
             this.panelP306.Size = new System.Drawing.Size(92, 67);
             this.panelP306.TabIndex = 45;
+            this.panelP306.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label71
             // 
@@ -1925,7 +1950,7 @@
             this.Controls.Add(this.panelP302);
             this.Controls.Add(this.panelP301);
             this.Name = "UCDanhSachPhong";
-            this.Size = new System.Drawing.Size(1050, 570);
+            this.Size = new System.Drawing.Size(997, 563);
             this.Load += new System.EventHandler(this.UCTrangChinh_Load);
             this.panelP105.ResumeLayout(false);
             this.panelP105.PerformLayout();
