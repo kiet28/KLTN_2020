@@ -15,9 +15,48 @@ namespace DOAN
         public FormTrangChinh()
         {
             InitializeComponent();
+            CustomizeDesign();
             timerTime.Start();
         }
+        //
+        //
+        //
+        private void CustomizeDesign()
+        {
+            panelThuePhong.Visible = false;
+            panelThongKeSubMenu.Visible = false;
+            panelQuanLiPhongSubMenu.Visible = false;
+            panelQuanLiKhachHangSubMenu.Visible = false;
+            panelQuanLiNhanVienSubMenu.Visible = false;
+        }
 
+        //
+        //
+        //
+        private void HideSubMenu()
+        {
+            if (panelThuePhong.Visible == true)
+                panelThuePhong.Visible = false;
+            if (panelThongKeSubMenu.Visible == true)
+                panelThongKeSubMenu.Visible = false;
+            if (panelQuanLiPhongSubMenu.Visible == true)
+                panelQuanLiPhongSubMenu.Visible = false;
+            if (panelQuanLiKhachHangSubMenu.Visible == true)
+                panelQuanLiKhachHangSubMenu.Visible = false;
+            if (panelQuanLiNhanVienSubMenu.Visible == true)
+                panelQuanLiNhanVienSubMenu.Visible = false;
+        }
+
+        private void ShowSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                HideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+                subMenu.Visible = false;
+        }
         //
         // Button thoát chương trình
         //
@@ -90,6 +129,30 @@ namespace DOAN
             using (FormDoiMatKhau dmk = new FormDoiMatKhau())
             {
                 dmk.ShowDialog();
+            }
+        }
+
+        private void btnThuePhong_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(panelThuePhong);
+        }
+
+        private void btnThuePhongTrucTiep_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            using (FormThuePhongTrucTiep tptt = new FormThuePhongTrucTiep())
+            {
+                tptt.ShowDialog();
+            }
+            
+        }
+
+        private void btnThuePhongDatTruoc_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            using (FormThuePhongDatTruoc tpdt = new FormThuePhongDatTruoc())
+            {
+                tpdt.ShowDialog();
             }
         }
     }
