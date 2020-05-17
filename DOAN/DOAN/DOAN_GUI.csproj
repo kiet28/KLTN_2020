@@ -58,6 +58,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Button_WOC.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DragControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -129,6 +132,12 @@
     <Compile Include="UCTrangChinh.Designer.cs">
       <DependentUpon>UCTrangChinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCTraPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTraPhong.Designer.cs">
+      <DependentUpon>UCTraPhong.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCTrangChinh.resx">
       <DependentUpon>UCTrangChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTraPhong.resx">
+      <DependentUpon>UCTraPhong.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

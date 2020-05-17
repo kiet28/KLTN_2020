@@ -172,7 +172,9 @@ namespace DOAN
         //
         private void btnTraPhong_Click(object sender, EventArgs e)
         {
-            
+            HideSubMenu();
+            UCTraPhong trp = new UCTraPhong();
+            AddControlToPanel(trp);
         }
 
         //

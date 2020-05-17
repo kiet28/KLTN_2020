@@ -15,6 +15,25 @@ namespace DOAN
         public UCThuePhong()
         {
             InitializeComponent();
+            ChonPhong();
+        }
+
+        public void ChonPhong()
+        {
+            cboTenPhong.Text = "";
+            for (int i = 0; i < cboTenPhong.Items.Count; i++)
+            {
+                if (cboTenPhong.SelectedIndex == i)
+                {
+                    cboTenPhong.Text = cboTenPhong.Items[i].ToString() + ",";
+                }
+            }
+        }
+
+        private void UCThuePhong_Load(object sender, EventArgs e)
+        {
+            cboTenPhong.Text = "--Chọn tên phòng";
         }
     }
+
 }
