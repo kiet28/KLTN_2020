@@ -15,11 +15,19 @@ namespace DOAN
         public FormThongTinPhong()
         {
             InitializeComponent();
+            timerTime.Start();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void timerTime_Tick(object sender, EventArgs e)
+        {
+            DateTime dt = DateTime.Now;
+            //labelTime.Text = dt.ToString("HH:mm:ss");
+            lblNgayPhong.Text = dt.ToString("dd/MM/yyyy");
         }
     }
 }

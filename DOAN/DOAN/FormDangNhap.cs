@@ -24,7 +24,11 @@ namespace DOAN
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            DialogResult dialog = MessageBox.Show("Bạn có chắc muốn thoát chương trình không?", "Thoát", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -32,6 +36,14 @@ namespace DOAN
             FormTrangChinh tc = new FormTrangChinh();
             tc.Show();
             this.Visible = false;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            using (FormDoiMatKhau dmk = new FormDoiMatKhau())
+            {
+                dmk.ShowDialog();
+            }
         }
     }
 }
