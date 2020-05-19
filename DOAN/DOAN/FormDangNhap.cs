@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,21 @@ namespace DOAN
 {
     public partial class FormDangNhap : Form
     {
+        List<eTaiKhoan> dsTK;
+        TaiKhoanBLL tkBLL;
+        List<int> myList;
         public FormDangNhap()
         {
             InitializeComponent();
+            myList = new List<int>();
+            //dsQL = new List<eQuanLy>();
+            //qlBLL = new QuanLyBLL();
+            dsTK = new List<eTaiKhoan>();
+            tkBLL = new TaiKhoanBLL();
+            //dsBS = new List<eBacSi>();
+            //bsBLL = new BacSiBLL();
+            //nvBLL = new NhanVienBLL();
+            //dsNV = new List<eNhanVien>();
         }
 
         private void Form1_Load(object sender, EventArgs e)
