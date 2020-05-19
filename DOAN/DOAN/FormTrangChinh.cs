@@ -141,7 +141,9 @@ namespace DOAN
         //
         private void btnThuePhong_Click(object sender, EventArgs e)
         {
-            ShowSubMenu(panelThuePhong);
+            HideSubMenu();
+            UCThuePhong tp = new UCThuePhong();
+            AddControlToPanel(tp);
         }
 
         //

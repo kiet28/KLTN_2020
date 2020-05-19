@@ -33,9 +33,24 @@ namespace DOAN
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            FormTrangChinh tc = new FormTrangChinh();
-            tc.Show();
-            this.Visible = false;
+            string username = txtTenDN.Text;
+            string password = txtMatKhau.Text;
+            if (Login(username,password))
+            {
+                FormTrangChinh tc = new FormTrangChinh();
+                tc.Show();
+                this.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
+            }
+        }
+
+
+        bool Login(string username, string password)
+        {
+            return false;
         }
 
         private void label4_Click(object sender, EventArgs e)

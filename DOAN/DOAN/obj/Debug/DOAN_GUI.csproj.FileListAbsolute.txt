@@ -53,3 +53,4 @@ C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN_GUI.csproj.CopyComple
 C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.exe
 C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.pdb
 C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.UCTraPhong.resources
+C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormHoaDon.resources
