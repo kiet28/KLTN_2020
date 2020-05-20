@@ -37,7 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtXacNhanMatKhau = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dragControl1 = new DOAN.DragControl();
             this.btnDoiMatKhau = new DOAN.Button_WOC();
@@ -64,7 +64,7 @@
             this.panelHeader.Controls.Add(this.label20);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelHeader.Margin = new System.Windows.Forms.Padding(4);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(575, 59);
             this.panelHeader.TabIndex = 37;
@@ -80,7 +80,7 @@
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnThoat.Location = new System.Drawing.Point(511, 0);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(64, 59);
             this.btnThoat.TabIndex = 49;
@@ -97,7 +97,7 @@
             this.txtMatKhauCu.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhauCu.ForeColor = System.Drawing.Color.Black;
             this.txtMatKhauCu.Location = new System.Drawing.Point(36, 199);
-            this.txtMatKhauCu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMatKhauCu.Margin = new System.Windows.Forms.Padding(4);
             this.txtMatKhauCu.Name = "txtMatKhauCu";
             this.txtMatKhauCu.PasswordChar = '*';
             this.txtMatKhauCu.Size = new System.Drawing.Size(493, 35);
@@ -124,7 +124,7 @@
             this.txtMatKhauMoi.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhauMoi.ForeColor = System.Drawing.Color.Black;
             this.txtMatKhauMoi.Location = new System.Drawing.Point(36, 287);
-            this.txtMatKhauMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMatKhauMoi.Margin = new System.Windows.Forms.Padding(4);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
             this.txtMatKhauMoi.PasswordChar = '*';
             this.txtMatKhauMoi.Size = new System.Drawing.Size(493, 35);
@@ -151,7 +151,7 @@
             this.txtXacNhanMatKhau.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtXacNhanMatKhau.ForeColor = System.Drawing.Color.Black;
             this.txtXacNhanMatKhau.Location = new System.Drawing.Point(36, 370);
-            this.txtXacNhanMatKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtXacNhanMatKhau.Margin = new System.Windows.Forms.Padding(4);
             this.txtXacNhanMatKhau.Name = "txtXacNhanMatKhau";
             this.txtXacNhanMatKhau.PasswordChar = '*';
             this.txtXacNhanMatKhau.Size = new System.Drawing.Size(493, 35);
@@ -169,20 +169,19 @@
             this.label3.TabIndex = 46;
             this.label3.Text = "Xác nhận mật khẩu:";
             // 
-            // textBox1
+            // txtTenDangNhap
             // 
-            this.textBox1.AcceptsReturn = true;
-            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(36, 118);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(493, 35);
-            this.textBox1.TabIndex = 50;
+            this.txtTenDangNhap.AcceptsReturn = true;
+            this.txtTenDangNhap.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtTenDangNhap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTenDangNhap.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenDangNhap.ForeColor = System.Drawing.Color.Black;
+            this.txtTenDangNhap.Location = new System.Drawing.Point(36, 118);
+            this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenDangNhap.Name = "txtTenDangNhap";
+            this.txtTenDangNhap.Size = new System.Drawing.Size(493, 34);
+            this.txtTenDangNhap.TabIndex = 50;
             // 
             // label4
             // 
@@ -219,6 +218,7 @@
             this.btnDoiMatKhau.Text = "Đổi mật khẩu";
             this.btnDoiMatKhau.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnDoiMatKhau.UseVisualStyleBackColor = true;
+            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
             // 
             // FormDoiMatKhau
             // 
@@ -227,7 +227,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(575, 498);
             this.Controls.Add(this.btnDoiMatKhau);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTenDangNhap);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtXacNhanMatKhau);
             this.Controls.Add(this.label3);
@@ -237,7 +237,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormDoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormDoiMatKhau";
@@ -258,7 +258,7 @@
         private System.Windows.Forms.TextBox txtXacNhanMatKhau;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTenDangNhap;
         private System.Windows.Forms.Label label4;
         private DragControl dragControl1;
         private Button_WOC btnDoiMatKhau;

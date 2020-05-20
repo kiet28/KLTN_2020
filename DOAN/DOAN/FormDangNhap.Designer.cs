@@ -38,9 +38,9 @@
             this.panelHeader = new System.Windows.Forms.Panel();
             this.btnThoat = new System.Windows.Forms.Button();
             this.labelDoiMatKhau = new System.Windows.Forms.Label();
-            this.dragControl1 = new DOAN.DragControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDangNhap = new DOAN.Button_WOC();
+            this.dragControl1 = new DOAN.DragControl();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -80,16 +80,19 @@
             // 
             // txtTenDN
             // 
+            this.txtTenDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDN.Location = new System.Drawing.Point(264, 232);
             this.txtTenDN.Name = "txtTenDN";
-            this.txtTenDN.Size = new System.Drawing.Size(362, 38);
+            this.txtTenDN.Size = new System.Drawing.Size(362, 34);
             this.txtTenDN.TabIndex = 4;
             // 
             // txtMatKhau
             // 
+            this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhau.Location = new System.Drawing.Point(264, 305);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(362, 38);
+            this.txtMatKhau.PasswordChar = '*';
+            this.txtMatKhau.Size = new System.Drawing.Size(362, 34);
             this.txtMatKhau.TabIndex = 5;
             // 
             // panelHeader
@@ -124,18 +127,15 @@
             // labelDoiMatKhau
             // 
             this.labelDoiMatKhau.AutoSize = true;
+            this.labelDoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelDoiMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDoiMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(43)))), ((int)(((byte)(96)))));
-            this.labelDoiMatKhau.Location = new System.Drawing.Point(383, 356);
+            this.labelDoiMatKhau.Location = new System.Drawing.Point(372, 355);
             this.labelDoiMatKhau.Name = "labelDoiMatKhau";
             this.labelDoiMatKhau.Size = new System.Drawing.Size(152, 29);
             this.labelDoiMatKhau.TabIndex = 9;
             this.labelDoiMatKhau.Text = "Đổi mật khẩu";
             this.labelDoiMatKhau.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // dragControl1
-            // 
-            this.dragControl1.SelectControl = this.panelHeader;
             // 
             // pictureBox1
             // 
@@ -167,6 +167,10 @@
             this.btnDangNhap.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
+            // 
+            // dragControl1
+            // 
+            this.dragControl1.SelectControl = this.panelHeader;
             // 
             // FormDangNhap
             // 

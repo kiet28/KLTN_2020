@@ -75,10 +75,10 @@ namespace DOAN
                     .Where(bs1 => bs1.bs.MaNV == bs1.tk.MaNhanVien)
                     .Select(bs2 => bs2.tk.TenNhanVien).FirstOrDefault();
 
-                    tc.lblTenDangNhap.Text = tenNV.ToString();
+                    tc.lblTenDangNhap.Text = "Welcome! " + tenNV.ToString();//tạo label vào form bán hàng để hiển thị tên lên form
                     tc.btnQuanLiPhong.Enabled = false;
                     tc.btnQuanLiNhanVien.Enabled = false;
-                    tc.btnQuanLiKhachHang.Enabled = false;//tạo label vào form bán hàng để hiển thị tên lên form
+                    tc.btnQuanLiKhachHang.Enabled = false;
                     tc.Show();
                     this.Hide();
                 }
@@ -90,7 +90,7 @@ namespace DOAN
                     .Where(bs1 => bs1.bs.MaNQL == bs1.tk.MaNQL)
                     .Select(bs2 => bs2.tk.TenNQL).FirstOrDefault();
                     
-                    tc.lblTenDangNhap.Text = tenQL.ToString(); //tạo label vào form quản lý để hiển thị tên lên form
+                    tc.lblTenDangNhap.Text = "Welcome" + tenQL.ToString(); //tạo label vào form quản lý để hiển thị tên lên form
                     tc.btnQuanLiPhong.Enabled = true;
                     tc.btnQuanLiNhanVien.Enabled = true;
                     tc.btnQuanLiKhachHang.Enabled = true;
