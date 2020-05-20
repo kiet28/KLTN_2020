@@ -42,12 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NhanVienBLL.cs" />
+    <Compile Include="QuanLyBLL.cs" />
     <Compile Include="TaiKhoanBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{D38C093C-163B-49A8-AB9F-D7955049F4A2}</Project>
+      <Project>{d38c093c-163b-49a8-ab9f-d7955049f4a2}</Project>
       <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">

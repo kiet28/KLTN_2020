@@ -26,8 +26,8 @@ namespace BLL
                 tks.Pass = tkn.passWord;
                 tks.LoaiTK = tkn.loaiTaiKhoan;
                 tks.MaTK = tkn.maTaiKhoan;
-                tks.MaNV = tkn.maNhanVien;
-                tks.MaNQL = tkn.maNQL;
+                tks.MaNV = (Int32)tkn.maNhanVien;
+                tks.MaNQL = (Int32)tkn.maNQL;
                 dsTK.Add(tks);
             }
             return dsTK;

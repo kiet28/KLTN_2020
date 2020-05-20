@@ -54,3 +54,10 @@ C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.exe
 C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.pdb
 C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.UCTraPhong.resources
 C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormHoaDon.resources
+C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\bin\Debug\BLL.dll
+C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\bin\Debug\Entities.dll
+C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\bin\Debug\DAL.dll
+C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\bin\Debug\BLL.pdb
+C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\bin\Debug\Entities.pdb
+C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\bin\Debug\DAL.pdb
+C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\bin\Debug\DAL.dll.config

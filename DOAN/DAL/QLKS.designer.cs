@@ -1909,9 +1909,9 @@ namespace DAL
 		
 		private string _passWord;
 		
-		private int _maNhanVien;
+		private System.Nullable<int> _maNhanVien;
 		
-		private int _maNQL;
+		private System.Nullable<int> _maNQL;
 		
 		private string _loaiTaiKhoan;
 		
@@ -1929,9 +1929,9 @@ namespace DAL
     partial void OnuserNameChanged();
     partial void OnpassWordChanging(string value);
     partial void OnpassWordChanged();
-    partial void OnmaNhanVienChanging(int value);
+    partial void OnmaNhanVienChanging(System.Nullable<int> value);
     partial void OnmaNhanVienChanged();
-    partial void OnmaNQLChanging(int value);
+    partial void OnmaNQLChanging(System.Nullable<int> value);
     partial void OnmaNQLChanged();
     partial void OnloaiTaiKhoanChanging(string value);
     partial void OnloaiTaiKhoanChanged();
@@ -2005,7 +2005,7 @@ namespace DAL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNhanVien", DbType="Int")]
-		public int maNhanVien
+		public System.Nullable<int> maNhanVien
 		{
 			get
 			{
@@ -2029,7 +2029,7 @@ namespace DAL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNQL", DbType="Int")]
-		public int maNQL
+		public System.Nullable<int> maNQL
 		{
 			get
 			{
@@ -2099,7 +2099,7 @@ namespace DAL
 					}
 					else
 					{
-						this._maNQL = default(int);
+						this._maNQL = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("NguoiQuanLy");
 				}
@@ -2133,7 +2133,7 @@ namespace DAL
 					}
 					else
 					{
-						this._maNhanVien = default(int);
+						this._maNhanVien = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("NhanVien");
 				}

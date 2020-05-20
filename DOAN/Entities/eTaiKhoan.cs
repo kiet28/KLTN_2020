@@ -28,9 +28,9 @@ namespace Entities
             this.UserName = user;
             this.Pass = p;
             this.LoaiTK = loaitk;
-            this.MaNV = manv;
-            this.MaNQL = manql;
-            this.MaTK = matk;
+            this.MaNV = Convert.ToInt32( manv);
+            this.MaNQL = Convert.ToInt32(manql);
+            this.MaTK = Convert.ToInt32(matk);
         }
     }
 }

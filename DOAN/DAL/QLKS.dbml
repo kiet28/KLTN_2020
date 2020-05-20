@@ -90,8 +90,8 @@
       <Column Name="maTaiKhoan" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="userName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="passWord" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="maNhanVien" Type="System.Int32" DbType="Int" CanBeNull="false" />
-      <Column Name="maNQL" Type="System.Int32" DbType="Int" CanBeNull="false" />
+      <Column Name="maNhanVien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="maNQL" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="loaiTaiKhoan" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Association Name="NguoiQuanLy_TaiKhoan" Member="NguoiQuanLy" ThisKey="maNQL" OtherKey="maNQL" Type="NguoiQuanLy" IsForeignKey="true" />
       <Association Name="NhanVien_TaiKhoan" Member="NhanVien" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="NhanVien" IsForeignKey="true" />

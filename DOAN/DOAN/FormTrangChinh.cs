@@ -144,6 +144,7 @@ namespace DOAN
             HideSubMenu();
             UCThuePhong tp = new UCThuePhong();
             AddControlToPanel(tp);
+            
         }
 
         //
