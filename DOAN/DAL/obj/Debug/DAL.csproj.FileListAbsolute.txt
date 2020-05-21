@@ -1,0 +1,6 @@
+C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\DAL\bin\Debug\DAL.dll.config
+C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\DAL\bin\Debug\DAL.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\DAL\bin\Debug\DAL.pdb
+C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\DAL\obj\Debug\DAL.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\DAL\obj\Debug\DAL.pdb

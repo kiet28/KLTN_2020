@@ -1,0 +1,11 @@
+C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\BLL\bin\Debug\BLL.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\BLL\bin\Debug\BLL.pdb
+C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\BLL\bin\Debug\DAL.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\BLL\bin\Debug\Entities.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\BLL\bin\Debug\DAL.pdb
+C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\BLL\bin\Debug\DAL.dll.config
+C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\BLL\bin\Debug\Entities.pdb
+C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\BLL\obj\Debug\BLL.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\BLL\obj\Debug\BLL.pdb

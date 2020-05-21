@@ -120,6 +120,12 @@
     <Compile Include="UCDanhSachPhong.Designer.cs">
       <DependentUpon>UCDanhSachPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCThemNV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCThemNV.Designer.cs">
+      <DependentUpon>UCThemNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCThuePhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     <EmbeddedResource Include="UCDanhSachPhong.resx">
       <DependentUpon>UCDanhSachPhong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCThemNV.resx">
+      <DependentUpon>UCThemNV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCThuePhong.resx">
       <DependentUpon>UCThuePhong.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +209,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Reserve_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{d23608ec-dfac-4df3-b9f9-05f0ee7bc306}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{40dd8a1d-baf3-401d-a84f-e5659c907d83}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{1d08dfa8-a94e-4112-87a6-d6e55db84737}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
