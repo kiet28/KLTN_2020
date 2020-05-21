@@ -308,6 +308,7 @@
             this.btnThemKhachHang.Text = "Thêm khách hàng";
             this.btnThemKhachHang.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnThemKhachHang.UseVisualStyleBackColor = true;
+            this.btnThemKhachHang.Click += new System.EventHandler(this.btnThemKhachHang_Click);
             // 
             // checkedListBoxChonPhong
             // 

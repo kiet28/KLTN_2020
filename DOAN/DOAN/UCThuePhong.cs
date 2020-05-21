@@ -23,6 +23,14 @@ namespace DOAN
         {
             
         }
+
+        private void btnThemKhachHang_Click(object sender, EventArgs e)
+        {
+            using(FormThemKhachHang tkh = new FormThemKhachHang())
+            {
+                tkh.ShowDialog();
+            }
+        }
     }
 
 }

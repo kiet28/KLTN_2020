@@ -22,7 +22,7 @@ namespace DAL
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Nhom14_QLKhachSan")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Nhom14_QLKhachSan_version_1")]
 	public partial class QLKSDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -60,7 +60,7 @@ namespace DAL
     #endregion
 		
 		public QLKSDataContext() : 
-				base(global::DAL.Properties.Settings.Default.Nhom14_QLKhachSanConnectionString, mappingSource)
+				base(global::DAL.Properties.Settings.Default.Nhom14_QLKhachSan_version_1ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -172,15 +172,19 @@ namespace DAL
 		
 		private System.Nullable<System.DateTime> _ngayTraPhong;
 		
-		private System.Nullable<decimal> _tongTien;
-		
 		private System.Nullable<int> _maPhong;
 		
 		private System.Nullable<int> _maHD;
 		
 		private System.Nullable<int> _maDatPhong;
 		
+		private System.Nullable<int> _maDV;
+		
+		private System.Nullable<int> _soLuong;
+		
 		private EntityRef<DatPhong> _DatPhong;
+		
+		private EntityRef<DichVu> _DichVu;
 		
 		private EntityRef<HoaDon> _HoaDon;
 		
@@ -194,25 +198,28 @@ namespace DAL
     partial void OnmaCTHDChanged();
     partial void OnngayTraPhongChanging(System.Nullable<System.DateTime> value);
     partial void OnngayTraPhongChanged();
-    partial void OntongTienChanging(System.Nullable<decimal> value);
-    partial void OntongTienChanged();
     partial void OnmaPhongChanging(System.Nullable<int> value);
     partial void OnmaPhongChanged();
     partial void OnmaHDChanging(System.Nullable<int> value);
     partial void OnmaHDChanged();
     partial void OnmaDatPhongChanging(System.Nullable<int> value);
     partial void OnmaDatPhongChanged();
+    partial void OnmaDVChanging(System.Nullable<int> value);
+    partial void OnmaDVChanged();
+    partial void OnsoLuongChanging(System.Nullable<int> value);
+    partial void OnsoLuongChanged();
     #endregion
 		
 		public CTHoaDon()
 		{
 			this._DatPhong = default(EntityRef<DatPhong>);
+			this._DichVu = default(EntityRef<DichVu>);
 			this._HoaDon = default(EntityRef<HoaDon>);
 			this._Phong = default(EntityRef<Phong>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maCTHD", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maCTHD", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int maCTHD
 		{
 			get
@@ -248,26 +255,6 @@ namespace DAL
 					this._ngayTraPhong = value;
 					this.SendPropertyChanged("ngayTraPhong");
 					this.OnngayTraPhongChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tongTien", DbType="Money")]
-		public System.Nullable<decimal> tongTien
-		{
-			get
-			{
-				return this._tongTien;
-			}
-			set
-			{
-				if ((this._tongTien != value))
-				{
-					this.OntongTienChanging(value);
-					this.SendPropertyChanging();
-					this._tongTien = value;
-					this.SendPropertyChanged("tongTien");
-					this.OntongTienChanged();
 				}
 			}
 		}
@@ -344,6 +331,50 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maDV", DbType="Int")]
+		public System.Nullable<int> maDV
+		{
+			get
+			{
+				return this._maDV;
+			}
+			set
+			{
+				if ((this._maDV != value))
+				{
+					if (this._DichVu.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnmaDVChanging(value);
+					this.SendPropertyChanging();
+					this._maDV = value;
+					this.SendPropertyChanged("maDV");
+					this.OnmaDVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_soLuong", DbType="Int")]
+		public System.Nullable<int> soLuong
+		{
+			get
+			{
+				return this._soLuong;
+			}
+			set
+			{
+				if ((this._soLuong != value))
+				{
+					this.OnsoLuongChanging(value);
+					this.SendPropertyChanging();
+					this._soLuong = value;
+					this.SendPropertyChanged("soLuong");
+					this.OnsoLuongChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DatPhong_CTHoaDon", Storage="_DatPhong", ThisKey="maDatPhong", OtherKey="maDatPhong", IsForeignKey=true)]
 		public DatPhong DatPhong
 		{
@@ -374,6 +405,40 @@ namespace DAL
 						this._maDatPhong = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("DatPhong");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DichVu_CTHoaDon", Storage="_DichVu", ThisKey="maDV", OtherKey="maDichVu", IsForeignKey=true)]
+		public DichVu DichVu
+		{
+			get
+			{
+				return this._DichVu.Entity;
+			}
+			set
+			{
+				DichVu previousValue = this._DichVu.Entity;
+				if (((previousValue != value) 
+							|| (this._DichVu.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DichVu.Entity = null;
+						previousValue.CTHoaDons.Remove(this);
+					}
+					this._DichVu.Entity = value;
+					if ((value != null))
+					{
+						value.CTHoaDons.Add(this);
+						this._maDV = value.maDichVu;
+					}
+					else
+					{
+						this._maDV = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("DichVu");
 				}
 			}
 		}
@@ -479,6 +544,8 @@ namespace DAL
 		
 		private System.Nullable<int> _maKhachHang;
 		
+		private System.Nullable<int> _maPhong;
+		
 		private System.Nullable<System.DateTime> _ngayDatPhong;
 		
 		private System.Nullable<System.DateTime> _ngayDuKienTra;
@@ -499,6 +566,8 @@ namespace DAL
     partial void OnmaNhanVienChanged();
     partial void OnmaKhachHangChanging(System.Nullable<int> value);
     partial void OnmaKhachHangChanged();
+    partial void OnmaPhongChanging(System.Nullable<int> value);
+    partial void OnmaPhongChanged();
     partial void OnngayDatPhongChanging(System.Nullable<System.DateTime> value);
     partial void OnngayDatPhongChanged();
     partial void OnngayDuKienTraChanging(System.Nullable<System.DateTime> value);
@@ -513,7 +582,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maDatPhong", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maDatPhong", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int maDatPhong
 		{
 			get
@@ -577,6 +646,26 @@ namespace DAL
 					this._maKhachHang = value;
 					this.SendPropertyChanged("maKhachHang");
 					this.OnmaKhachHangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maPhong", DbType="Int")]
+		public System.Nullable<int> maPhong
+		{
+			get
+			{
+				return this._maPhong;
+			}
+			set
+			{
+				if ((this._maPhong != value))
+				{
+					this.OnmaPhongChanging(value);
+					this.SendPropertyChanging();
+					this._maPhong = value;
+					this.SendPropertyChanged("maPhong");
+					this.OnmaPhongChanged();
 				}
 			}
 		}
@@ -747,7 +836,7 @@ namespace DAL
 		
 		private System.Nullable<decimal> _giaDichVu;
 		
-		private EntitySet<Phong> _Phongs;
+		private EntitySet<CTHoaDon> _CTHoaDons;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -763,11 +852,11 @@ namespace DAL
 		
 		public DichVu()
 		{
-			this._Phongs = new EntitySet<Phong>(new Action<Phong>(this.attach_Phongs), new Action<Phong>(this.detach_Phongs));
+			this._CTHoaDons = new EntitySet<CTHoaDon>(new Action<CTHoaDon>(this.attach_CTHoaDons), new Action<CTHoaDon>(this.detach_CTHoaDons));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maDichVu", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maDichVu", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int maDichVu
 		{
 			get
@@ -827,16 +916,16 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DichVu_Phong", Storage="_Phongs", ThisKey="maDichVu", OtherKey="maDichVu")]
-		public EntitySet<Phong> Phongs
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DichVu_CTHoaDon", Storage="_CTHoaDons", ThisKey="maDichVu", OtherKey="maDV")]
+		public EntitySet<CTHoaDon> CTHoaDons
 		{
 			get
 			{
-				return this._Phongs;
+				return this._CTHoaDons;
 			}
 			set
 			{
-				this._Phongs.Assign(value);
+				this._CTHoaDons.Assign(value);
 			}
 		}
 		
@@ -860,13 +949,13 @@ namespace DAL
 			}
 		}
 		
-		private void attach_Phongs(Phong entity)
+		private void attach_CTHoaDons(CTHoaDon entity)
 		{
 			this.SendPropertyChanging();
 			entity.DichVu = this;
 		}
 		
-		private void detach_Phongs(Phong entity)
+		private void detach_CTHoaDons(CTHoaDon entity)
 		{
 			this.SendPropertyChanging();
 			entity.DichVu = null;
@@ -885,6 +974,8 @@ namespace DAL
 		
 		private System.Nullable<System.DateTime> _ngayLapHD;
 		
+		private System.Nullable<decimal> _tongTien;
+		
 		private EntitySet<CTHoaDon> _CTHoaDons;
 		
 		private EntityRef<NhanVien> _NhanVien;
@@ -899,6 +990,8 @@ namespace DAL
     partial void OnmaNhanVienChanged();
     partial void OnngayLapHDChanging(System.Nullable<System.DateTime> value);
     partial void OnngayLapHDChanged();
+    partial void OntongTienChanging(System.Nullable<decimal> value);
+    partial void OntongTienChanged();
     #endregion
 		
 		public HoaDon()
@@ -908,7 +1001,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maHD", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maHD", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int maHD
 		{
 			get
@@ -968,6 +1061,26 @@ namespace DAL
 					this._ngayLapHD = value;
 					this.SendPropertyChanged("ngayLapHD");
 					this.OnngayLapHDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tongTien", DbType="Money")]
+		public System.Nullable<decimal> tongTien
+		{
+			get
+			{
+				return this._tongTien;
+			}
+			set
+			{
+				if ((this._tongTien != value))
+				{
+					this.OntongTienChanging(value);
+					this.SendPropertyChanging();
+					this._tongTien = value;
+					this.SendPropertyChanged("tongTien");
+					this.OntongTienChanged();
 				}
 			}
 		}
@@ -1064,7 +1177,7 @@ namespace DAL
 		
 		private System.Nullable<int> _CMND;
 		
-		private System.Nullable<int> _gioiTinh;
+		private string _gioiTinh;
 		
 		private System.Nullable<int> _SDT;
 		
@@ -1080,7 +1193,7 @@ namespace DAL
     partial void OntenKhachHangChanged();
     partial void OnCMNDChanging(System.Nullable<int> value);
     partial void OnCMNDChanged();
-    partial void OngioiTinhChanging(System.Nullable<int> value);
+    partial void OngioiTinhChanging(string value);
     partial void OngioiTinhChanged();
     partial void OnSDTChanging(System.Nullable<int> value);
     partial void OnSDTChanged();
@@ -1092,7 +1205,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maKhachHang", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maKhachHang", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int maKhachHang
 		{
 			get
@@ -1152,8 +1265,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gioiTinh", DbType="Int")]
-		public System.Nullable<int> gioiTinh
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gioiTinh", DbType="NVarChar(10)")]
+		public string gioiTinh
 		{
 			get
 			{
@@ -1270,7 +1383,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNQL", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNQL", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int maNQL
 		{
 			get
@@ -1368,11 +1481,13 @@ namespace DAL
 		
 		private System.Nullable<System.DateTime> _namSinh;
 		
-		private System.Nullable<int> _gioiTinh;
+		private string _gioiTinh;
 		
 		private string _diaChi;
 		
 		private System.Nullable<int> _SDT;
+		
+		private string _trangThai;
 		
 		private EntitySet<DatPhong> _DatPhongs;
 		
@@ -1390,12 +1505,14 @@ namespace DAL
     partial void OnhoTenChanged();
     partial void OnnamSinhChanging(System.Nullable<System.DateTime> value);
     partial void OnnamSinhChanged();
-    partial void OngioiTinhChanging(System.Nullable<int> value);
+    partial void OngioiTinhChanging(string value);
     partial void OngioiTinhChanged();
     partial void OndiaChiChanging(string value);
     partial void OndiaChiChanged();
     partial void OnSDTChanging(System.Nullable<int> value);
     partial void OnSDTChanged();
+    partial void OntrangThaiChanging(string value);
+    partial void OntrangThaiChanged();
     #endregion
 		
 		public NhanVien()
@@ -1406,7 +1523,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNhanVien", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNhanVien", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int maNhanVien
 		{
 			get
@@ -1466,8 +1583,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gioiTinh", DbType="Int")]
-		public System.Nullable<int> gioiTinh
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gioiTinh", DbType="NVarChar(10)")]
+		public string gioiTinh
 		{
 			get
 			{
@@ -1522,6 +1639,26 @@ namespace DAL
 					this._SDT = value;
 					this.SendPropertyChanged("SDT");
 					this.OnSDTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trangThai", DbType="NVarChar(50)")]
+		public string trangThai
+		{
+			get
+			{
+				return this._trangThai;
+			}
+			set
+			{
+				if ((this._trangThai != value))
+				{
+					this.OntrangThaiChanging(value);
+					this.SendPropertyChanging();
+					this._trangThai = value;
+					this.SendPropertyChanged("trangThai");
+					this.OntrangThaiChanged();
 				}
 			}
 		}
@@ -1644,8 +1781,6 @@ namespace DAL
 		
 		private EntitySet<CTHoaDon> _CTHoaDons;
 		
-		private EntityRef<DichVu> _DichVu;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1669,11 +1804,10 @@ namespace DAL
 		public Phong()
 		{
 			this._CTHoaDons = new EntitySet<CTHoaDon>(new Action<CTHoaDon>(this.attach_CTHoaDons), new Action<CTHoaDon>(this.detach_CTHoaDons));
-			this._DichVu = default(EntityRef<DichVu>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maPhong", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maPhong", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int maPhong
 		{
 			get
@@ -1804,10 +1938,6 @@ namespace DAL
 			{
 				if ((this._maDichVu != value))
 				{
-					if (this._DichVu.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnmaDichVuChanging(value);
 					this.SendPropertyChanging();
 					this._maDichVu = value;
@@ -1827,40 +1957,6 @@ namespace DAL
 			set
 			{
 				this._CTHoaDons.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DichVu_Phong", Storage="_DichVu", ThisKey="maDichVu", OtherKey="maDichVu", IsForeignKey=true)]
-		public DichVu DichVu
-		{
-			get
-			{
-				return this._DichVu.Entity;
-			}
-			set
-			{
-				DichVu previousValue = this._DichVu.Entity;
-				if (((previousValue != value) 
-							|| (this._DichVu.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._DichVu.Entity = null;
-						previousValue.Phongs.Remove(this);
-					}
-					this._DichVu.Entity = value;
-					if ((value != null))
-					{
-						value.Phongs.Add(this);
-						this._maDichVu = value.maDichVu;
-					}
-					else
-					{
-						this._maDichVu = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("DichVu");
-				}
 			}
 		}
 		
@@ -1944,7 +2040,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maTaiKhoan", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maTaiKhoan", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int maTaiKhoan
 		{
 			get

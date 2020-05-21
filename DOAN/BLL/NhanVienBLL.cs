@@ -1,4 +1,5 @@
 ﻿using DAL;
+using DAL.Properties;
 using Entities;
 using System;
 using System.Collections.Generic;
