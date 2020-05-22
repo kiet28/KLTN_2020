@@ -16,7 +16,7 @@ namespace BLL
         {
             ks = new QLKSDataContext();
         }
-        public List<eKhachHang> LayThongTinBenhNhan()
+        public List<eKhachHang> LayThongTinKhachHang()
         {
             var dsKhachHang = ks.KhachHangs.ToList();
             List<eKhachHang> dsbn = new List<eKhachHang>();

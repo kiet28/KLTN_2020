@@ -61,4 +61,4 @@ C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\bin\Debug\BLL.pdb
 C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\bin\Debug\Entities.pdb
 C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\bin\Debug\DAL.pdb
 C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\bin\Debug\DAL.dll.config
-C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormThemKhachHang.resources
+C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormDanhSachKhachHang.resources
