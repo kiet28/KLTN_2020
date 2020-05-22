@@ -1,5 +1,4 @@
 ﻿using DAL;
-using DAL.Properties;
 using Entities;
 using System;
 using System.Collections.Generic;
@@ -20,7 +19,7 @@ namespace BLL
         {
             var dsTaiKhoan = ks.TaiKhoans.ToList();
             List<eTaiKhoan> dsTK = new List<eTaiKhoan>();
-            foreach (TaiKhoan tkn in dsTaiKhoan)
+            foreach (TaiKhoans tkn in dsTaiKhoan)
             {
                 eTaiKhoan tks = new eTaiKhoan();
                 tks.UserName = tkn.userName;
@@ -36,7 +35,7 @@ namespace BLL
 
         public void DoiMKTaiKhoan(string user, string pass)
         {
-            IQueryable<TaiKhoan> taikhoan = ks.TaiKhoans.Where(nv => nv.userName.Equals(user));
+            IQueryable<TaiKhoans> taikhoan = ks.TaiKhoans.Where(nv => nv.userName.Equals(user));
             taikhoan.First().passWord = pass;
             ks.SubmitChanges();
         }

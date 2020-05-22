@@ -19,7 +19,7 @@ namespace BLL
         {
             var dsQuanLy = ks.NguoiQuanLies.ToList();
             List<eQuanLy> dsQL = new List<eQuanLy>();
-            foreach (NguoiQuanLy qls in dsQuanLy)
+            foreach (NguoiQuanLies qls in dsQuanLy)
             {
                 eQuanLy qln = new eQuanLy();
                 qln.MaNQL = qls.maNQL;

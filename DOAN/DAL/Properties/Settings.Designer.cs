@@ -26,8 +26,19 @@ namespace DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-ID65Q0UD\\SQLEXPRESS;Initial Catalog=Nhom14_QLKhachSan;Persist " +
-            "Security Info=True;User ID=sa;Password=sapassword")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-ID65Q0UD\\SQLEXPRESS;Initial Catalog=Nhom14_QLKhachSan_version_" +
+            "1;Persist Security Info=True;User ID=sa;Password=sapassword")]
+        public string Nhom14_QLKhachSan_version_1ConnectionString {
+            get {
+                return ((string)(this["Nhom14_QLKhachSan_version_1ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-ID65Q0UD\\SQLEXPRESS;Initial Catalog=Nhom14_QLKhachSan;User ID=" +
+            "sa")]
         public string Nhom14_QLKhachSanConnectionString {
             get {
                 return ((string)(this["Nhom14_QLKhachSanConnectionString"]));
@@ -38,18 +49,7 @@ namespace DAL.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-ID65Q0UD\\SQLEXPRESS;Initial Catalog=Nhom14_QLKhachSan_version_" +
-            "1;User ID=sa")]
-        public string Nhom14_QLKhachSan_version_1ConnectionString {
-            get {
-                return ((string)(this["Nhom14_QLKhachSan_version_1ConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-ID65Q0UD\\SQLEXPRESS;Initial Catalog=Nhom14_QLKhachSan_version_" +
-            "1;User ID=sa;Password=sapassword")]
+            "1;Persist Security Info=True;User ID=sa;Password=sapassword")]
         public string Nhom14_QLKhachSan_version_1ConnectionString1 {
             get {
                 return ((string)(this["Nhom14_QLKhachSan_version_1ConnectionString1"]));

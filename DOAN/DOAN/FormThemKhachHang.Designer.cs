@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLuu = new DOAN.Button_WOC();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.btnThoat = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
@@ -41,28 +40,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.rdNam = new System.Windows.Forms.RadioButton();
             this.rdNu = new System.Windows.Forms.RadioButton();
+            this.btnLuu = new DOAN.Button_WOC();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.BorderColor = System.Drawing.Color.Transparent;
-            this.btnLuu.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(43)))), ((int)(((byte)(96)))));
-            this.btnLuu.FlatAppearance.BorderSize = 0;
-            this.btnLuu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnLuu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Location = new System.Drawing.Point(19, 314);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnLuu.OnHoverButtonColor = System.Drawing.Color.MidnightBlue;
-            this.btnLuu.OnHoverTextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLuu.Size = new System.Drawing.Size(494, 63);
-            this.btnLuu.TabIndex = 55;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLuu.UseVisualStyleBackColor = true;
             // 
             // panelHeader
             // 
@@ -201,6 +181,7 @@
             // rdNam
             // 
             this.rdNam.AutoSize = true;
+            this.rdNam.Checked = true;
             this.rdNam.Location = new System.Drawing.Point(135, 209);
             this.rdNam.Name = "rdNam";
             this.rdNam.Size = new System.Drawing.Size(58, 21);
@@ -216,9 +197,29 @@
             this.rdNu.Name = "rdNu";
             this.rdNu.Size = new System.Drawing.Size(47, 21);
             this.rdNu.TabIndex = 65;
-            this.rdNu.TabStop = true;
             this.rdNu.Text = "Nữ";
             this.rdNu.UseVisualStyleBackColor = true;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.BorderColor = System.Drawing.Color.Transparent;
+            this.btnLuu.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(43)))), ((int)(((byte)(96)))));
+            this.btnLuu.FlatAppearance.BorderSize = 0;
+            this.btnLuu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLuu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Location = new System.Drawing.Point(19, 314);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnLuu.OnHoverButtonColor = System.Drawing.Color.MidnightBlue;
+            this.btnLuu.OnHoverTextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLuu.Size = new System.Drawing.Size(494, 63);
+            this.btnLuu.TabIndex = 55;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // FormThemKhachHang
             // 
@@ -239,6 +240,7 @@
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormThemKhachHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormThemKhachHang";
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();

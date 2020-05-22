@@ -20,7 +20,7 @@ namespace BLL
         {
             var dsKhachHang = ks.KhachHangs.ToList();
             List<eKhachHang> dsbn = new List<eKhachHang>();
-            foreach (KhachHang item in dsKhachHang)
+            foreach (KhachHangs item in dsKhachHang)
             {
                 eKhachHang kh = new eKhachHang();
                 kh.MaKH = item.maKhachHang;
@@ -35,7 +35,7 @@ namespace BLL
 
         public void ThemThongTinKhachHang(eKhachHang newKH)
         {
-            KhachHang temp = new KhachHang();
+            KhachHangs temp = new KhachHangs();
             temp.maKhachHang = newKH.MaKH;
             temp.tenKhachHang = newKH.TenKH;
             temp.CMND = newKH.CMND;
@@ -49,7 +49,7 @@ namespace BLL
         {
             if (CheckExisted(khmoi.MaKH))
                 return 0;
-            KhachHang khtemp = new KhachHang();
+            KhachHangs khtemp = new KhachHangs();
             khtemp.maKhachHang = khmoi.MaKH;
             khtemp.tenKhachHang = khmoi.TenKH;
             khtemp.CMND = khmoi.CMND;
@@ -61,7 +61,7 @@ namespace BLL
         }
         public bool CheckExisted(int maKhachHang)
         {
-            KhachHang khtemp = ks.KhachHangs.Where(x => x.maKhachHang == maKhachHang).FirstOrDefault();
+            KhachHangs khtemp = ks.KhachHangs.Where(x => x.maKhachHang == maKhachHang).FirstOrDefault();
             if (khtemp != null)
                 return true;
             return false;
@@ -69,7 +69,7 @@ namespace BLL
 
         public void ThemKhachHang(eKhachHang khMoi)
         {
-            KhachHang temp = new KhachHang();
+            KhachHangs temp = new KhachHangs();
             temp.maKhachHang = khMoi.MaKH;
             temp.tenKhachHang = khMoi.TenKH;
             temp.gioiTinh = khMoi.GioiTinh;

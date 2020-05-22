@@ -30,33 +30,33 @@ namespace DAL
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertCTHoaDon(CTHoaDon instance);
-    partial void UpdateCTHoaDon(CTHoaDon instance);
-    partial void DeleteCTHoaDon(CTHoaDon instance);
-    partial void InsertDatPhong(DatPhong instance);
-    partial void UpdateDatPhong(DatPhong instance);
-    partial void DeleteDatPhong(DatPhong instance);
-    partial void InsertDichVu(DichVu instance);
-    partial void UpdateDichVu(DichVu instance);
-    partial void DeleteDichVu(DichVu instance);
-    partial void InsertHoaDon(HoaDon instance);
-    partial void UpdateHoaDon(HoaDon instance);
-    partial void DeleteHoaDon(HoaDon instance);
-    partial void InsertKhachHang(KhachHang instance);
-    partial void UpdateKhachHang(KhachHang instance);
-    partial void DeleteKhachHang(KhachHang instance);
-    partial void InsertNguoiQuanLy(NguoiQuanLy instance);
-    partial void UpdateNguoiQuanLy(NguoiQuanLy instance);
-    partial void DeleteNguoiQuanLy(NguoiQuanLy instance);
-    partial void InsertNhanVien(NhanVien instance);
-    partial void UpdateNhanVien(NhanVien instance);
-    partial void DeleteNhanVien(NhanVien instance);
-    partial void InsertPhong(Phong instance);
-    partial void UpdatePhong(Phong instance);
-    partial void DeletePhong(Phong instance);
-    partial void InsertTaiKhoan(TaiKhoan instance);
-    partial void UpdateTaiKhoan(TaiKhoan instance);
-    partial void DeleteTaiKhoan(TaiKhoan instance);
+    partial void InsertCTHoaDons(CTHoaDons instance);
+    partial void UpdateCTHoaDons(CTHoaDons instance);
+    partial void DeleteCTHoaDons(CTHoaDons instance);
+    partial void InsertDatPhongs(DatPhongs instance);
+    partial void UpdateDatPhongs(DatPhongs instance);
+    partial void DeleteDatPhongs(DatPhongs instance);
+    partial void InsertDichVus(DichVus instance);
+    partial void UpdateDichVus(DichVus instance);
+    partial void DeleteDichVus(DichVus instance);
+    partial void InsertHoaDons(HoaDons instance);
+    partial void UpdateHoaDons(HoaDons instance);
+    partial void DeleteHoaDons(HoaDons instance);
+    partial void InsertKhachHangs(KhachHangs instance);
+    partial void UpdateKhachHangs(KhachHangs instance);
+    partial void DeleteKhachHangs(KhachHangs instance);
+    partial void InsertNguoiQuanLies(NguoiQuanLies instance);
+    partial void UpdateNguoiQuanLies(NguoiQuanLies instance);
+    partial void DeleteNguoiQuanLies(NguoiQuanLies instance);
+    partial void InsertNhanViens(NhanViens instance);
+    partial void UpdateNhanViens(NhanViens instance);
+    partial void DeleteNhanViens(NhanViens instance);
+    partial void InsertPhongs(Phongs instance);
+    partial void UpdatePhongs(Phongs instance);
+    partial void DeletePhongs(Phongs instance);
+    partial void InsertTaiKhoans(TaiKhoans instance);
+    partial void UpdateTaiKhoans(TaiKhoans instance);
+    partial void DeleteTaiKhoans(TaiKhoans instance);
     #endregion
 		
 		public QLKSDataContext() : 
@@ -89,81 +89,81 @@ namespace DAL
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<CTHoaDon> CTHoaDons
+		public System.Data.Linq.Table<CTHoaDons> CTHoaDons
 		{
 			get
 			{
-				return this.GetTable<CTHoaDon>();
+				return this.GetTable<CTHoaDons>();
 			}
 		}
 		
-		public System.Data.Linq.Table<DatPhong> DatPhongs
+		public System.Data.Linq.Table<DatPhongs> DatPhongs
 		{
 			get
 			{
-				return this.GetTable<DatPhong>();
+				return this.GetTable<DatPhongs>();
 			}
 		}
 		
-		public System.Data.Linq.Table<DichVu> DichVus
+		public System.Data.Linq.Table<DichVus> DichVus
 		{
 			get
 			{
-				return this.GetTable<DichVu>();
+				return this.GetTable<DichVus>();
 			}
 		}
 		
-		public System.Data.Linq.Table<HoaDon> HoaDons
+		public System.Data.Linq.Table<HoaDons> HoaDons
 		{
 			get
 			{
-				return this.GetTable<HoaDon>();
+				return this.GetTable<HoaDons>();
 			}
 		}
 		
-		public System.Data.Linq.Table<KhachHang> KhachHangs
+		public System.Data.Linq.Table<KhachHangs> KhachHangs
 		{
 			get
 			{
-				return this.GetTable<KhachHang>();
+				return this.GetTable<KhachHangs>();
 			}
 		}
 		
-		public System.Data.Linq.Table<NguoiQuanLy> NguoiQuanLies
+		public System.Data.Linq.Table<NguoiQuanLies> NguoiQuanLies
 		{
 			get
 			{
-				return this.GetTable<NguoiQuanLy>();
+				return this.GetTable<NguoiQuanLies>();
 			}
 		}
 		
-		public System.Data.Linq.Table<NhanVien> NhanViens
+		public System.Data.Linq.Table<NhanViens> NhanViens
 		{
 			get
 			{
-				return this.GetTable<NhanVien>();
+				return this.GetTable<NhanViens>();
 			}
 		}
 		
-		public System.Data.Linq.Table<Phong> Phongs
+		public System.Data.Linq.Table<Phongs> Phongs
 		{
 			get
 			{
-				return this.GetTable<Phong>();
+				return this.GetTable<Phongs>();
 			}
 		}
 		
-		public System.Data.Linq.Table<TaiKhoan> TaiKhoans
+		public System.Data.Linq.Table<TaiKhoans> TaiKhoans
 		{
 			get
 			{
-				return this.GetTable<TaiKhoan>();
+				return this.GetTable<TaiKhoans>();
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CTHoaDon")]
-	public partial class CTHoaDon : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class CTHoaDons : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -182,13 +182,13 @@ namespace DAL
 		
 		private System.Nullable<int> _soLuong;
 		
-		private EntityRef<DatPhong> _DatPhong;
+		private EntityRef<DatPhongs> _DatPhongs;
 		
-		private EntityRef<DichVu> _DichVu;
+		private EntityRef<DichVus> _DichVus;
 		
-		private EntityRef<HoaDon> _HoaDon;
+		private EntityRef<HoaDons> _HoaDons;
 		
-		private EntityRef<Phong> _Phong;
+		private EntityRef<Phongs> _Phongs;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -210,12 +210,12 @@ namespace DAL
     partial void OnsoLuongChanged();
     #endregion
 		
-		public CTHoaDon()
+		public CTHoaDons()
 		{
-			this._DatPhong = default(EntityRef<DatPhong>);
-			this._DichVu = default(EntityRef<DichVu>);
-			this._HoaDon = default(EntityRef<HoaDon>);
-			this._Phong = default(EntityRef<Phong>);
+			this._DatPhongs = default(EntityRef<DatPhongs>);
+			this._DichVus = default(EntityRef<DichVus>);
+			this._HoaDons = default(EntityRef<HoaDons>);
+			this._Phongs = default(EntityRef<Phongs>);
 			OnCreated();
 		}
 		
@@ -270,7 +270,7 @@ namespace DAL
 			{
 				if ((this._maPhong != value))
 				{
-					if (this._Phong.HasLoadedOrAssignedValue)
+					if (this._Phongs.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -294,7 +294,7 @@ namespace DAL
 			{
 				if ((this._maHD != value))
 				{
-					if (this._HoaDon.HasLoadedOrAssignedValue)
+					if (this._HoaDons.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -318,7 +318,7 @@ namespace DAL
 			{
 				if ((this._maDatPhong != value))
 				{
-					if (this._DatPhong.HasLoadedOrAssignedValue)
+					if (this._DatPhongs.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -342,7 +342,7 @@ namespace DAL
 			{
 				if ((this._maDV != value))
 				{
-					if (this._DichVu.HasLoadedOrAssignedValue)
+					if (this._DichVus.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -375,26 +375,26 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DatPhong_CTHoaDon", Storage="_DatPhong", ThisKey="maDatPhong", OtherKey="maDatPhong", IsForeignKey=true)]
-		public DatPhong DatPhong
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DatPhong_CTHoaDon", Storage="_DatPhongs", ThisKey="maDatPhong", OtherKey="maDatPhong", IsForeignKey=true)]
+		public DatPhongs DatPhongs
 		{
 			get
 			{
-				return this._DatPhong.Entity;
+				return this._DatPhongs.Entity;
 			}
 			set
 			{
-				DatPhong previousValue = this._DatPhong.Entity;
+				DatPhongs previousValue = this._DatPhongs.Entity;
 				if (((previousValue != value) 
-							|| (this._DatPhong.HasLoadedOrAssignedValue == false)))
+							|| (this._DatPhongs.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._DatPhong.Entity = null;
+						this._DatPhongs.Entity = null;
 						previousValue.CTHoaDons.Remove(this);
 					}
-					this._DatPhong.Entity = value;
+					this._DatPhongs.Entity = value;
 					if ((value != null))
 					{
 						value.CTHoaDons.Add(this);
@@ -404,31 +404,31 @@ namespace DAL
 					{
 						this._maDatPhong = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("DatPhong");
+					this.SendPropertyChanged("DatPhongs");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DichVu_CTHoaDon", Storage="_DichVu", ThisKey="maDV", OtherKey="maDichVu", IsForeignKey=true)]
-		public DichVu DichVu
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DichVu_CTHoaDon", Storage="_DichVus", ThisKey="maDV", OtherKey="maDichVu", IsForeignKey=true)]
+		public DichVus DichVus
 		{
 			get
 			{
-				return this._DichVu.Entity;
+				return this._DichVus.Entity;
 			}
 			set
 			{
-				DichVu previousValue = this._DichVu.Entity;
+				DichVus previousValue = this._DichVus.Entity;
 				if (((previousValue != value) 
-							|| (this._DichVu.HasLoadedOrAssignedValue == false)))
+							|| (this._DichVus.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._DichVu.Entity = null;
+						this._DichVus.Entity = null;
 						previousValue.CTHoaDons.Remove(this);
 					}
-					this._DichVu.Entity = value;
+					this._DichVus.Entity = value;
 					if ((value != null))
 					{
 						value.CTHoaDons.Add(this);
@@ -438,31 +438,31 @@ namespace DAL
 					{
 						this._maDV = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("DichVu");
+					this.SendPropertyChanged("DichVus");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HoaDon_CTHoaDon", Storage="_HoaDon", ThisKey="maHD", OtherKey="maHD", IsForeignKey=true)]
-		public HoaDon HoaDon
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HoaDon_CTHoaDon", Storage="_HoaDons", ThisKey="maHD", OtherKey="maHD", IsForeignKey=true)]
+		public HoaDons HoaDons
 		{
 			get
 			{
-				return this._HoaDon.Entity;
+				return this._HoaDons.Entity;
 			}
 			set
 			{
-				HoaDon previousValue = this._HoaDon.Entity;
+				HoaDons previousValue = this._HoaDons.Entity;
 				if (((previousValue != value) 
-							|| (this._HoaDon.HasLoadedOrAssignedValue == false)))
+							|| (this._HoaDons.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._HoaDon.Entity = null;
+						this._HoaDons.Entity = null;
 						previousValue.CTHoaDons.Remove(this);
 					}
-					this._HoaDon.Entity = value;
+					this._HoaDons.Entity = value;
 					if ((value != null))
 					{
 						value.CTHoaDons.Add(this);
@@ -472,31 +472,31 @@ namespace DAL
 					{
 						this._maHD = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("HoaDon");
+					this.SendPropertyChanged("HoaDons");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Phong_CTHoaDon", Storage="_Phong", ThisKey="maPhong", OtherKey="maPhong", IsForeignKey=true)]
-		public Phong Phong
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Phong_CTHoaDon", Storage="_Phongs", ThisKey="maPhong", OtherKey="maPhong", IsForeignKey=true)]
+		public Phongs Phongs
 		{
 			get
 			{
-				return this._Phong.Entity;
+				return this._Phongs.Entity;
 			}
 			set
 			{
-				Phong previousValue = this._Phong.Entity;
+				Phongs previousValue = this._Phongs.Entity;
 				if (((previousValue != value) 
-							|| (this._Phong.HasLoadedOrAssignedValue == false)))
+							|| (this._Phongs.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Phong.Entity = null;
+						this._Phongs.Entity = null;
 						previousValue.CTHoaDons.Remove(this);
 					}
-					this._Phong.Entity = value;
+					this._Phongs.Entity = value;
 					if ((value != null))
 					{
 						value.CTHoaDons.Add(this);
@@ -506,7 +506,7 @@ namespace DAL
 					{
 						this._maPhong = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("Phong");
+					this.SendPropertyChanged("Phongs");
 				}
 			}
 		}
@@ -533,7 +533,7 @@ namespace DAL
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DatPhong")]
-	public partial class DatPhong : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class DatPhongs : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -550,11 +550,11 @@ namespace DAL
 		
 		private System.Nullable<System.DateTime> _ngayDuKienTra;
 		
-		private EntitySet<CTHoaDon> _CTHoaDons;
+		private EntitySet<CTHoaDons> _CTHoaDons;
 		
-		private EntityRef<KhachHang> _KhachHang;
+		private EntityRef<KhachHangs> _KhachHangs;
 		
-		private EntityRef<NhanVien> _NhanVien;
+		private EntityRef<NhanViens> _NhanViens;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -574,11 +574,11 @@ namespace DAL
     partial void OnngayDuKienTraChanged();
     #endregion
 		
-		public DatPhong()
+		public DatPhongs()
 		{
-			this._CTHoaDons = new EntitySet<CTHoaDon>(new Action<CTHoaDon>(this.attach_CTHoaDons), new Action<CTHoaDon>(this.detach_CTHoaDons));
-			this._KhachHang = default(EntityRef<KhachHang>);
-			this._NhanVien = default(EntityRef<NhanVien>);
+			this._CTHoaDons = new EntitySet<CTHoaDons>(new Action<CTHoaDons>(this.attach_CTHoaDons), new Action<CTHoaDons>(this.detach_CTHoaDons));
+			this._KhachHangs = default(EntityRef<KhachHangs>);
+			this._NhanViens = default(EntityRef<NhanViens>);
 			OnCreated();
 		}
 		
@@ -593,7 +593,7 @@ namespace DAL
 			{
 				if ((this._maDatPhong != value))
 				{
-					if (this._KhachHang.HasLoadedOrAssignedValue)
+					if (this._KhachHangs.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -617,7 +617,7 @@ namespace DAL
 			{
 				if ((this._maNhanVien != value))
 				{
-					if (this._NhanVien.HasLoadedOrAssignedValue)
+					if (this._NhanViens.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -711,7 +711,7 @@ namespace DAL
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DatPhong_CTHoaDon", Storage="_CTHoaDons", ThisKey="maDatPhong", OtherKey="maDatPhong")]
-		public EntitySet<CTHoaDon> CTHoaDons
+		public EntitySet<CTHoaDons> CTHoaDons
 		{
 			get
 			{
@@ -723,60 +723,60 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KhachHang_DatPhong", Storage="_KhachHang", ThisKey="maDatPhong", OtherKey="maKhachHang", IsForeignKey=true)]
-		public KhachHang KhachHang
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KhachHang_DatPhong", Storage="_KhachHangs", ThisKey="maDatPhong", OtherKey="maKhachHang", IsForeignKey=true)]
+		public KhachHangs KhachHangs
 		{
 			get
 			{
-				return this._KhachHang.Entity;
+				return this._KhachHangs.Entity;
 			}
 			set
 			{
-				KhachHang previousValue = this._KhachHang.Entity;
+				KhachHangs previousValue = this._KhachHangs.Entity;
 				if (((previousValue != value) 
-							|| (this._KhachHang.HasLoadedOrAssignedValue == false)))
+							|| (this._KhachHangs.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._KhachHang.Entity = null;
-						previousValue.DatPhong = null;
+						this._KhachHangs.Entity = null;
+						previousValue.DatPhongs = null;
 					}
-					this._KhachHang.Entity = value;
+					this._KhachHangs.Entity = value;
 					if ((value != null))
 					{
-						value.DatPhong = this;
+						value.DatPhongs = this;
 						this._maDatPhong = value.maKhachHang;
 					}
 					else
 					{
 						this._maDatPhong = default(int);
 					}
-					this.SendPropertyChanged("KhachHang");
+					this.SendPropertyChanged("KhachHangs");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_DatPhong", Storage="_NhanVien", ThisKey="maNhanVien", OtherKey="maNhanVien", IsForeignKey=true)]
-		public NhanVien NhanVien
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_DatPhong", Storage="_NhanViens", ThisKey="maNhanVien", OtherKey="maNhanVien", IsForeignKey=true)]
+		public NhanViens NhanViens
 		{
 			get
 			{
-				return this._NhanVien.Entity;
+				return this._NhanViens.Entity;
 			}
 			set
 			{
-				NhanVien previousValue = this._NhanVien.Entity;
+				NhanViens previousValue = this._NhanViens.Entity;
 				if (((previousValue != value) 
-							|| (this._NhanVien.HasLoadedOrAssignedValue == false)))
+							|| (this._NhanViens.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._NhanVien.Entity = null;
+						this._NhanViens.Entity = null;
 						previousValue.DatPhongs.Remove(this);
 					}
-					this._NhanVien.Entity = value;
+					this._NhanViens.Entity = value;
 					if ((value != null))
 					{
 						value.DatPhongs.Add(this);
@@ -786,7 +786,7 @@ namespace DAL
 					{
 						this._maNhanVien = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("NhanVien");
+					this.SendPropertyChanged("NhanViens");
 				}
 			}
 		}
@@ -811,21 +811,21 @@ namespace DAL
 			}
 		}
 		
-		private void attach_CTHoaDons(CTHoaDon entity)
+		private void attach_CTHoaDons(CTHoaDons entity)
 		{
 			this.SendPropertyChanging();
-			entity.DatPhong = this;
+			entity.DatPhongs = this;
 		}
 		
-		private void detach_CTHoaDons(CTHoaDon entity)
+		private void detach_CTHoaDons(CTHoaDons entity)
 		{
 			this.SendPropertyChanging();
-			entity.DatPhong = null;
+			entity.DatPhongs = null;
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DichVu")]
-	public partial class DichVu : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class DichVus : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -836,7 +836,7 @@ namespace DAL
 		
 		private System.Nullable<decimal> _giaDichVu;
 		
-		private EntitySet<CTHoaDon> _CTHoaDons;
+		private EntitySet<CTHoaDons> _CTHoaDons;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -850,9 +850,9 @@ namespace DAL
     partial void OngiaDichVuChanged();
     #endregion
 		
-		public DichVu()
+		public DichVus()
 		{
-			this._CTHoaDons = new EntitySet<CTHoaDon>(new Action<CTHoaDon>(this.attach_CTHoaDons), new Action<CTHoaDon>(this.detach_CTHoaDons));
+			this._CTHoaDons = new EntitySet<CTHoaDons>(new Action<CTHoaDons>(this.attach_CTHoaDons), new Action<CTHoaDons>(this.detach_CTHoaDons));
 			OnCreated();
 		}
 		
@@ -917,7 +917,7 @@ namespace DAL
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DichVu_CTHoaDon", Storage="_CTHoaDons", ThisKey="maDichVu", OtherKey="maDV")]
-		public EntitySet<CTHoaDon> CTHoaDons
+		public EntitySet<CTHoaDons> CTHoaDons
 		{
 			get
 			{
@@ -949,21 +949,21 @@ namespace DAL
 			}
 		}
 		
-		private void attach_CTHoaDons(CTHoaDon entity)
+		private void attach_CTHoaDons(CTHoaDons entity)
 		{
 			this.SendPropertyChanging();
-			entity.DichVu = this;
+			entity.DichVus = this;
 		}
 		
-		private void detach_CTHoaDons(CTHoaDon entity)
+		private void detach_CTHoaDons(CTHoaDons entity)
 		{
 			this.SendPropertyChanging();
-			entity.DichVu = null;
+			entity.DichVus = null;
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HoaDon")]
-	public partial class HoaDon : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class HoaDons : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -976,9 +976,9 @@ namespace DAL
 		
 		private System.Nullable<decimal> _tongTien;
 		
-		private EntitySet<CTHoaDon> _CTHoaDons;
+		private EntitySet<CTHoaDons> _CTHoaDons;
 		
-		private EntityRef<NhanVien> _NhanVien;
+		private EntityRef<NhanViens> _NhanViens;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -994,10 +994,10 @@ namespace DAL
     partial void OntongTienChanged();
     #endregion
 		
-		public HoaDon()
+		public HoaDons()
 		{
-			this._CTHoaDons = new EntitySet<CTHoaDon>(new Action<CTHoaDon>(this.attach_CTHoaDons), new Action<CTHoaDon>(this.detach_CTHoaDons));
-			this._NhanVien = default(EntityRef<NhanVien>);
+			this._CTHoaDons = new EntitySet<CTHoaDons>(new Action<CTHoaDons>(this.attach_CTHoaDons), new Action<CTHoaDons>(this.detach_CTHoaDons));
+			this._NhanViens = default(EntityRef<NhanViens>);
 			OnCreated();
 		}
 		
@@ -1032,7 +1032,7 @@ namespace DAL
 			{
 				if ((this._maNhanVien != value))
 				{
-					if (this._NhanVien.HasLoadedOrAssignedValue)
+					if (this._NhanViens.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -1086,7 +1086,7 @@ namespace DAL
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HoaDon_CTHoaDon", Storage="_CTHoaDons", ThisKey="maHD", OtherKey="maHD")]
-		public EntitySet<CTHoaDon> CTHoaDons
+		public EntitySet<CTHoaDons> CTHoaDons
 		{
 			get
 			{
@@ -1098,26 +1098,26 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_HoaDon", Storage="_NhanVien", ThisKey="maNhanVien", OtherKey="maNhanVien", IsForeignKey=true)]
-		public NhanVien NhanVien
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_HoaDon", Storage="_NhanViens", ThisKey="maNhanVien", OtherKey="maNhanVien", IsForeignKey=true)]
+		public NhanViens NhanViens
 		{
 			get
 			{
-				return this._NhanVien.Entity;
+				return this._NhanViens.Entity;
 			}
 			set
 			{
-				NhanVien previousValue = this._NhanVien.Entity;
+				NhanViens previousValue = this._NhanViens.Entity;
 				if (((previousValue != value) 
-							|| (this._NhanVien.HasLoadedOrAssignedValue == false)))
+							|| (this._NhanViens.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._NhanVien.Entity = null;
+						this._NhanViens.Entity = null;
 						previousValue.HoaDons.Remove(this);
 					}
-					this._NhanVien.Entity = value;
+					this._NhanViens.Entity = value;
 					if ((value != null))
 					{
 						value.HoaDons.Add(this);
@@ -1127,7 +1127,7 @@ namespace DAL
 					{
 						this._maNhanVien = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("NhanVien");
+					this.SendPropertyChanged("NhanViens");
 				}
 			}
 		}
@@ -1152,21 +1152,21 @@ namespace DAL
 			}
 		}
 		
-		private void attach_CTHoaDons(CTHoaDon entity)
+		private void attach_CTHoaDons(CTHoaDons entity)
 		{
 			this.SendPropertyChanging();
-			entity.HoaDon = this;
+			entity.HoaDons = this;
 		}
 		
-		private void detach_CTHoaDons(CTHoaDon entity)
+		private void detach_CTHoaDons(CTHoaDons entity)
 		{
 			this.SendPropertyChanging();
-			entity.HoaDon = null;
+			entity.HoaDons = null;
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KhachHang")]
-	public partial class KhachHang : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class KhachHangs : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1181,7 +1181,7 @@ namespace DAL
 		
 		private System.Nullable<int> _SDT;
 		
-		private EntityRef<DatPhong> _DatPhong;
+		private EntityRef<DatPhongs> _DatPhongs;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1199,9 +1199,9 @@ namespace DAL
     partial void OnSDTChanged();
     #endregion
 		
-		public KhachHang()
+		public KhachHangs()
 		{
-			this._DatPhong = default(EntityRef<DatPhong>);
+			this._DatPhongs = default(EntityRef<DatPhongs>);
 			OnCreated();
 		}
 		
@@ -1305,31 +1305,31 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KhachHang_DatPhong", Storage="_DatPhong", ThisKey="maKhachHang", OtherKey="maDatPhong", IsUnique=true, IsForeignKey=false)]
-		public DatPhong DatPhong
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KhachHang_DatPhong", Storage="_DatPhongs", ThisKey="maKhachHang", OtherKey="maDatPhong", IsUnique=true, IsForeignKey=false)]
+		public DatPhongs DatPhongs
 		{
 			get
 			{
-				return this._DatPhong.Entity;
+				return this._DatPhongs.Entity;
 			}
 			set
 			{
-				DatPhong previousValue = this._DatPhong.Entity;
+				DatPhongs previousValue = this._DatPhongs.Entity;
 				if (((previousValue != value) 
-							|| (this._DatPhong.HasLoadedOrAssignedValue == false)))
+							|| (this._DatPhongs.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._DatPhong.Entity = null;
-						previousValue.KhachHang = null;
+						this._DatPhongs.Entity = null;
+						previousValue.KhachHangs = null;
 					}
-					this._DatPhong.Entity = value;
+					this._DatPhongs.Entity = value;
 					if ((value != null))
 					{
-						value.KhachHang = this;
+						value.KhachHangs = this;
 					}
-					this.SendPropertyChanged("DatPhong");
+					this.SendPropertyChanged("DatPhongs");
 				}
 			}
 		}
@@ -1356,7 +1356,7 @@ namespace DAL
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NguoiQuanLy")]
-	public partial class NguoiQuanLy : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class NguoiQuanLies : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1365,7 +1365,7 @@ namespace DAL
 		
 		private string _tenNQL;
 		
-		private EntitySet<TaiKhoan> _TaiKhoans;
+		private EntitySet<TaiKhoans> _TaiKhoans;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1377,9 +1377,9 @@ namespace DAL
     partial void OntenNQLChanged();
     #endregion
 		
-		public NguoiQuanLy()
+		public NguoiQuanLies()
 		{
-			this._TaiKhoans = new EntitySet<TaiKhoan>(new Action<TaiKhoan>(this.attach_TaiKhoans), new Action<TaiKhoan>(this.detach_TaiKhoans));
+			this._TaiKhoans = new EntitySet<TaiKhoans>(new Action<TaiKhoans>(this.attach_TaiKhoans), new Action<TaiKhoans>(this.detach_TaiKhoans));
 			OnCreated();
 		}
 		
@@ -1424,7 +1424,7 @@ namespace DAL
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NguoiQuanLy_TaiKhoan", Storage="_TaiKhoans", ThisKey="maNQL", OtherKey="maNQL")]
-		public EntitySet<TaiKhoan> TaiKhoans
+		public EntitySet<TaiKhoans> TaiKhoans
 		{
 			get
 			{
@@ -1456,21 +1456,21 @@ namespace DAL
 			}
 		}
 		
-		private void attach_TaiKhoans(TaiKhoan entity)
+		private void attach_TaiKhoans(TaiKhoans entity)
 		{
 			this.SendPropertyChanging();
-			entity.NguoiQuanLy = this;
+			entity.NguoiQuanLies = this;
 		}
 		
-		private void detach_TaiKhoans(TaiKhoan entity)
+		private void detach_TaiKhoans(TaiKhoans entity)
 		{
 			this.SendPropertyChanging();
-			entity.NguoiQuanLy = null;
+			entity.NguoiQuanLies = null;
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NhanVien")]
-	public partial class NhanVien : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class NhanViens : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1489,11 +1489,11 @@ namespace DAL
 		
 		private string _trangThai;
 		
-		private EntitySet<DatPhong> _DatPhongs;
+		private EntitySet<DatPhongs> _DatPhongs;
 		
-		private EntitySet<HoaDon> _HoaDons;
+		private EntitySet<HoaDons> _HoaDons;
 		
-		private EntitySet<TaiKhoan> _TaiKhoans;
+		private EntitySet<TaiKhoans> _TaiKhoans;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1515,11 +1515,11 @@ namespace DAL
     partial void OntrangThaiChanged();
     #endregion
 		
-		public NhanVien()
+		public NhanViens()
 		{
-			this._DatPhongs = new EntitySet<DatPhong>(new Action<DatPhong>(this.attach_DatPhongs), new Action<DatPhong>(this.detach_DatPhongs));
-			this._HoaDons = new EntitySet<HoaDon>(new Action<HoaDon>(this.attach_HoaDons), new Action<HoaDon>(this.detach_HoaDons));
-			this._TaiKhoans = new EntitySet<TaiKhoan>(new Action<TaiKhoan>(this.attach_TaiKhoans), new Action<TaiKhoan>(this.detach_TaiKhoans));
+			this._DatPhongs = new EntitySet<DatPhongs>(new Action<DatPhongs>(this.attach_DatPhongs), new Action<DatPhongs>(this.detach_DatPhongs));
+			this._HoaDons = new EntitySet<HoaDons>(new Action<HoaDons>(this.attach_HoaDons), new Action<HoaDons>(this.detach_HoaDons));
+			this._TaiKhoans = new EntitySet<TaiKhoans>(new Action<TaiKhoans>(this.attach_TaiKhoans), new Action<TaiKhoans>(this.detach_TaiKhoans));
 			OnCreated();
 		}
 		
@@ -1664,7 +1664,7 @@ namespace DAL
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_DatPhong", Storage="_DatPhongs", ThisKey="maNhanVien", OtherKey="maNhanVien")]
-		public EntitySet<DatPhong> DatPhongs
+		public EntitySet<DatPhongs> DatPhongs
 		{
 			get
 			{
@@ -1677,7 +1677,7 @@ namespace DAL
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_HoaDon", Storage="_HoaDons", ThisKey="maNhanVien", OtherKey="maNhanVien")]
-		public EntitySet<HoaDon> HoaDons
+		public EntitySet<HoaDons> HoaDons
 		{
 			get
 			{
@@ -1690,7 +1690,7 @@ namespace DAL
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_TaiKhoan", Storage="_TaiKhoans", ThisKey="maNhanVien", OtherKey="maNhanVien")]
-		public EntitySet<TaiKhoan> TaiKhoans
+		public EntitySet<TaiKhoans> TaiKhoans
 		{
 			get
 			{
@@ -1722,45 +1722,45 @@ namespace DAL
 			}
 		}
 		
-		private void attach_DatPhongs(DatPhong entity)
+		private void attach_DatPhongs(DatPhongs entity)
 		{
 			this.SendPropertyChanging();
-			entity.NhanVien = this;
+			entity.NhanViens = this;
 		}
 		
-		private void detach_DatPhongs(DatPhong entity)
+		private void detach_DatPhongs(DatPhongs entity)
 		{
 			this.SendPropertyChanging();
-			entity.NhanVien = null;
+			entity.NhanViens = null;
 		}
 		
-		private void attach_HoaDons(HoaDon entity)
+		private void attach_HoaDons(HoaDons entity)
 		{
 			this.SendPropertyChanging();
-			entity.NhanVien = this;
+			entity.NhanViens = this;
 		}
 		
-		private void detach_HoaDons(HoaDon entity)
+		private void detach_HoaDons(HoaDons entity)
 		{
 			this.SendPropertyChanging();
-			entity.NhanVien = null;
+			entity.NhanViens = null;
 		}
 		
-		private void attach_TaiKhoans(TaiKhoan entity)
+		private void attach_TaiKhoans(TaiKhoans entity)
 		{
 			this.SendPropertyChanging();
-			entity.NhanVien = this;
+			entity.NhanViens = this;
 		}
 		
-		private void detach_TaiKhoans(TaiKhoan entity)
+		private void detach_TaiKhoans(TaiKhoans entity)
 		{
 			this.SendPropertyChanging();
-			entity.NhanVien = null;
+			entity.NhanViens = null;
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Phong")]
-	public partial class Phong : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class Phongs : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1779,7 +1779,7 @@ namespace DAL
 		
 		private System.Nullable<int> _maDichVu;
 		
-		private EntitySet<CTHoaDon> _CTHoaDons;
+		private EntitySet<CTHoaDons> _CTHoaDons;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1801,9 +1801,9 @@ namespace DAL
     partial void OnmaDichVuChanged();
     #endregion
 		
-		public Phong()
+		public Phongs()
 		{
-			this._CTHoaDons = new EntitySet<CTHoaDon>(new Action<CTHoaDon>(this.attach_CTHoaDons), new Action<CTHoaDon>(this.detach_CTHoaDons));
+			this._CTHoaDons = new EntitySet<CTHoaDons>(new Action<CTHoaDons>(this.attach_CTHoaDons), new Action<CTHoaDons>(this.detach_CTHoaDons));
 			OnCreated();
 		}
 		
@@ -1948,7 +1948,7 @@ namespace DAL
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Phong_CTHoaDon", Storage="_CTHoaDons", ThisKey="maPhong", OtherKey="maPhong")]
-		public EntitySet<CTHoaDon> CTHoaDons
+		public EntitySet<CTHoaDons> CTHoaDons
 		{
 			get
 			{
@@ -1980,21 +1980,21 @@ namespace DAL
 			}
 		}
 		
-		private void attach_CTHoaDons(CTHoaDon entity)
+		private void attach_CTHoaDons(CTHoaDons entity)
 		{
 			this.SendPropertyChanging();
-			entity.Phong = this;
+			entity.Phongs = this;
 		}
 		
-		private void detach_CTHoaDons(CTHoaDon entity)
+		private void detach_CTHoaDons(CTHoaDons entity)
 		{
 			this.SendPropertyChanging();
-			entity.Phong = null;
+			entity.Phongs = null;
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TaiKhoan")]
-	public partial class TaiKhoan : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class TaiKhoans : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -2011,9 +2011,9 @@ namespace DAL
 		
 		private string _loaiTaiKhoan;
 		
-		private EntityRef<NguoiQuanLy> _NguoiQuanLy;
+		private EntityRef<NguoiQuanLies> _NguoiQuanLies;
 		
-		private EntityRef<NhanVien> _NhanVien;
+		private EntityRef<NhanViens> _NhanViens;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2033,10 +2033,10 @@ namespace DAL
     partial void OnloaiTaiKhoanChanged();
     #endregion
 		
-		public TaiKhoan()
+		public TaiKhoans()
 		{
-			this._NguoiQuanLy = default(EntityRef<NguoiQuanLy>);
-			this._NhanVien = default(EntityRef<NhanVien>);
+			this._NguoiQuanLies = default(EntityRef<NguoiQuanLies>);
+			this._NhanViens = default(EntityRef<NhanViens>);
 			OnCreated();
 		}
 		
@@ -2111,7 +2111,7 @@ namespace DAL
 			{
 				if ((this._maNhanVien != value))
 				{
-					if (this._NhanVien.HasLoadedOrAssignedValue)
+					if (this._NhanViens.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -2135,7 +2135,7 @@ namespace DAL
 			{
 				if ((this._maNQL != value))
 				{
-					if (this._NguoiQuanLy.HasLoadedOrAssignedValue)
+					if (this._NguoiQuanLies.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -2168,26 +2168,26 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NguoiQuanLy_TaiKhoan", Storage="_NguoiQuanLy", ThisKey="maNQL", OtherKey="maNQL", IsForeignKey=true)]
-		public NguoiQuanLy NguoiQuanLy
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NguoiQuanLy_TaiKhoan", Storage="_NguoiQuanLies", ThisKey="maNQL", OtherKey="maNQL", IsForeignKey=true)]
+		public NguoiQuanLies NguoiQuanLies
 		{
 			get
 			{
-				return this._NguoiQuanLy.Entity;
+				return this._NguoiQuanLies.Entity;
 			}
 			set
 			{
-				NguoiQuanLy previousValue = this._NguoiQuanLy.Entity;
+				NguoiQuanLies previousValue = this._NguoiQuanLies.Entity;
 				if (((previousValue != value) 
-							|| (this._NguoiQuanLy.HasLoadedOrAssignedValue == false)))
+							|| (this._NguoiQuanLies.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._NguoiQuanLy.Entity = null;
+						this._NguoiQuanLies.Entity = null;
 						previousValue.TaiKhoans.Remove(this);
 					}
-					this._NguoiQuanLy.Entity = value;
+					this._NguoiQuanLies.Entity = value;
 					if ((value != null))
 					{
 						value.TaiKhoans.Add(this);
@@ -2197,31 +2197,31 @@ namespace DAL
 					{
 						this._maNQL = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("NguoiQuanLy");
+					this.SendPropertyChanged("NguoiQuanLies");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_TaiKhoan", Storage="_NhanVien", ThisKey="maNhanVien", OtherKey="maNhanVien", IsForeignKey=true)]
-		public NhanVien NhanVien
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_TaiKhoan", Storage="_NhanViens", ThisKey="maNhanVien", OtherKey="maNhanVien", IsForeignKey=true)]
+		public NhanViens NhanViens
 		{
 			get
 			{
-				return this._NhanVien.Entity;
+				return this._NhanViens.Entity;
 			}
 			set
 			{
-				NhanVien previousValue = this._NhanVien.Entity;
+				NhanViens previousValue = this._NhanViens.Entity;
 				if (((previousValue != value) 
-							|| (this._NhanVien.HasLoadedOrAssignedValue == false)))
+							|| (this._NhanViens.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._NhanVien.Entity = null;
+						this._NhanViens.Entity = null;
 						previousValue.TaiKhoans.Remove(this);
 					}
-					this._NhanVien.Entity = value;
+					this._NhanViens.Entity = value;
 					if ((value != null))
 					{
 						value.TaiKhoans.Add(this);
@@ -2231,7 +2231,7 @@ namespace DAL
 					{
 						this._maNhanVien = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("NhanVien");
+					this.SendPropertyChanged("NhanViens");
 				}
 			}
 		}
