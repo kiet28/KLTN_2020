@@ -37,8 +37,8 @@ namespace BLL
 
         public int InsertThuePhong(eThuePhong tpmoi)
         {
-            if (CheckExisted(tpmoi.MaThuePhong))
-                return 0;
+            //if (CheckExisted(tpmoi.MaThuePhong))
+            //    return 0;
             ThuePhongs tptemp = new ThuePhongs();
             tptemp.maThuePhong = tpmoi.MaThuePhong;
             tptemp.maNhanVien = tpmoi.MaNhanVien;

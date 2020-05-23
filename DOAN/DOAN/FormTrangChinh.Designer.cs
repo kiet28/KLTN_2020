@@ -72,6 +72,7 @@
             this.panelHeader = new System.Windows.Forms.Panel();
             this.btnThoat = new System.Windows.Forms.Button();
             this.dragControl1 = new DOAN.DragControl();
+            this.lblMa = new System.Windows.Forms.Label();
             this.panelSideMenu.SuspendLayout();
             this.panelQuanLiNhanVienSubMenu.SuspendLayout();
             this.panelQuanLiKhachHangSubMenu.SuspendLayout();
@@ -596,7 +597,7 @@
             this.lblTenDangNhap.BackColor = System.Drawing.Color.Transparent;
             this.lblTenDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenDangNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(43)))), ((int)(((byte)(96)))));
-            this.lblTenDangNhap.Location = new System.Drawing.Point(349, 53);
+            this.lblTenDangNhap.Location = new System.Drawing.Point(350, 70);
             this.lblTenDangNhap.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTenDangNhap.Name = "lblTenDangNhap";
             this.lblTenDangNhap.Size = new System.Drawing.Size(78, 20);
@@ -715,11 +716,25 @@
             // 
             this.dragControl1.SelectControl = this.panelHeader;
             // 
+            // lblMa
+            // 
+            this.lblMa.AutoSize = true;
+            this.lblMa.BackColor = System.Drawing.Color.Transparent;
+            this.lblMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(43)))), ((int)(((byte)(96)))));
+            this.lblMa.Location = new System.Drawing.Point(350, 38);
+            this.lblMa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMa.Name = "lblMa";
+            this.lblMa.Size = new System.Drawing.Size(78, 20);
+            this.lblMa.TabIndex = 18;
+            this.lblMa.Text = "Tên User";
+            // 
             // FormTrangChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 800);
+            this.Controls.Add(this.lblMa);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.panelControl);
             this.Controls.Add(this.label2);
@@ -796,5 +811,6 @@
         public System.Windows.Forms.Button btnQuanLiPhong;
         public System.Windows.Forms.Button btnQuanLiKhachHang;
         public System.Windows.Forms.Button btnQuanLiNhanVien;
+        public System.Windows.Forms.Label lblMa;
     }
 }

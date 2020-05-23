@@ -32,5 +32,15 @@ namespace BLL
             }
             return dsp;
         }
+
+        public void CapNhatTrangThaiPhong(int mp,int tt)
+        {
+            IQueryable<Phongs> phong = ks.Phongs.Where(p => p.maPhong.Equals(mp));
+
+            phong.First().maPhong = mp;
+            phong.First().trangThai = tt;
+
+            ks.SubmitChanges();
+        }
     }
 }

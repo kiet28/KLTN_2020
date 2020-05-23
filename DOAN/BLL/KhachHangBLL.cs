@@ -25,9 +25,9 @@ namespace BLL
                 eKhachHang kh = new eKhachHang();
                 kh.MaKH = item.maKhachHang;
                 kh.TenKH = item.tenKhachHang;
-                kh.CMND = Convert.ToInt32(item.CMND);
+                kh.CMND = item.CMND;
                 kh.GioiTinh = item.gioiTinh;
-                kh.SDT = Convert.ToInt32(item.SDT);
+                kh.SDT = item.SDT;
                 dskh.Add(kh);
             }
             return dskh;

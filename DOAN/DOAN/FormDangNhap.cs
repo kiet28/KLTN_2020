@@ -74,8 +74,12 @@ namespace DOAN
                     var tenNV = dsNV.Join(dsTK, tk => tk.MaNhanVien, bs => bs.MaNV, (tk, bs) => new { tk, bs })
                     .Where(bs1 => bs1.bs.MaNV == bs1.tk.MaNhanVien)
                     .Select(bs2 => bs2.tk.TenNhanVien).FirstOrDefault();
+                    var maNV = dsNV.Join(dsTK, tk => tk.MaNhanVien, bs => bs.MaNV, (tk, bs) => new { tk, bs })
+                    .Where(bs1 => bs1.bs.MaNV == bs1.tk.MaNhanVien)
+                    .Select(bs2 => bs2.tk.MaNhanVien).FirstOrDefault();
 
-                    tc.lblTenDangNhap.Text = "Welcome! " + tenNV.ToString();//tạo label vào form bán hàng để hiển thị tên lên form
+                    tc.lblMa.Text = maNV.ToString();
+                    tc.lblTenDangNhap.Text =  tenNV.ToString();//tạo label vào form bán hàng để hiển thị tên lên form
                     tc.btnQuanLiPhong.Enabled = false;
                     tc.btnQuanLiNhanVien.Enabled = false;
                     tc.btnQuanLiKhachHang.Enabled = false;
@@ -89,7 +93,11 @@ namespace DOAN
                     var tenQL = dsQL.Join(dsTK, tk => tk.MaNQL, bs => bs.MaNQL, (tk, bs) => new { tk, bs })
                     .Where(bs1 => bs1.bs.MaNQL == bs1.tk.MaNQL)
                     .Select(bs2 => bs2.tk.TenNQL).FirstOrDefault();
-                    
+                    var maQL = dsQL.Join(dsTK, tk => tk.MaNQL, bs => bs.MaNQL, (tk, bs) => new { tk, bs })
+                    .Where(bs1 => bs1.bs.MaNQL == bs1.tk.MaNQL)
+                    .Select(bs2 => bs2.tk.MaNQL).FirstOrDefault();
+
+                    tc.lblMa.Text = maQL.ToString();
                     tc.lblTenDangNhap.Text = "Welcome" + tenQL.ToString(); //tạo label vào form quản lý để hiển thị tên lên form
                     tc.btnQuanLiPhong.Enabled = true;
                     tc.btnQuanLiNhanVien.Enabled = true;

@@ -52,11 +52,13 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gridDanhSachPhong = new System.Windows.Forms.DataGridView();
             this.gridPhongDaChon = new System.Windows.Forms.DataGridView();
+            this.txtMaKH = new System.Windows.Forms.TextBox();
+            this.btnTaoLai = new DOAN.Button_WOC();
             this.btnHuyChon = new DOAN.Button_WOC();
             this.btnChonPhong = new DOAN.Button_WOC();
             this.btnThuePhong = new DOAN.Button_WOC();
             this.btnDanhSachKhachHang = new DOAN.Button_WOC();
-            this.btnTaoLai = new DOAN.Button_WOC();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDanhSachPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridPhongDaChon)).BeginInit();
@@ -85,10 +87,9 @@
             this.txtTenKhachHang.Location = new System.Drawing.Point(221, 135);
             this.txtTenKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.ReadOnly = true;
             this.txtTenKhachHang.Size = new System.Drawing.Size(353, 35);
             this.txtTenKhachHang.TabIndex = 40;
-            this.txtTenKhachHang.TextChanged += new System.EventHandler(this.txtTenKhachHang_TextChanged);
+            this.txtTenKhachHang.TextChanged += new System.EventHandler(this.tbSDT_TextChanged);
             // 
             // label1
             // 
@@ -112,7 +113,6 @@
             this.txtSoDienThoai.Location = new System.Drawing.Point(819, 135);
             this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
-            this.txtSoDienThoai.ReadOnly = true;
             this.txtSoDienThoai.Size = new System.Drawing.Size(353, 35);
             this.txtSoDienThoai.TabIndex = 42;
             this.txtSoDienThoai.TextChanged += new System.EventHandler(this.tbSDT_TextChanged);
@@ -139,9 +139,9 @@
             this.txtSoCMND.Location = new System.Drawing.Point(221, 193);
             this.txtSoCMND.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoCMND.Name = "txtSoCMND";
-            this.txtSoCMND.ReadOnly = true;
             this.txtSoCMND.Size = new System.Drawing.Size(353, 35);
             this.txtSoCMND.TabIndex = 44;
+            this.txtSoCMND.TextChanged += new System.EventHandler(this.tbSDT_TextChanged);
             // 
             // label3
             // 
@@ -316,6 +316,7 @@
             this.gridDanhSachPhong.Size = new System.Drawing.Size(352, 150);
             this.gridDanhSachPhong.TabIndex = 72;
             this.gridDanhSachPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDanhSachPhong_CellClick);
+            this.gridDanhSachPhong.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.gridDanhSachPhong_DataBindingComplete);
             // 
             // gridPhongDaChon
             // 
@@ -328,6 +329,43 @@
             this.gridPhongDaChon.Size = new System.Drawing.Size(353, 150);
             this.gridPhongDaChon.TabIndex = 73;
             this.gridPhongDaChon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPhongDaChon_CellClick);
+            // 
+            // txtMaKH
+            // 
+            this.txtMaKH.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtMaKH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMaKH.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaKH.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKH.ForeColor = System.Drawing.Color.Black;
+            this.txtMaKH.Location = new System.Drawing.Point(221, 93);
+            this.txtMaKH.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.ReadOnly = true;
+            this.txtMaKH.Size = new System.Drawing.Size(85, 35);
+            this.txtMaKH.TabIndex = 75;
+            // 
+            // btnTaoLai
+            // 
+            this.btnTaoLai.BorderColor = System.Drawing.Color.Transparent;
+            this.btnTaoLai.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(105)))), ((int)(((byte)(114)))));
+            this.btnTaoLai.FlatAppearance.BorderSize = 0;
+            this.btnTaoLai.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnTaoLai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnTaoLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaoLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaoLai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(66)))), ((int)(((byte)(135)))));
+            this.btnTaoLai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTaoLai.Location = new System.Drawing.Point(1028, 72);
+            this.btnTaoLai.Name = "btnTaoLai";
+            this.btnTaoLai.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnTaoLai.OnHoverButtonColor = System.Drawing.Color.DarkCyan;
+            this.btnTaoLai.OnHoverTextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnTaoLai.Size = new System.Drawing.Size(144, 56);
+            this.btnTaoLai.TabIndex = 74;
+            this.btnTaoLai.Text = "Tạo lại";
+            this.btnTaoLai.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnTaoLai.UseVisualStyleBackColor = true;
+            this.btnTaoLai.Click += new System.EventHandler(this.btnTaoLai_Click);
             // 
             // btnHuyChon
             // 
@@ -407,7 +445,7 @@
             this.btnDanhSachKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(66)))), ((int)(((byte)(135)))));
             this.btnDanhSachKhachHang.Image = ((System.Drawing.Image)(resources.GetObject("btnDanhSachKhachHang.Image")));
             this.btnDanhSachKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDanhSachKhachHang.Location = new System.Drawing.Point(221, 72);
+            this.btnDanhSachKhachHang.Location = new System.Drawing.Point(370, 72);
             this.btnDanhSachKhachHang.Name = "btnDanhSachKhachHang";
             this.btnDanhSachKhachHang.OnHoverBorderColor = System.Drawing.Color.Transparent;
             this.btnDanhSachKhachHang.OnHoverButtonColor = System.Drawing.Color.DarkCyan;
@@ -419,33 +457,25 @@
             this.btnDanhSachKhachHang.UseVisualStyleBackColor = true;
             this.btnDanhSachKhachHang.Click += new System.EventHandler(this.btnThemKhachHang_Click);
             // 
-            // btnTaoLai
+            // label4
             // 
-            this.btnTaoLai.BorderColor = System.Drawing.Color.Transparent;
-            this.btnTaoLai.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(105)))), ((int)(((byte)(114)))));
-            this.btnTaoLai.FlatAppearance.BorderSize = 0;
-            this.btnTaoLai.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnTaoLai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnTaoLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTaoLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaoLai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(66)))), ((int)(((byte)(135)))));
-            this.btnTaoLai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaoLai.Location = new System.Drawing.Point(1028, 72);
-            this.btnTaoLai.Name = "btnTaoLai";
-            this.btnTaoLai.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnTaoLai.OnHoverButtonColor = System.Drawing.Color.DarkCyan;
-            this.btnTaoLai.OnHoverTextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTaoLai.Size = new System.Drawing.Size(144, 56);
-            this.btnTaoLai.TabIndex = 74;
-            this.btnTaoLai.Text = "Tạo lại";
-            this.btnTaoLai.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTaoLai.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(43)))), ((int)(((byte)(96)))));
+            this.label4.Location = new System.Drawing.Point(51, 98);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(153, 25);
+            this.label4.TabIndex = 76;
+            this.label4.Text = "Mã khách hàng:";
             // 
             // UCThuePhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtMaKH);
             this.Controls.Add(this.btnTaoLai);
             this.Controls.Add(this.gridPhongDaChon);
             this.Controls.Add(this.gridDanhSachPhong);
@@ -513,5 +543,7 @@
         private Button_WOC btnHuyChon;
         private Button_WOC btnChonPhong;
         private Button_WOC btnTaoLai;
+        private System.Windows.Forms.TextBox txtMaKH;
+        private System.Windows.Forms.Label label4;
     }
 }

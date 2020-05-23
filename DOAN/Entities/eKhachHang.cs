@@ -10,20 +10,20 @@ namespace Entities
     {
         public int MaKH { get; set; }
         public string TenKH { get; set; }
-        public int CMND { get; set; }
+        public string CMND { get; set; }
         public string GioiTinh { get; set; }
-        public int SDT { get; set; }
+        public string SDT { get; set; }
 
         public eKhachHang()
         {
             this.MaKH = 0;
             this.TenKH = "";
-            this.CMND = 0;
+            this.CMND = "";
             this.GioiTinh = "";
-            this.SDT = 0;
+            this.SDT = "";
         }
 
-        public eKhachHang(int mkh, string tkh, int cmnd, string gt, int sdt)
+        public eKhachHang(int mkh, string tkh, string cmnd, string gt, string sdt)
         {
             this.MaKH = mkh;
             this.TenKH = tkh;
