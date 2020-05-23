@@ -29,8 +29,8 @@ namespace BLL
                 nv.TenNhanVien = item.hoTen;
                 nv.NamSinh = item.namSinh.ToString();
                 nv.DiaChi = item.diaChi.ToString();
-               // nv.Email = item.Email;
-               // nv.TinhTrang = item.TinhTrang;
+                nv.SDT = item.SDT;
+                nv.TinhTrang = item.trangThai;
                 dsnv.Add(nv);
             }
             return dsnv;

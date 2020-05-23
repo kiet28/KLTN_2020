@@ -13,8 +13,8 @@ namespace Entities
         public string GioiTinh { get; set; }
         public string NamSinh { get; set; }
         public string DiaChi { get; set; }
-        //public string Email { get; set; }
-        //public int TinhTrang { get; set; }
+        public string SDT { get; set; }
+        public string TinhTrang { get; set; }
 
         public eNhanVien()
         {
@@ -23,19 +23,19 @@ namespace Entities
             this.GioiTinh = "";
             this.NamSinh = "";
             this.DiaChi = "";
-            //this.Email = "";
-            //this.TinhTrang = 1;
+            this.SDT = "";
+            this.TinhTrang = "";
         }
 
-        public eNhanVien(int mnv, string tnv, string gt, string ns, string dc)
+        public eNhanVien(int mnv, string tnv, string gt, string ns, string dc, string sdt, string tt)
         {
             this.MaNhanVien = mnv;
             this.TenNhanVien = tnv;
             this.GioiTinh = gt;
             this.NamSinh = ns;
             this.DiaChi = dc;
-            //this.Email = e;
-            //this.TinhTrang = tt;
+            this.SDT = sdt;
+            this.TinhTrang = tt;
         }
     }
 }

@@ -19,7 +19,7 @@ namespace BLL
         public List<eKhachHang> LayThongTinKhachHang()
         {
             var dsKhachHang = ks.KhachHangs.ToList();
-            List<eKhachHang> dsbn = new List<eKhachHang>();
+            List<eKhachHang> dskh = new List<eKhachHang>();
             foreach (KhachHangs item in dsKhachHang)
             {
                 eKhachHang kh = new eKhachHang();
@@ -28,9 +28,9 @@ namespace BLL
                 kh.CMND = Convert.ToInt32(item.CMND);
                 kh.GioiTinh = item.gioiTinh;
                 kh.SDT = Convert.ToInt32(item.SDT);
-                dsbn.Add(kh);
+                dskh.Add(kh);
             }
-            return dsbn;
+            return dskh;
         }
 
         public void ThemThongTinKhachHang(eKhachHang newKH)
