@@ -2,4 +2,3 @@ C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\Entities\bin\Debug\Entit
 C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\Entities\bin\Debug\Entities.pdb
 C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\Entities\obj\Debug\Entities.dll
 C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\Entities\obj\Debug\Entities.pdb
-C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\Entities\obj\Debug\Entities.csprojAssemblyReference.cache

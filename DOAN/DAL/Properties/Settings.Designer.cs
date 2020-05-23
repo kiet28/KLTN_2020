@@ -33,5 +33,16 @@ namespace DAL.Properties {
                 return ((string)(this["Nhom14_QLKhachSan1ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NUE\\SQLEXPRESS;Initial Catalog=Nhom14_QLKhachSan_version_1;Persist Se" +
+            "curity Info=True;User ID=sa;Password=shiroe1058")]
+        public string Nhom14_QLKhachSan_version_1ConnectionString {
+            get {
+                return ((string)(this["Nhom14_QLKhachSan_version_1ConnectionString"]));
+            }
+        }
     }
 }

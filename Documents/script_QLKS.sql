@@ -30,7 +30,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[DatPhong](
 	[maDatPhong] [int] IDENTITY(1,1) NOT NULL,
-	[maNhanVien] [int] NULL,
+	[maNhanVien] [nchar](10) NULL,
 	[maKhachHang] [int] NULL,
 	[maPhong] [int] NULL,
 	[ngayDatPhong] [date] NULL,
@@ -65,7 +65,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[HoaDon](
 	[maHD] [int] IDENTITY(1,1) NOT NULL,
-	[maNhanVien] [int] NULL,
+	[maNhanVien] [nchar](10) NULL,
 	[ngayLapHD] [date] NULL,
 	[tongTien] [money] NULL
  CONSTRAINT [PK_HoaDon] PRIMARY KEY CLUSTERED 
@@ -99,7 +99,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[NhanVien](
-	[maNhanVien] [int] IDENTITY(1,1) NOT NULL,
+	[maNhanVien] [nchar](10) NOT NULL,
 	[hoTen] [nvarchar](50) NULL,
 	[namSinh] [date] NULL,
 	[gioiTinh] [nvarchar](10) NULL,
@@ -111,7 +111,7 @@ CREATE TABLE [dbo].[NhanVien](
 	[maNhanVien] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
+delete from NhanVien where maNhanVien = 'NV002'
 GO
 /****** Object:  Table [dbo].[Phong]    Script Date: 5/19/2020 3:06:32 PM ******/
 SET ANSI_NULLS ON
@@ -142,7 +142,7 @@ CREATE TABLE [dbo].[TaiKhoan](
 	[maTaiKhoan] [int] IDENTITY(1,1) NOT NULL,
 	[userName] [nvarchar](50) NOT NULL,
 	[passWord] [nvarchar](50) NOT NULL,
-	[maNhanVien] [int] NULL,
+	[maNhanVien] [nchar](10) NULL,
 	[maNQL] [int] NULL,
 	[loaiTaiKhoan] [nvarchar](20) NOT NULL,
  CONSTRAINT [PK_TaiKhoan] PRIMARY KEY CLUSTERED 

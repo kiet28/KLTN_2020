@@ -8,22 +8,24 @@ namespace Entities
 {
     public class eNhanVien
     {
-        public int maNhanVien { get; set; }
+        public string maNhanVien { get; set; }
         public string hoTen { get; set; }
         public DateTime namSinh { get; set; }
-        public int gioiTinh { get; set; }
+        public string gioiTinh { get; set; }
         public string diaChi { get; set; }
-        public int SDT { get; set; }
+        public string SDT { get; set; }
+        public string tinhTrang { get; set; }
         public eNhanVien()
         {
-            this.maNhanVien = 0;
+            this.maNhanVien = "";
             this.hoTen = "";
             this.namSinh = DateTime.Now;
-            this.gioiTinh = 0;
+            this.gioiTinh = "";
             this.diaChi = "";
-            this.SDT = 0;
+            this.SDT = "";
+            this.tinhTrang = "";
         }
-        public eNhanVien(int mNV, string hoten, DateTime namsinh, int gt, string dc, int sdt)
+        public eNhanVien(string mNV, string hoten, DateTime namsinh, string gt, string dc, string sdt, string tt)
         {
             this.maNhanVien = mNV;
             this.hoTen = hoten;
@@ -31,6 +33,7 @@ namespace Entities
             this.gioiTinh = gt;
             this.diaChi = dc;
             this.SDT = sdt;
+            this.tinhTrang = tt;
         }
     }
 }

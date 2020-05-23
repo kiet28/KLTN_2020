@@ -85,3 +85,4 @@ C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\DOAN\bin\Debug\BLL.pdb
 C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\DOAN\bin\Debug\DAL.pdb
 C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\DOAN\bin\Debug\DAL.dll.config
 C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\DOAN\bin\Debug\Entities.pdb
+C:\Users\Admin\OneDrive\Documents\GitHub\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.UCCapNhatTTNV.resources

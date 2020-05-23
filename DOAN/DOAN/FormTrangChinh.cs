@@ -264,6 +264,8 @@ namespace DOAN
         private void btnCapNhatNhanVien_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+            UCCapNhatTTNV uccnnv = new UCCapNhatTTNV();
+            AddControlToPanel(uccnnv);
         }
 
         private void btnXemDanhSachPhong_Click(object sender, EventArgs e)

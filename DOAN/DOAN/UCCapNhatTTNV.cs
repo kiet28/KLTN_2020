@@ -9,17 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entities;
 using BLL;
-using DAL;
 using System.Text.RegularExpressions;
 
 namespace DOAN
 {
-    public partial class UCThemNV : UserControl
+    public partial class UCCapNhatTTNV : UserControl
     {
         NhanVienBLL nvBLL;
         List<eNhanVien> dsNV;
         BindingSource lsNV;
-        public UCThemNV()
+        public UCCapNhatTTNV()
         {
             InitializeComponent();
             nvBLL = new NhanVienBLL();
@@ -27,25 +26,23 @@ namespace DOAN
             lsNV = new BindingSource();
             HienThiThongTin();
         }
-        //lấy thông tin để hiển thị thông tin lên datagridview
-        public void HienThiThongTin()
+        public void HienThiThongTin()   //lấy thông tin để hiển thị lên datagrid
         {
             dsNV = nvBLL.getALLNhanVien();
             var dgvTTNV = dsNV.Select(nv => new
             {
                 maNhanVien = nv.maNhanVien,
                 hoTen = nv.hoTen,
-                gioiTinh = nv .gioiTinh,
+                gioiTinh = nv.gioiTinh,
                 namSinh = nv.namSinh.ToString("dd/MM/yyyy"),
                 SDT = nv.SDT,
                 diaChi = nv.diaChi,
                 trangThai = nv.tinhTrang
             }).ToList();
             lsNV.DataSource = dgvTTNV;
-            dgvDSNV.DataSource = lsNV;
+            dgvCapNhatNV.DataSource = lsNV;
         }
-        //clear hết tất cả cái fill
-        public void clearText()
+        public void clearText() //clear hết các field
         {
             txtHoTen.Text = "";
             txtDiaChi.Text = "";
@@ -54,74 +51,113 @@ namespace DOAN
             rdbNu.Checked = false;
             dtNamSinh.Text = "";
         }
-        public void AutoComplete()
+        public void HienThiThongTinNhanVienDaChon()
         {
-
+            if (dgvCapNhatNV.SelectedCells.Count > 0)
+            {
+                txtMaNhanVien.Text = dgvCapNhatNV.SelectedCells[0].OwningRow.Cells["maNhanVien"].Value.ToString();
+                txtHoTen.Text = dgvCapNhatNV.SelectedCells[0].OwningRow.Cells["hoTen"].Value.ToString();
+                txtSDT.Text = dgvCapNhatNV.SelectedCells[0].OwningRow.Cells["SDT"].Value.ToString();
+                txtDiaChi.Text = dgvCapNhatNV.SelectedCells[0].OwningRow.Cells["diaChi"].Value.ToString();
+                if (dgvCapNhatNV.SelectedCells[0].OwningRow.Cells["gioiTinh"].Value.ToString().Equals("Nam"))
+                {
+                    rdbNam.Checked = true;
+                }
+                else
+                {
+                    rdbNu.Checked = true;
+                }
+                if(dgvCapNhatNV.SelectedCells[0].OwningRow.Cells["trangThai"].Value.ToString().Equals("Đang làm"))
+                {
+                    cbxDangLam.Checked = true;
+                }
+                else
+                {
+                    cbxDaNghi.Checked = true;
+                }   
+            }
         }
-        private void btnLuu_Click(object sender, EventArgs e)
+        private void UCCapNhatTTNV_Load(object sender, EventArgs e)
         {
-            eNhanVien nv = new eNhanVien();
-            nv.maNhanVien = txtMaNhanVien.Text;
-            nv.hoTen = txtHoTen.Text;
-            if (rdbNam.Checked == true)
-            {
-                nv.gioiTinh = "Nam";
-            }
-            if (rdbNu.Checked == true)
-            {
-                nv.gioiTinh = "Nữ";
-            }
-            nv.diaChi = txtDiaChi.Text;
-            nv.namSinh = Convert.ToDateTime(dtNamSinh.Text);
-            nv.SDT = txtSDT.Text;
-            if (cbxDangLam.Checked == true)
-            {
-                nv.tinhTrang = "Đang làm";
-            }
-            if (cbxDaNghi.Checked == true)
-            {
-                nv.tinhTrang = "Đã nghỉ";
-            }
-            nvBLL.ThemNhanVien(nv);
-            MessageBox.Show("Thêm thành công");
-        }
-        private void UCThemNV_Load(object sender, EventArgs e)
-        {
-            txtMaNhanVien.Enabled = false;
-            cbxDangLam.Checked = true;
-            btnLuu.Enabled = false;
-            btnHuy.Enabled = false;
             txtHoTen.Enabled = false;
             txtDiaChi.Enabled = false;
             txtSDT.Enabled = false;
-            rdbNam.Enabled = false;
-            rdbNu.Enabled = false;
+            dtNamSinh.Enabled = false;
+            btnLuu.Enabled = false;
+        }
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            clearText();
         }
 
-        private void rdbNam_CheckedChanged(object sender, EventArgs e)
+        private void btnLuu_Click(object sender, EventArgs e)
         {
-
+            if(dgvCapNhatNV.SelectedCells.Count==0)
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên để cập nhật thông tin");
+            }
+            else
+            {
+                string maNV = txtMaNhanVien.Text;
+                string hoTen = txtHoTen.Text;
+                DateTime namSinh = dtNamSinh.Value;
+                string sdt = txtSDT.Text;
+                string dc = txtDiaChi.Text;
+                string gt;
+                if (rdbNam.Checked == true)
+                {
+                    gt = "Nam";
+                }
+                else
+                {
+                    gt = "Nữ";
+                }
+                string tt;
+                if (cbxDangLam.Checked == true)
+                {
+                    tt = "Đang làm";
+                }
+                else
+                {
+                    tt = "Đã nghỉ";
+                }
+                nvBLL.CapNhatThongTinNhanVien(maNV, hoTen, namSinh, gt, dc, sdt, tt);
+                MessageBox.Show("Cập nhật thành công");
+            }
         }
 
-        private void dgvDSNV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCapNhatNV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            dsNV = nvBLL.getALLNhanVien();
-            txtMaNhanVien.Enabled = true;
-            txtMaNhanVien.Text = "NV00" + (dsNV.Count + 1).ToString();
-            btnLuu.Enabled = true;
-            btnHuy.Enabled = true;
+            HienThiThongTinNhanVienDaChon();
             txtHoTen.Enabled = true;
             txtDiaChi.Enabled = true;
             txtSDT.Enabled = true;
-            rdbNam.Enabled = true;
-            rdbNu.Enabled = true;
+            dtNamSinh.Enabled = true;
+            btnLuu.Enabled = true;
         }
-        private void txtHoTen_TextChanged_1(object sender, EventArgs e)
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            HienThiThongTin();
+        }
+
+        private void cbxDangLam_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxDangLam.Checked == true)
+            {
+                cbxDaNghi.Checked = false;
+            }
+        }
+
+        private void cbxDaNghi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxDaNghi.Checked == true)
+            {
+                cbxDangLam.Checked = false;
+            }
+        }
+
+        private void txtHoTen_TextChanged(object sender, EventArgs e)
         {
             Control ctr = (Control)sender;
             if (!Regex.IsMatch(ctr.Text, @"^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ +
@@ -141,16 +177,12 @@ namespace DOAN
             Control ctr = (Control)sender;
             if (!Regex.IsMatch(ctr.Text, @"^([0]\d{2})?([1-9]\d{6})$"))
             {
-                errorProvider.SetError(ctr, "Số điện thoại không đúng định dạng");
+                errorProvider.SetError(ctr, "Số điện thoại không đúng định dạng");          
             }
             else
             {
                 errorProvider.SetError(ctr, null);
             }
-        }
-        private void btnHuy_Click(object sender, EventArgs e)
-        {
-            clearText();
         }
 
         private void txtDiaChi_TextChanged(object sender, EventArgs e)
@@ -168,7 +200,7 @@ namespace DOAN
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnTimKiem_Click(object sender, EventArgs e)
         {
             dsNV = nvBLL.getALLNhanVien();
             var gridViewInfo = dsNV.Where(w => w.hoTen.Contains(txtSearch.Text))
@@ -183,22 +215,7 @@ namespace DOAN
                                         trangThai = s.tinhTrang
                                     }).ToList();
             lsNV.DataSource = gridViewInfo;
-            dgvDSNV.DataSource = lsNV;
-        }
-        private void cbxDangLam_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbxDangLam.Checked == true)
-            {
-                cbxDaNghi.Checked = false;
-            }
-        }
-
-        private void cbxDaNghi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbxDaNghi.Checked == true)
-            {
-                cbxDangLam.Checked = false;
-            }
+            dgvCapNhatNV.DataSource = lsNV;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

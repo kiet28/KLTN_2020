@@ -19,15 +19,16 @@ namespace BLL
         {
             var listNV = _db.NhanViens.ToList();
             List<eNhanVien> ls = new List<eNhanVien>();
-            foreach (var item in ls)
+            foreach (var item in listNV)
             {
                 eNhanVien nv = new eNhanVien();
                 nv.maNhanVien = item.maNhanVien;
                 nv.hoTen = item.hoTen;
-                nv.namSinh = item.namSinh;
+                nv.namSinh = Convert.ToDateTime(item.namSinh);
                 nv.gioiTinh = item.gioiTinh;
                 nv.diaChi = item.diaChi;
                 nv.SDT = item.SDT;
+                nv.tinhTrang = item.trangThai;
                 ls.Add(nv);
             }
             return ls;
@@ -41,7 +42,20 @@ namespace BLL
             temp.gioiTinh = newnv.gioiTinh;
             temp.diaChi = newnv.diaChi;
             temp.SDT = newnv.SDT;
+            temp.trangThai = newnv.tinhTrang;
             _db.NhanViens.InsertOnSubmit(temp);
+            _db.SubmitChanges();
+        }
+        public void CapNhatThongTinNhanVien(string manv, string hoten, DateTime namsinh, string gt, string dc, string sdt, string tt)
+        {
+            IQueryable<NhanVien> nhanvien = _db.NhanViens.Where(nv => nv.maNhanVien.Equals(manv));
+            nhanvien.First().maNhanVien = manv;
+            nhanvien.First().hoTen = hoten;
+            nhanvien.First().namSinh = namsinh;
+            nhanvien.First().gioiTinh = gt;
+            nhanvien.First().diaChi = dc;
+            nhanvien.First().SDT = sdt;
+            nhanvien.First().trangThai = tt;
             _db.SubmitChanges();
         }
     }
