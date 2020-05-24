@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -25,7 +26,13 @@ namespace DOAN
         List<eQuanLy> dsQL;
         public FormDangNhap()
         {
+            Thread th = new Thread(new ThreadStart(formRun));
+            th.Start();
+            Thread.Sleep(3520);
+
             InitializeComponent();
+            th.Abort();
+
             myList = new List<int>();
             dsQL = new List<eQuanLy>();
             qlBLL = new QuanLyBLL();
@@ -35,8 +42,13 @@ namespace DOAN
             //bsBLL = new BacSiBLL();
             nvBLL = new NhanVienBLL();
             dsNV = new List<eNhanVien>();
+
         }
 
+        private void formRun()
+        {
+            Application.Run(new SplashScreen());
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
