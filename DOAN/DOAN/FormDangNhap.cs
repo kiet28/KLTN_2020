@@ -91,7 +91,7 @@ namespace DOAN
                     .Select(bs2 => bs2.tk.MaNhanVien).FirstOrDefault();
 
                     tc.lblMa.Text = maNV.ToString();
-                    tc.lblTenDangNhap.Text =  tenNV.ToString();//tạo label vào form bán hàng để hiển thị tên lên form
+                    tc.lblTenDangNhap.Text = tenNV.ToString();//tạo label vào form bán hàng để hiển thị tên lên form
                     tc.btnQuanLiPhong.Enabled = false;
                     tc.btnQuanLiNhanVien.Enabled = false;
                     tc.btnQuanLiKhachHang.Enabled = false;
@@ -110,7 +110,7 @@ namespace DOAN
                     .Select(bs2 => bs2.tk.MaNQL).FirstOrDefault();
 
                     tc.lblMa.Text = maQL.ToString();
-                    tc.lblTenDangNhap.Text = "Welcome" + tenQL.ToString(); //tạo label vào form quản lý để hiển thị tên lên form
+                    tc.lblTenDangNhap.Text = tenQL.ToString(); //tạo label vào form quản lý để hiển thị tên lên form
                     tc.btnQuanLiPhong.Enabled = true;
                     tc.btnQuanLiNhanVien.Enabled = true;
                     tc.btnQuanLiKhachHang.Enabled = true;

@@ -185,6 +185,9 @@ namespace DOAN
 
         #endregion
 
+        //
+        // hiển thị danh sách khách hàng
+        //
         private void btnThemKhachHang_Click(object sender, EventArgs e)
         {
             if (formDSKH.IsDisposed == true)
@@ -361,7 +364,7 @@ namespace DOAN
 
         private void btnTaoLai_Click(object sender, EventArgs e)
         {
-            DialogResult DR = MessageBox.Show("Bạn có muốn tạo lại đơn thuốc hay không ?", "Tạo lại", MessageBoxButtons.OKCancel);
+            DialogResult DR = MessageBox.Show("Bạn có muốn tạo lại hay không ?", "Tạo lại", MessageBoxButtons.OKCancel);
             if (DialogResult.OK == DR)
             {
                 gridPhongDaChon.Rows.Clear();

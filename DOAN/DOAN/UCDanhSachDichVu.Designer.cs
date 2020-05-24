@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCDanhSachDichVu));
             this.label20 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gridDanhSachDichVu = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.gridDichVuPhong = new System.Windows.Forms.DataGridView();
+            this.cbChonPhong = new MetroFramework.Controls.MetroComboBox();
+            this.gridDichVuDaChon = new System.Windows.Forms.DataGridView();
+            this.donvicol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluongcol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSuDungDichVu = new DOAN.Button_WOC();
+            this.btnQuanLyDichVu = new DOAN.Button_WOC();
             this.btnHuyDichVu = new DOAN.Button_WOC();
-            this.btnThemDichVu = new DOAN.Button_WOC();
-            this.btnXoaDichVu = new DOAN.Button_WOC();
+            this.btnChonDichVu = new DOAN.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.gridDanhSachDichVu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridDichVuPhong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDichVuDaChon)).BeginInit();
             this.SuspendLayout();
             // 
             // label20
@@ -61,7 +62,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(43)))), ((int)(((byte)(96)))));
-            this.label1.Location = new System.Drawing.Point(136, 116);
+            this.label1.Location = new System.Drawing.Point(22, 105);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 25);
@@ -72,68 +73,114 @@
             // 
             this.gridDanhSachDichVu.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gridDanhSachDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridDanhSachDichVu.Location = new System.Drawing.Point(141, 147);
+            this.gridDanhSachDichVu.Location = new System.Drawing.Point(27, 147);
             this.gridDanhSachDichVu.Name = "gridDanhSachDichVu";
             this.gridDanhSachDichVu.RowHeadersWidth = 51;
             this.gridDanhSachDichVu.RowTemplate.Height = 24;
-            this.gridDanhSachDichVu.Size = new System.Drawing.Size(459, 305);
+            this.gridDanhSachDichVu.Size = new System.Drawing.Size(523, 388);
             this.gridDanhSachDichVu.TabIndex = 41;
+            this.gridDanhSachDichVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDanhSachDichVu_CellClick);
+            this.gridDanhSachDichVu.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.gridDanhSachDichVu_DataBindingComplete);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(43)))), ((int)(((byte)(96)))));
-            this.label2.Location = new System.Drawing.Point(754, 116);
+            this.label2.Location = new System.Drawing.Point(704, 105);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 25);
             this.label2.TabIndex = 42;
             this.label2.Text = "Chọn phòng:";
             // 
-            // metroComboBox1
+            // cbChonPhong
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 24;
-            this.metroComboBox1.Items.AddRange(new object[] {
+            this.cbChonPhong.FormattingEnabled = true;
+            this.cbChonPhong.ItemHeight = 24;
+            this.cbChonPhong.Items.AddRange(new object[] {
             "Danh sách phòng đã thuê"});
-            this.metroComboBox1.Location = new System.Drawing.Point(887, 111);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(321, 30);
-            this.metroComboBox1.TabIndex = 43;
-            this.metroComboBox1.UseSelectable = true;
+            this.cbChonPhong.Location = new System.Drawing.Point(837, 100);
+            this.cbChonPhong.Name = "cbChonPhong";
+            this.cbChonPhong.Size = new System.Drawing.Size(371, 30);
+            this.cbChonPhong.TabIndex = 43;
+            this.cbChonPhong.UseSelectable = true;
             // 
-            // gridDichVuPhong
+            // gridDichVuDaChon
             // 
-            this.gridDichVuPhong.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.gridDichVuPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridDichVuPhong.Location = new System.Drawing.Point(759, 147);
-            this.gridDichVuPhong.Name = "gridDichVuPhong";
-            this.gridDichVuPhong.RowHeadersWidth = 51;
-            this.gridDichVuPhong.RowTemplate.Height = 24;
-            this.gridDichVuPhong.Size = new System.Drawing.Size(449, 305);
-            this.gridDichVuPhong.TabIndex = 44;
+            this.gridDichVuDaChon.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.gridDichVuDaChon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridDichVuDaChon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.donvicol,
+            this.soluongcol});
+            this.gridDichVuDaChon.Location = new System.Drawing.Point(709, 147);
+            this.gridDichVuDaChon.Name = "gridDichVuDaChon";
+            this.gridDichVuDaChon.RowHeadersWidth = 51;
+            this.gridDichVuDaChon.RowTemplate.Height = 24;
+            this.gridDichVuDaChon.Size = new System.Drawing.Size(499, 388);
+            this.gridDichVuDaChon.TabIndex = 44;
+            this.gridDichVuDaChon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDichVuDaChon_CellClick);
+            this.gridDichVuDaChon.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.gridDichVuDaChon_EditingControlShowing);
+            // 
+            // donvicol
+            // 
+            this.donvicol.HeaderText = "Đơn vị tính";
+            this.donvicol.MinimumWidth = 6;
+            this.donvicol.Name = "donvicol";
+            this.donvicol.ReadOnly = true;
+            this.donvicol.Width = 125;
+            // 
+            // soluongcol
+            // 
+            this.soluongcol.HeaderText = "Số lượng";
+            this.soluongcol.MinimumWidth = 6;
+            this.soluongcol.Name = "soluongcol";
+            this.soluongcol.Width = 125;
             // 
             // btnSuDungDichVu
             // 
             this.btnSuDungDichVu.BorderColor = System.Drawing.Color.Transparent;
-            this.btnSuDungDichVu.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(105)))), ((int)(((byte)(114)))));
+            this.btnSuDungDichVu.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(26)))), ((int)(((byte)(82)))));
             this.btnSuDungDichVu.FlatAppearance.BorderSize = 0;
             this.btnSuDungDichVu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnSuDungDichVu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnSuDungDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuDungDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuDungDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuDungDichVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(66)))), ((int)(((byte)(135)))));
-            this.btnSuDungDichVu.Location = new System.Drawing.Point(606, 213);
+            this.btnSuDungDichVu.Location = new System.Drawing.Point(407, 552);
             this.btnSuDungDichVu.Name = "btnSuDungDichVu";
             this.btnSuDungDichVu.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnSuDungDichVu.OnHoverButtonColor = System.Drawing.Color.DarkCyan;
+            this.btnSuDungDichVu.OnHoverButtonColor = System.Drawing.Color.MidnightBlue;
             this.btnSuDungDichVu.OnHoverTextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSuDungDichVu.Size = new System.Drawing.Size(147, 68);
-            this.btnSuDungDichVu.TabIndex = 62;
-            this.btnSuDungDichVu.Text = "Sử dụng dịch vụ >>";
+            this.btnSuDungDichVu.Size = new System.Drawing.Size(447, 65);
+            this.btnSuDungDichVu.TabIndex = 65;
+            this.btnSuDungDichVu.Text = "Sử dụng dịch vụ";
             this.btnSuDungDichVu.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnSuDungDichVu.UseVisualStyleBackColor = true;
+            this.btnSuDungDichVu.Click += new System.EventHandler(this.btnSuDungDichVu_Click);
+            // 
+            // btnQuanLyDichVu
+            // 
+            this.btnQuanLyDichVu.BorderColor = System.Drawing.Color.Transparent;
+            this.btnQuanLyDichVu.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(105)))), ((int)(((byte)(114)))));
+            this.btnQuanLyDichVu.FlatAppearance.BorderSize = 0;
+            this.btnQuanLyDichVu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnQuanLyDichVu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnQuanLyDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuanLyDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLyDichVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(66)))), ((int)(((byte)(135)))));
+            this.btnQuanLyDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuanLyDichVu.Location = new System.Drawing.Point(323, 80);
+            this.btnQuanLyDichVu.Name = "btnQuanLyDichVu";
+            this.btnQuanLyDichVu.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnQuanLyDichVu.OnHoverButtonColor = System.Drawing.Color.DarkCyan;
+            this.btnQuanLyDichVu.OnHoverTextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnQuanLyDichVu.Size = new System.Drawing.Size(227, 61);
+            this.btnQuanLyDichVu.TabIndex = 64;
+            this.btnQuanLyDichVu.Text = "Quản lý dịch vụ";
+            this.btnQuanLyDichVu.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnQuanLyDichVu.UseVisualStyleBackColor = true;
+            this.btnQuanLyDichVu.Click += new System.EventHandler(this.btnQuanLyDichVu_Click);
             // 
             // btnHuyDichVu
             // 
@@ -145,7 +192,7 @@
             this.btnHuyDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuyDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuyDichVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(66)))), ((int)(((byte)(135)))));
-            this.btnHuyDichVu.Location = new System.Drawing.Point(606, 287);
+            this.btnHuyDichVu.Location = new System.Drawing.Point(556, 336);
             this.btnHuyDichVu.Name = "btnHuyDichVu";
             this.btnHuyDichVu.OnHoverBorderColor = System.Drawing.Color.Transparent;
             this.btnHuyDichVu.OnHoverButtonColor = System.Drawing.Color.MidnightBlue;
@@ -155,73 +202,51 @@
             this.btnHuyDichVu.Text = "<< Hủy dịch vụ";
             this.btnHuyDichVu.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnHuyDichVu.UseVisualStyleBackColor = true;
+            this.btnHuyDichVu.Click += new System.EventHandler(this.btnHuyDichVu_Click);
             // 
-            // btnThemDichVu
+            // btnChonDichVu
             // 
-            this.btnThemDichVu.BorderColor = System.Drawing.Color.Transparent;
-            this.btnThemDichVu.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(105)))), ((int)(((byte)(114)))));
-            this.btnThemDichVu.FlatAppearance.BorderSize = 0;
-            this.btnThemDichVu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnThemDichVu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnThemDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemDichVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(66)))), ((int)(((byte)(135)))));
-            this.btnThemDichVu.Image = ((System.Drawing.Image)(resources.GetObject("btnThemDichVu.Image")));
-            this.btnThemDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemDichVu.Location = new System.Drawing.Point(141, 458);
-            this.btnThemDichVu.Name = "btnThemDichVu";
-            this.btnThemDichVu.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnThemDichVu.OnHoverButtonColor = System.Drawing.Color.DarkCyan;
-            this.btnThemDichVu.OnHoverTextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnThemDichVu.Size = new System.Drawing.Size(227, 61);
-            this.btnThemDichVu.TabIndex = 64;
-            this.btnThemDichVu.Text = "Thêm dịch vụ";
-            this.btnThemDichVu.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnThemDichVu.UseVisualStyleBackColor = true;
-            // 
-            // btnXoaDichVu
-            // 
-            this.btnXoaDichVu.BorderColor = System.Drawing.Color.Transparent;
-            this.btnXoaDichVu.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(53)))), ((int)(((byte)(70)))));
-            this.btnXoaDichVu.FlatAppearance.BorderSize = 0;
-            this.btnXoaDichVu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnXoaDichVu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnXoaDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaDichVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(66)))), ((int)(((byte)(135)))));
-            this.btnXoaDichVu.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaDichVu.Image")));
-            this.btnXoaDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaDichVu.Location = new System.Drawing.Point(384, 458);
-            this.btnXoaDichVu.Name = "btnXoaDichVu";
-            this.btnXoaDichVu.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnXoaDichVu.OnHoverButtonColor = System.Drawing.Color.Crimson;
-            this.btnXoaDichVu.OnHoverTextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnXoaDichVu.Size = new System.Drawing.Size(216, 61);
-            this.btnXoaDichVu.TabIndex = 65;
-            this.btnXoaDichVu.Text = "Xóa dịch vụ";
-            this.btnXoaDichVu.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnXoaDichVu.UseVisualStyleBackColor = true;
+            this.btnChonDichVu.BorderColor = System.Drawing.Color.Transparent;
+            this.btnChonDichVu.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(105)))), ((int)(((byte)(114)))));
+            this.btnChonDichVu.FlatAppearance.BorderSize = 0;
+            this.btnChonDichVu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnChonDichVu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnChonDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChonDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChonDichVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(66)))), ((int)(((byte)(135)))));
+            this.btnChonDichVu.Location = new System.Drawing.Point(556, 262);
+            this.btnChonDichVu.Name = "btnChonDichVu";
+            this.btnChonDichVu.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnChonDichVu.OnHoverButtonColor = System.Drawing.Color.DarkCyan;
+            this.btnChonDichVu.OnHoverTextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnChonDichVu.Size = new System.Drawing.Size(147, 68);
+            this.btnChonDichVu.TabIndex = 62;
+            this.btnChonDichVu.Text = "Chọn dịch vụ >>";
+            this.btnChonDichVu.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnChonDichVu.UseVisualStyleBackColor = true;
+            this.btnChonDichVu.Click += new System.EventHandler(this.btnChonDichVu_Click);
             // 
             // UCDanhSachDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.Controls.Add(this.btnXoaDichVu);
-            this.Controls.Add(this.btnThemDichVu);
-            this.Controls.Add(this.btnHuyDichVu);
             this.Controls.Add(this.btnSuDungDichVu);
-            this.Controls.Add(this.gridDichVuPhong);
-            this.Controls.Add(this.metroComboBox1);
+            this.Controls.Add(this.btnQuanLyDichVu);
+            this.Controls.Add(this.btnHuyDichVu);
+            this.Controls.Add(this.btnChonDichVu);
+            this.Controls.Add(this.gridDichVuDaChon);
+            this.Controls.Add(this.cbChonPhong);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.gridDanhSachDichVu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label20);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UCDanhSachDichVu";
             this.Size = new System.Drawing.Size(1329, 693);
+            this.Load += new System.EventHandler(this.UCDanhSachDichVu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridDanhSachDichVu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridDichVuPhong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDichVuDaChon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,11 +258,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView gridDanhSachDichVu;
         private System.Windows.Forms.Label label2;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private System.Windows.Forms.DataGridView gridDichVuPhong;
-        private Button_WOC btnSuDungDichVu;
+        private MetroFramework.Controls.MetroComboBox cbChonPhong;
+        private System.Windows.Forms.DataGridView gridDichVuDaChon;
+        private Button_WOC btnChonDichVu;
         private Button_WOC btnHuyDichVu;
-        private Button_WOC btnThemDichVu;
-        private Button_WOC btnXoaDichVu;
+        private Button_WOC btnQuanLyDichVu;
+        private Button_WOC btnSuDungDichVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donvicol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soluongcol;
     }
 }

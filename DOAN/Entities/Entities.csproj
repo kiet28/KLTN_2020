@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="eCTThuePhong.cs" />
+    <Compile Include="eDichVu.cs" />
     <Compile Include="eKhachHang.cs" />
     <Compile Include="eNhanVien.cs" />
     <Compile Include="ePhong.cs" />
