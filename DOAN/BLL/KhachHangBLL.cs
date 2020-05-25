@@ -59,7 +59,7 @@ namespace BLL
             ks.SubmitChanges();
             return 1;
         }
-        public bool CheckExisted(int maKhachHang)
+        public bool CheckExisted(string maKhachHang)
         {
             KhachHangs khtemp = ks.KhachHangs.Where(x => x.maKhachHang == maKhachHang).FirstOrDefault();
             if (khtemp != null)

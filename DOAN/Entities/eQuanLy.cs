@@ -8,14 +8,14 @@ namespace Entities
 {
     public class eQuanLy
     {
-        public int MaNQL { get; set; }
+        public string MaNQL { get; set; }
         public string TenNQL { get; set; }
         public eQuanLy()
         {
-            this.MaNQL = 0;
+            this.MaNQL = "";
             this.TenNQL = "";
         }
-        public eQuanLy(int ma, string ten)
+        public eQuanLy(string ma, string ten)
         {
             this.MaNQL = ma;
             this.TenNQL = ten;

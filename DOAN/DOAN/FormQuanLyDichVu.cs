@@ -152,7 +152,7 @@ namespace DOAN
                 if (isThem == true)
                 {
                     eDichVu newDichVu = new eDichVu();
-                    newDichVu.MaDV = Convert.ToInt32(txtMaDV.Text);
+                    newDichVu.MaDV = txtMaDV.Text;
                     newDichVu.TenDV = txtTenDichVu.Text;
                     newDichVu.DonGia = Convert.ToDecimal(txtDonGia.Text);
                     if (rdCon.Checked == true)
@@ -187,7 +187,7 @@ namespace DOAN
                     {
                         trangThai = 0;
                     }
-                    dichVuBLL.CapNhatThongTinDichVu(Convert.ToInt32(maDichVu), tenDichVu, Convert.ToDecimal(donGia), Convert.ToInt32(trangThai));
+                    dichVuBLL.CapNhatThongTinDichVu(maDichVu, tenDichVu, Convert.ToDecimal(donGia), Convert.ToInt32(trangThai));
                     MessageBox.Show("Cập nhật thành công");
                     isSua = false;
                     btnSua.Text = "Sửa";

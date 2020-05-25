@@ -44,7 +44,7 @@ namespace BLL
 
         }
 
-        public void CapNhatThongTinDichVu(int mdv, string tdv, decimal dg, int tt)
+        public void CapNhatThongTinDichVu(string mdv, string tdv, decimal dg, int tt)
         {
             IQueryable<DichVus> dichvu = ks.DichVus.Where(dv => dv.maDichVu.Equals(mdv));
 

@@ -31,7 +31,7 @@ namespace DOAN
             txtTimKiemKhachHang.ForeColor = Color.Gray;
         }
 
-        public delegate void GetString(int mkh, String tkh, String cmnd, String gt, String sdt);
+        public delegate void GetString(string mkh, String tkh, String cmnd, String gt, String sdt);
         public GetString MyGetData;
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -79,7 +79,7 @@ namespace DOAN
             int index = gridDanhSachKhachHang.CurrentRow.Index;
             if (MyGetData != null)
             {
-                MyGetData(Convert.ToInt32(gridDanhSachKhachHang.Rows[index].Cells[0].Value.ToString()), gridDanhSachKhachHang.Rows[index].Cells[1].Value.ToString(), gridDanhSachKhachHang.Rows[index].Cells[2].Value.ToString(), gridDanhSachKhachHang.Rows[index].Cells[3].Value.ToString(), gridDanhSachKhachHang.Rows[index].Cells[4].Value.ToString());
+                MyGetData(gridDanhSachKhachHang.Rows[index].Cells[0].Value.ToString(), gridDanhSachKhachHang.Rows[index].Cells[1].Value.ToString(), gridDanhSachKhachHang.Rows[index].Cells[2].Value.ToString(), gridDanhSachKhachHang.Rows[index].Cells[3].Value.ToString(), gridDanhSachKhachHang.Rows[index].Cells[4].Value.ToString());
             }
             this.Close();
             this.Dispose();
@@ -137,7 +137,7 @@ namespace DOAN
                 int index = gridDanhSachKhachHang.CurrentRow.Index;
                 if (MyGetData != null)
                 {
-                    MyGetData(Convert.ToInt32(gridDanhSachKhachHang.Rows[index].Cells[0].Value.ToString()), gridDanhSachKhachHang.Rows[index].Cells[1].Value.ToString(), gridDanhSachKhachHang.Rows[index].Cells[2].Value.ToString(), gridDanhSachKhachHang.Rows[index].Cells[3].Value.ToString(), gridDanhSachKhachHang.Rows[index].Cells[4].Value.ToString());
+                    MyGetData(gridDanhSachKhachHang.Rows[index].Cells[0].Value.ToString(), gridDanhSachKhachHang.Rows[index].Cells[1].Value.ToString(), gridDanhSachKhachHang.Rows[index].Cells[2].Value.ToString(), gridDanhSachKhachHang.Rows[index].Cells[3].Value.ToString(), gridDanhSachKhachHang.Rows[index].Cells[4].Value.ToString());
                 }
                 this.Close();
                 this.Dispose();

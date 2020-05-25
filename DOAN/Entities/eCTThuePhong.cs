@@ -8,23 +8,26 @@ namespace Entities
 {
     public class eCTThuePhong
     {
-        public int MaThuePhong { get; set; }
-        public int MaPhong { get; set; }
-        public int MaDichVu { get; set; }
+        public int MaCTTP { get; set; }
+        public string MaThuePhong { get; set; }
+        public string MaPhong { get; set; }
+        public string MaDichVu { get; set; }
         public string DVT { get; set; }
         public int SoLuong { get; set; }
 
         public eCTThuePhong()
         {
-            this.MaThuePhong = 0;
-            this.MaPhong = 0;
-            this.MaDichVu = 0;
+            this.MaCTTP = 0;
+            this.MaThuePhong = "";
+            this.MaPhong = "";
+            this.MaDichVu = "";
             this.DVT = "";
             this.SoLuong = 0;
         }
 
-        public eCTThuePhong(int mtp, int mp, int mdv, string dvt, int sl)
+        public eCTThuePhong(int mcttp, string mtp, string mp, string mdv, string dvt, int sl)
         {
+            this.MaCTTP = mcttp;
             this.MaThuePhong = mtp;
             this.MaPhong = mp;
             this.MaDichVu = mdv;

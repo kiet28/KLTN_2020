@@ -15,7 +15,7 @@ namespace DOAN
 {
     public partial class UCDanhSachDichVu : UserControl
     {
-        BindingSource bsPhong, bsDichVu, bsDichVuDaChon;
+        BindingSource bsPhong, bsDichVu, bsDichVuDaChon,bs;
         DichVuBLL dichVuBLL;
         CTThuePhongBLL cttpBLL;
         PhongBLL pBLL;
@@ -34,6 +34,7 @@ namespace DOAN
             bsDichVu = new BindingSource();
             bsDichVuDaChon = new BindingSource();
             bsPhong = new BindingSource();
+            bs = new BindingSource();
             dsDV = dichVuBLL.LayThongTinDichVu();
             dsCTTP = cttpBLL.LayThongTinCTThuePhong();
 
@@ -80,7 +81,7 @@ namespace DOAN
             {
                 if (!sl.IsMatch(gridDichVuDaChon.Rows[j].Cells[1].Value.ToString()))
                 {
-                    MessageBox.Show("Thiếu hoặc sai tên khách hàng, Vui lòng kiểm tra lại" + gridDichVuDaChon.Rows[j].Cells[1].Value.ToString());
+                    MessageBox.Show("Thiếu hoặc sai tên khách hàng, Vui lòng kiểm tra lại");
                     return false;
                 }
             }
@@ -161,7 +162,7 @@ namespace DOAN
                 //gridDichVuDaChon.Columns[6].Visible = false;
 
                 gridDichVuDaChon.Rows[gridDichVuDaChon.Rows.Count - 1].Cells[1].Value = 1;
-                //gridDichVuDaChon.Rows[gridDichVuDaChon.Rows.Count - 1].Cells[2].Value = "3 viên/1 ngày";
+                gridDichVuDaChon.Rows[gridDichVuDaChon.Rows.Count - 1].Cells[0].Value = "Không";
                 bsDichVu.RemoveCurrent();
             }
 
@@ -185,57 +186,43 @@ namespace DOAN
                     eDichVu dvmoi1 = new eDichVu();
                     eCTThuePhong cttpmoi1 = new eCTThuePhong();
                     ePhong pmoi1 = new ePhong();
-                    //Lưu vào csdl KH
-                    //cttpmoi1.MaKH = Convert.ToInt32(txtMaKH.Text);
-                    //khmoi1.TenKH = txtTenKhachHang.Text;
-                    //khmoi1.SDT = txtSoDienThoai.Text;
-                    //khmoi1.CMND = txtSoCMND.Text;
-                    //if (rdNam.Checked)
-                    //{
-                    //    khmoi1.GioiTinh = "nam";
-                    //}
-                    //if (rdNu.Checked)
-                    //{
-                    //    khmoi1.GioiTinh = "nu";
-                    //}
-                    //if (khBLL.InsertKhachHang(khmoi1) == 0)
-                    //{
-                    //}
-                    //else
-                    //{
-                    //    khBLL.InsertKhachHang(khmoi1);
-                    //}
-                    ////-----------------------------------//
-                    ////Lưu vào csdl thuê phòng
-                    //tpmoi1.MaThuePhong = Convert.ToInt32(maTP);
-                    //tpmoi1.MaKhachHang = Convert.ToInt32(khmoi1.MaKH);
-                    //tpmoi1.MaNhanVien = Convert.ToInt32(((FormTrangChinh)f).lblMa.Text);
-                    //tpmoi1.NgayThue = Convert.ToDateTime(dateNgayNhanPhong.Text);
-                    //tpmoi1.NgayTra = Convert.ToDateTime(dateNgayTraPhong.Text);
-                    //tpmoi1.GioThue = txtGioNhan.Text;
-                    //tpmoi1.GioTra = txtGioTra.Text;
-                    //-----------------------------------//
-                    int map = Convert.ToInt32(dsP
-                        .Where(x => x.TenP.Contains(cbChonPhong.Text))
-                        .Select(x2 => new{ 
-                            x2.MaP,
-                            //x2.TenP,
-                        }).ToString());
-                    string mtp = dsCTTP
-                        .Where(t => t.MaPhong.Equals(Convert.ToInt32(map)))
-                        .Select(t2 => t2.MaThuePhong).ToString();
+
+                    dsP = pBLL.LayThongTinPhong();
+                    dsCTTP = cttpBLL.LayThongTinCTThuePhong();
+                    var info = dsP
+                        .Join(dsCTTP, p => p.MaP, ctp => ctp.MaPhong, (p, ctp) => new { p, ctp })
+                        .Where(x => x.p.TenP.Equals(cbChonPhong.Text))
+                        .Select(x2 => new
+                        {
+                            x2.p.MaP,
+                            x2.ctp.MaThuePhong,
+                            x2.ctp.MaCTTP,
+                        }).ToList();
+                    //var map = dsP
+                    //    .Where(x => x.TenP.Contains(cbChonPhong.Text))
+                    //    .Select(x2 => new{ 
+                    //        x2.MaP
+                    //        //x2.TenP,
+                    //    }).ToString();
+                    //string mtp = dsCTTP
+                    //    .Where(t => t.MaPhong.Contains(map))
+                    //    .Select(t2 => new { t2.MaThuePhong, }).ToString();
                     //Lưu vào csdl CTThuePhong
+                    string maP = info[0].MaP.ToString();
+                    string maTP = info[0].MaThuePhong.ToString();
+                    string maCTTP = info[0].MaCTTP.ToString();
                     int countDV = gridDichVuDaChon.Rows.Count;
                     for (int i = 0; i <= countDV - 1; i++)
                     {
-                        cttpmoi1.MaDichVu = Convert.ToInt32(gridDichVuDaChon.Rows[i].Cells[2].Value);
-                        MessageBox.Show(map.ToString());
-                        cttpmoi1.MaPhong = map;
-                        cttpmoi1.MaThuePhong = Convert.ToInt32(mtp);
+                        //cttpmoi1.MaCTTP = Convert.ToInt32(maCTTP);
+                        cttpmoi1.MaThuePhong = maTP;
+                        cttpmoi1.MaPhong = maP;
+                        MessageBox.Show(maP + "  " + maTP);
+                        cttpmoi1.MaDichVu = gridDichVuDaChon.Rows[i].Cells[2].Value.ToString();
                         cttpmoi1.DVT = gridDichVuDaChon.Rows[i].Cells[0].Value.ToString();
                         cttpmoi1.SoLuong = Convert.ToInt32(gridDichVuDaChon.Rows[i].Cells[1].Value);
 
-                        cttpBLL.CapNhatThongTinThemDVVaoCTTP(cttpmoi1.MaThuePhong, cttpmoi1.MaThuePhong, cttpmoi1.MaDichVu, cttpmoi1.DVT, cttpmoi1.SoLuong);
+                        cttpBLL.InsertDichVu(cttpmoi1);
                         //cttpBLL.InsertCTThuePhong(cttpmoi1);
                     }
                     //-----------------------------------

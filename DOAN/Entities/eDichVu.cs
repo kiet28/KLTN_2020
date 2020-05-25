@@ -8,20 +8,20 @@ namespace Entities
 {
     public class eDichVu
     {
-        public int MaDV { get; set; }
+        public string MaDV { get; set; }
         public string TenDV { get; set; }
         public decimal DonGia { get; set; }
         public int TrangThai { get; set; }
 
         public eDichVu()
         {
-            this.MaDV = 0;
+            this.MaDV = "";
             this.TenDV = "";
             this.DonGia = 0m;
             this.TrangThai = 0;
         }
 
-        public eDichVu(int mdv, string tdv, decimal dg, int tt)
+        public eDichVu(string mdv, string tdv, decimal dg, int tt)
         {
             this.MaDV = mdv;
             this.TenDV = tdv;

@@ -8,7 +8,7 @@ namespace Entities
 {
     public class eNhanVien
     {
-        public int MaNhanVien { get; set; }
+        public string MaNhanVien { get; set; }
         public string TenNhanVien { get; set; }
         public string GioiTinh { get; set; }
         public string NamSinh { get; set; }
@@ -18,7 +18,7 @@ namespace Entities
 
         public eNhanVien()
         {
-            this.MaNhanVien = 0;
+            this.MaNhanVien = "";
             this.TenNhanVien = "";
             this.GioiTinh = "";
             this.NamSinh = "";
@@ -27,7 +27,7 @@ namespace Entities
             this.TinhTrang = "";
         }
 
-        public eNhanVien(int mnv, string tnv, string gt, string ns, string dc, string sdt, string tt)
+        public eNhanVien(string mnv, string tnv, string gt, string ns, string dc, string sdt, string tt)
         {
             this.MaNhanVien = mnv;
             this.TenNhanVien = tnv;

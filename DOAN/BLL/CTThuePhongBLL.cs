@@ -22,9 +22,10 @@ namespace BLL
             foreach (CTThuePhongs item in dsCTThuePhong)
             {
                 eCTThuePhong cttp = new eCTThuePhong();
+                cttp.MaCTTP = item.maCTTP;
                 cttp.MaThuePhong = item.maThuePhong;
-                cttp.MaPhong = Convert.ToInt32(item.maPhong);
-                cttp.MaDichVu = Convert.ToInt32(item.maDichVu);
+                cttp.MaPhong = item.maPhong;
+                cttp.MaDichVu = item.maDichVu;
                 cttp.DVT = item.DVT;
                 cttp.SoLuong = Convert.ToInt32(item.soLuong);
                 dscttp.Add(cttp);
@@ -34,24 +35,27 @@ namespace BLL
         public int InsertCTThuePhong(eCTThuePhong cttpmoi)
         {
             CTThuePhongs cttptemp = new CTThuePhongs();
+            cttptemp.maCTTP = cttpmoi.MaCTTP;
             cttptemp.maThuePhong = cttpmoi.MaThuePhong;
             cttptemp.maPhong = cttpmoi.MaPhong;
-            cttptemp.maDichVu = 0;
+            cttptemp.maDichVu = "0";
+            cttptemp.DVT = "Không";
             ks.CTThuePhongs.InsertOnSubmit(cttptemp);
             ks.SubmitChanges();
             return 1;
         }
-        public void CapNhatThongTinThemDVVaoCTTP(int mtp, int mp, int mdv, string dvt, int sl)
+        public int InsertDichVu(eCTThuePhong cttpmoi)
         {
-            IQueryable<CTThuePhongs> cttp = ks.CTThuePhongs.Where(dv => dv.maThuePhong.Equals(mtp) && dv.maPhong.Equals(mp));
-
-            cttp.First().maThuePhong = mtp;
-            cttp.First().maPhong = mp;
-            cttp.First().maDichVu = mdv;
-            cttp.First().DVT = dvt;
-            cttp.First().soLuong = sl;
-
+            CTThuePhongs cttptemp = new CTThuePhongs();
+            cttptemp.maCTTP = cttpmoi.MaCTTP;
+            cttptemp.maThuePhong = cttpmoi.MaThuePhong;
+            cttptemp.maPhong = cttpmoi.MaPhong;
+            cttptemp.maDichVu = cttpmoi.MaDichVu;
+            cttptemp.DVT = cttpmoi.DVT;
+            cttptemp.soLuong = cttpmoi.SoLuong;
+            ks.CTThuePhongs.InsertOnSubmit(cttptemp);
             ks.SubmitChanges();
+            return 1;
         }
     }
 }

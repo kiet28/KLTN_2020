@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,26 +12,23 @@ namespace Entities
         public string UserName { set; get; }
         public string Pass { set; get; }
         public string LoaiTK { set; get; }
-        public int MaNV { set; get; }
-        public int MaNQL { set; get; }
-        public int MaTK { set; get; }
+        public string MaNV { set; get; }
+        public string MaNQL { set; get; }
         public eTaiKhoan()
         {
             this.UserName = "";
             this.Pass = "";
             this.LoaiTK = "";
-            this.MaNV = 0;
-            this.MaNQL = 0;
-            this.MaTK = 0;
+            this.MaNV = "";
+            this.MaNQL = "";
         }
-        public eTaiKhoan(string user, string p, string loaitk, int manv, int manql, int matk)
+        public eTaiKhoan(string user, string p, string loaitk, string manv, string manql)
         {
             this.UserName = user;
             this.Pass = p;
             this.LoaiTK = loaitk;
-            this.MaNV = Convert.ToInt32( manv);
-            this.MaNQL = Convert.ToInt32(manql);
-            this.MaTK = Convert.ToInt32(matk);
+            this.MaNV = manv;
+            this.MaNQL = manql;
         }
     }
 }

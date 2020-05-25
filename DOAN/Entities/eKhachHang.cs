@@ -8,7 +8,7 @@ namespace Entities
 {
     public class eKhachHang
     {
-        public int MaKH { get; set; }
+        public string MaKH { get; set; }
         public string TenKH { get; set; }
         public string CMND { get; set; }
         public string GioiTinh { get; set; }
@@ -16,14 +16,14 @@ namespace Entities
 
         public eKhachHang()
         {
-            this.MaKH = 0;
+            this.MaKH = "";
             this.TenKH = "";
             this.CMND = "";
             this.GioiTinh = "";
             this.SDT = "";
         }
 
-        public eKhachHang(int mkh, string tkh, string cmnd, string gt, string sdt)
+        public eKhachHang(string mkh, string tkh, string cmnd, string gt, string sdt)
         {
             this.MaKH = mkh;
             this.TenKH = tkh;

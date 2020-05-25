@@ -24,8 +24,8 @@ namespace BLL
             {
                 eThuePhong tp = new eThuePhong();
                 tp.MaThuePhong = item.maThuePhong;
-                tp.MaNhanVien = Convert.ToInt32(item.maNhanVien);
-                tp.MaKhachHang = Convert.ToInt32(item.maKhachHang);
+                tp.MaNhanVien = item.maNhanVien;
+                tp.MaKhachHang = item.maKhachHang;
                 tp.NgayThue = Convert.ToDateTime(item.ngayThuePhong);
                 tp.NgayTra = Convert.ToDateTime(item.ngayTraPhong);
                 tp.GioThue = item.gioThue;
@@ -51,7 +51,7 @@ namespace BLL
             ks.SubmitChanges();
             return 1;
         }
-        public bool CheckExisted(int maThuePhong)
+        public bool CheckExisted(string maThuePhong)
         {
             ThuePhongs tptemp = ks.ThuePhongs.Where(x => x.maThuePhong == maThuePhong).FirstOrDefault();
             if (tptemp != null)

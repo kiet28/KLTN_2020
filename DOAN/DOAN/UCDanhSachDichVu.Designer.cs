@@ -40,6 +40,8 @@
             this.btnQuanLyDichVu = new DOAN.Button_WOC();
             this.btnHuyDichVu = new DOAN.Button_WOC();
             this.btnChonDichVu = new DOAN.Button_WOC();
+            this.txtMaPhong = new System.Windows.Forms.TextBox();
+            this.txtMaTP = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridDanhSachDichVu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDichVuDaChon)).BeginInit();
             this.SuspendLayout();
@@ -226,11 +228,27 @@
             this.btnChonDichVu.UseVisualStyleBackColor = true;
             this.btnChonDichVu.Click += new System.EventHandler(this.btnChonDichVu_Click);
             // 
+            // txtMaPhong
+            // 
+            this.txtMaPhong.Location = new System.Drawing.Point(837, 58);
+            this.txtMaPhong.Name = "txtMaPhong";
+            this.txtMaPhong.Size = new System.Drawing.Size(100, 22);
+            this.txtMaPhong.TabIndex = 66;
+            // 
+            // txtMaTP
+            // 
+            this.txtMaTP.Location = new System.Drawing.Point(943, 58);
+            this.txtMaTP.Name = "txtMaTP";
+            this.txtMaTP.Size = new System.Drawing.Size(100, 22);
+            this.txtMaTP.TabIndex = 67;
+            // 
             // UCDanhSachDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
+            this.Controls.Add(this.txtMaTP);
+            this.Controls.Add(this.txtMaPhong);
             this.Controls.Add(this.btnSuDungDichVu);
             this.Controls.Add(this.btnQuanLyDichVu);
             this.Controls.Add(this.btnHuyDichVu);
@@ -266,5 +284,7 @@
         private Button_WOC btnSuDungDichVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn donvicol;
         private System.Windows.Forms.DataGridViewTextBoxColumn soluongcol;
+        private System.Windows.Forms.TextBox txtMaPhong;
+        private System.Windows.Forms.TextBox txtMaTP;
     }
 }

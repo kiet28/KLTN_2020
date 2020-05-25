@@ -99,12 +99,12 @@ namespace DOAN
                 }
             }
         }
-        public void GetValue(int makh, String tkh, String cmnd, String gt, String sdt)
+        public void GetValue(string makh, String tkh, String cmnd, String gt, String sdt)
         {// khai báo 1 hàm với 2 tham số đầu vào là str1, và str2 nó sẽ đưa dữ liệu vào 2 lable
-            txtMaKH.Text = makh.ToString();
+            txtMaKH.Text = makh;
             txtTenKhachHang.Text = tkh;
-            txtSoCMND.Text = cmnd.ToString();
-            txtSoDienThoai.Text = sdt.ToString();
+            txtSoCMND.Text = cmnd;
+            txtSoDienThoai.Text = sdt;
             txtTenKhachHang.Enabled = false;
             txtSoCMND.Enabled = false;
             rdNam.Enabled = false;
@@ -299,7 +299,7 @@ namespace DOAN
                     eCTThuePhong cttpmoi1 = new eCTThuePhong();
                     //ePhong p = new ePhong();
                     //Lưu vào csdl Khách hàng
-                    khmoi1.MaKH = Convert.ToInt32(txtMaKH.Text);
+                    khmoi1.MaKH = txtMaKH.Text;
                     khmoi1.TenKH = txtTenKhachHang.Text;
                     khmoi1.SDT = txtSoDienThoai.Text;
                     khmoi1.CMND = txtSoCMND.Text;
@@ -320,9 +320,9 @@ namespace DOAN
                     }
                     //-----------------------------------//
                     //Lưu vào csdl thuê phòng
-                    tpmoi1.MaThuePhong = Convert.ToInt32(maTP);
-                    tpmoi1.MaKhachHang = Convert.ToInt32(khmoi1.MaKH);
-                    tpmoi1.MaNhanVien = Convert.ToInt32(((FormTrangChinh)f).lblMa.Text);
+                    tpmoi1.MaThuePhong = maTP;
+                    tpmoi1.MaKhachHang = khmoi1.MaKH;
+                    tpmoi1.MaNhanVien = ((FormTrangChinh)f).lblMa.Text;
                     tpmoi1.NgayThue = Convert.ToDateTime(dateNgayNhanPhong.Text);
                     tpmoi1.NgayTra = Convert.ToDateTime(dateNgayTraPhong.Text);
                     tpmoi1.GioThue = txtGioNhan.Text;
@@ -335,7 +335,7 @@ namespace DOAN
                         int countCTTP = gridPhongDaChon.Rows.Count;
                         for (int i = 0; i <= countCTTP - 1; i++)
                         {
-                            cttpmoi1.MaPhong = Convert.ToInt32(gridPhongDaChon.Rows[i].Cells[0].Value);
+                            cttpmoi1.MaPhong = gridPhongDaChon.Rows[i].Cells[0].Value.ToString();
                             cttpmoi1.MaThuePhong = tpmoi1.MaThuePhong;
 
                             pBLL.CapNhatTrangThaiPhong(cttpmoi1.MaPhong, 2);

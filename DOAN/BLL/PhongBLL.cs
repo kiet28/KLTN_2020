@@ -33,7 +33,7 @@ namespace BLL
             return dsp;
         }
 
-        public void CapNhatTrangThaiPhong(int mp,int tt)
+        public void CapNhatTrangThaiPhong(string mp,int tt)
         {
             IQueryable<Phongs> phong = ks.Phongs.Where(p => p.maPhong.Equals(mp));
 

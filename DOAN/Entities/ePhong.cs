@@ -8,7 +8,7 @@ namespace Entities
 {
     public class ePhong
     {
-        public int MaP { get; set; }
+        public string MaP { get; set; }
         public string TenP { get; set; }
         public int TrangThai { get; set; }
         public string GhiChu { get; set; }
@@ -18,15 +18,15 @@ namespace Entities
 
         public ePhong()
         {
-            this.MaP = 0;
+            this.MaP = "";
             this.TenP = "";
             this.TrangThai = 0;
             this.GhiChu = "";
-            this.GiaPhong = 0;
+            this.GiaPhong = 0m;
             this.LoaiPhong = "";
         }
 
-        public ePhong(int mp, string tp, int tt, string gc, decimal gp, string lp)
+        public ePhong(string mp, string tp, int tt, string gc, decimal gp, string lp)
         {
             this.MaP = mp;
             this.TenP = tp;
