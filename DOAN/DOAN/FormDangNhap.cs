@@ -95,6 +95,8 @@ namespace DOAN
                     tc.btnQuanLiPhong.Enabled = false;
                     tc.btnQuanLiNhanVien.Enabled = false;
                     tc.btnQuanLiKhachHang.Enabled = false;
+                    UCDanhSachDichVu dv = new UCDanhSachDichVu();
+                    dv.btnQuanLyDichVu.Enabled = false;
                     tc.Show();
                     this.Hide();
                 }
@@ -114,6 +116,8 @@ namespace DOAN
                     tc.btnQuanLiPhong.Enabled = true;
                     tc.btnQuanLiNhanVien.Enabled = true;
                     tc.btnQuanLiKhachHang.Enabled = true;
+                    UCDanhSachDichVu dv = new UCDanhSachDichVu();
+                    dv.btnQuanLyDichVu.Enabled = false;
                     tc.Show();
                     this.Hide();
                 }

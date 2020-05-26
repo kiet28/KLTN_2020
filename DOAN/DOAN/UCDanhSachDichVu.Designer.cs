@@ -40,8 +40,6 @@
             this.btnQuanLyDichVu = new DOAN.Button_WOC();
             this.btnHuyDichVu = new DOAN.Button_WOC();
             this.btnChonDichVu = new DOAN.Button_WOC();
-            this.txtMaPhong = new System.Windows.Forms.TextBox();
-            this.txtMaTP = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridDanhSachDichVu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDichVuDaChon)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +50,7 @@
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(43)))), ((int)(((byte)(96)))));
-            this.label20.Location = new System.Drawing.Point(549, 16);
+            this.label20.Location = new System.Drawing.Point(471, 14);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(295, 39);
@@ -104,7 +102,7 @@
             "Danh sách phòng đã thuê"});
             this.cbChonPhong.Location = new System.Drawing.Point(837, 100);
             this.cbChonPhong.Name = "cbChonPhong";
-            this.cbChonPhong.Size = new System.Drawing.Size(371, 30);
+            this.cbChonPhong.Size = new System.Drawing.Size(406, 30);
             this.cbChonPhong.TabIndex = 43;
             this.cbChonPhong.UseSelectable = true;
             // 
@@ -119,7 +117,7 @@
             this.gridDichVuDaChon.Name = "gridDichVuDaChon";
             this.gridDichVuDaChon.RowHeadersWidth = 51;
             this.gridDichVuDaChon.RowTemplate.Height = 24;
-            this.gridDichVuDaChon.Size = new System.Drawing.Size(499, 388);
+            this.gridDichVuDaChon.Size = new System.Drawing.Size(534, 388);
             this.gridDichVuDaChon.TabIndex = 44;
             this.gridDichVuDaChon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDichVuDaChon_CellClick);
             this.gridDichVuDaChon.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.gridDichVuDaChon_EditingControlShowing);
@@ -228,27 +226,11 @@
             this.btnChonDichVu.UseVisualStyleBackColor = true;
             this.btnChonDichVu.Click += new System.EventHandler(this.btnChonDichVu_Click);
             // 
-            // txtMaPhong
-            // 
-            this.txtMaPhong.Location = new System.Drawing.Point(837, 58);
-            this.txtMaPhong.Name = "txtMaPhong";
-            this.txtMaPhong.Size = new System.Drawing.Size(100, 22);
-            this.txtMaPhong.TabIndex = 66;
-            // 
-            // txtMaTP
-            // 
-            this.txtMaTP.Location = new System.Drawing.Point(943, 58);
-            this.txtMaTP.Name = "txtMaTP";
-            this.txtMaTP.Size = new System.Drawing.Size(100, 22);
-            this.txtMaTP.TabIndex = 67;
-            // 
             // UCDanhSachDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.Controls.Add(this.txtMaTP);
-            this.Controls.Add(this.txtMaPhong);
             this.Controls.Add(this.btnSuDungDichVu);
             this.Controls.Add(this.btnQuanLyDichVu);
             this.Controls.Add(this.btnHuyDichVu);
@@ -280,11 +262,9 @@
         private System.Windows.Forms.DataGridView gridDichVuDaChon;
         private Button_WOC btnChonDichVu;
         private Button_WOC btnHuyDichVu;
-        private Button_WOC btnQuanLyDichVu;
         private Button_WOC btnSuDungDichVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn donvicol;
         private System.Windows.Forms.DataGridViewTextBoxColumn soluongcol;
-        private System.Windows.Forms.TextBox txtMaPhong;
-        private System.Windows.Forms.TextBox txtMaTP;
+        public Button_WOC btnQuanLyDichVu;
     }
 }
