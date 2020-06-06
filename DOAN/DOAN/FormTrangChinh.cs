@@ -224,6 +224,8 @@ namespace DOAN
         private void btnThemPhong_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+            UCThemPhong uctp = new UCThemPhong();
+            AddControlToPanel(uctp);
         }
 
         //
@@ -232,6 +234,8 @@ namespace DOAN
         private void btnCapNhatPhong_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+            UCCapNhatTTPhong uccnttp = new UCCapNhatTTPhong();
+            AddControlToPanel(uccnttp);
         }
 
         private void btnQuanLiKhachHang_Click(object sender, EventArgs e)
@@ -242,11 +246,15 @@ namespace DOAN
         private void btnThemKhachHang_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+            UCThemKhachHang uctkh = new UCThemKhachHang();
+            AddControlToPanel(uctkh);
         }
 
         private void btnCapNhatKhachHang_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+            UCCapNhatThongTinKh uccnkh = new UCCapNhatThongTinKh();
+            AddControlToPanel(uccnkh);
         }
 
         private void btnQuanLiNhanVien_Click(object sender, EventArgs e)
