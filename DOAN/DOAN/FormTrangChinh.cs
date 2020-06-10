@@ -289,5 +289,22 @@ namespace DOAN
             UCDanhSachDichVu dsdv = new UCDanhSachDichVu();
             AddControlToPanel(dsdv);
         }
+
+        private void btnDanhSachPhong_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            UCXemDanhSachPhong ucxdsp = new UCXemDanhSachPhong();
+            AddControlToPanel(ucxdsp);
+        }
+
+        private void btnDanhSachKH_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnDanhSachNV_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
     }
 }
