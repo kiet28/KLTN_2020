@@ -17,17 +17,18 @@ namespace DOAN
             InitializeComponent();
             CustomizeDesign();
             timerTime.Start();
+            //btnXemDanhSachPhong.BackColor = Color.Black;
+            //btnXemDanhSachPhong.Width = 1000;
+            //btnXemDanhSachPhong.Height = 1000;
         }
         //
         //
         //
         private void CustomizeDesign()
         {
-            panelThuePhong.Visible = false;
             panelThongKeSubMenu.Visible = false;
-            panelQuanLiPhongSubMenu.Visible = false;
-            panelQuanLiKhachHangSubMenu.Visible = false;
-            panelQuanLiNhanVienSubMenu.Visible = false;
+            panelQuanLySubMenu.Visible = false;
+
         }
 
         //
@@ -35,16 +36,10 @@ namespace DOAN
         //
         private void HideSubMenu()
         {
-            if (panelThuePhong.Visible == true)
-                panelThuePhong.Visible = false;
             if (panelThongKeSubMenu.Visible == true)
                 panelThongKeSubMenu.Visible = false;
-            if (panelQuanLiPhongSubMenu.Visible == true)
-                panelQuanLiPhongSubMenu.Visible = false;
-            if (panelQuanLiKhachHangSubMenu.Visible == true)
-                panelQuanLiKhachHangSubMenu.Visible = false;
-            if (panelQuanLiNhanVienSubMenu.Visible == true)
-                panelQuanLiNhanVienSubMenu.Visible = false;
+            if (panelQuanLySubMenu.Visible == true)
+                panelQuanLySubMenu.Visible = false;
         }
 
         private void ShowSubMenu(Panel subMenu)
@@ -57,6 +52,34 @@ namespace DOAN
             else
                 subMenu.Visible = false;
         }
+
+        private void ChangeColorDefault()
+        {
+            if (btnXemDanhSachPhong.BackColor == Color.DarkGray)
+                btnXemDanhSachPhong.BackColor = Color.Transparent;
+            if (btnThuePhong.BackColor == Color.DarkGray)
+                btnThuePhong.BackColor = Color.Transparent;
+            if (btnTraPhong.BackColor == Color.DarkGray)
+                btnTraPhong.BackColor = Color.Transparent;
+            if (btnXemDanhSachDichVu.BackColor == Color.DarkGray)
+                btnXemDanhSachDichVu.BackColor = Color.Transparent;
+            if (btnThongKe.BackColor == Color.DarkGray)
+                btnThongKe.BackColor = Color.Transparent;
+            if (btnQuanLy.BackColor == Color.DarkGray)
+                btnQuanLy.BackColor = Color.Transparent;
+        }
+
+        private void ChangeColorSelected(Button btn)
+        {
+            if (btn.BackColor == Color.Transparent)
+            {
+                ChangeColorDefault();
+                btn.BackColor = Color.DarkGray;
+            }
+            //else
+            //    btn.BackColor = Color.Transparent;
+        }
+
         //
         // Button thoát chương trình
         //
@@ -90,7 +113,7 @@ namespace DOAN
         }
 
         //
-        //Thêm control chức năng vào panel
+        //Thêm usercontrol chức năng vào panel
         //
         private void AddControlToPanel(Control c)
         {
@@ -142,9 +165,10 @@ namespace DOAN
         private void btnThuePhong_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+            ChangeColorSelected(btnThuePhong);
             UCThuePhong tp = new UCThuePhong();
             AddControlToPanel(tp);
-            
+
         }
 
         //
@@ -157,7 +181,7 @@ namespace DOAN
             {
                 tptt.ShowDialog();
             }
-            
+
         }
 
         //
@@ -176,6 +200,7 @@ namespace DOAN
         private void btnTraPhong_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+            ChangeColorSelected(btnTraPhong);
             UCTraPhong trp = new UCTraPhong();
             AddControlToPanel(trp);
         }
@@ -186,6 +211,7 @@ namespace DOAN
         private void btnThongKe_Click(object sender, EventArgs e)
         {
             ShowSubMenu(panelThongKeSubMenu);
+            ChangeColorSelected(btnThongKe);
         }
 
         //
@@ -216,67 +242,43 @@ namespace DOAN
         //
         // button quản lí phòng
         //
-        private void btnQuanLiPhong_Click(object sender, EventArgs e)
+        private void btnQuanLy_Click(object sender, EventArgs e)
         {
-            ShowSubMenu(panelQuanLiPhongSubMenu);
+            ShowSubMenu(panelQuanLySubMenu);
+            ChangeColorSelected(btnQuanLy);
         }
 
-        //
-        // thêm phòng
-        //
-        private void btnThemPhong_Click(object sender, EventArgs e)
-        {
-            HideSubMenu();
-        }
 
-        //
-        //cập nhật phòng
-        //
-        private void btnCapNhatPhong_Click(object sender, EventArgs e)
+        private void btnQuanLyPhong_Click(object sender, EventArgs e)
         {
             HideSubMenu();
         }
 
-        private void btnQuanLiKhachHang_Click(object sender, EventArgs e)
-        {
-            ShowSubMenu(panelQuanLiKhachHangSubMenu);
-        }
 
-        private void btnThemKhachHang_Click(object sender, EventArgs e)
+        private void btnQuanLyNhanVien_Click(object sender, EventArgs e)
         {
             HideSubMenu();
         }
-
-        private void btnCapNhatKhachHang_Click(object sender, EventArgs e)
+        private void btnQuanLyDichVu_Click(object sender, EventArgs e)
         {
             HideSubMenu();
         }
-
-        private void btnQuanLiNhanVien_Click(object sender, EventArgs e)
-        {
-            ShowSubMenu(panelQuanLiNhanVienSubMenu);
-        }
-
-        private void btnThemNhanVien_Click(object sender, EventArgs e)
+        private void btnQuanLyKhachHang_Click(object sender, EventArgs e)
         {
             HideSubMenu();
         }
-
-        private void btnCapNhatNhanVien_Click(object sender, EventArgs e)
-        {
-            HideSubMenu();
-        }
-
         private void btnXemDanhSachPhong_Click(object sender, EventArgs e)
         {
             HideSubMenu();
-            UCDanhSachPhong dsp = new UCDanhSachPhong();
+            ChangeColorSelected(btnXemDanhSachPhong);
+            UCDanhSachPhong2 dsp = new UCDanhSachPhong2();
             AddControlToPanel(dsp);
         }
 
         private void btnXemDanhSachDichVu_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+            ChangeColorSelected(btnXemDanhSachDichVu);
             UCDanhSachDichVu dsdv = new UCDanhSachDichVu();
             AddControlToPanel(dsdv);
         }

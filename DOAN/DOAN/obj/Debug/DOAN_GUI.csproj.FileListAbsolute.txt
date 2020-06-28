@@ -65,3 +65,4 @@ C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormDanhSachKhachHang
 C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.SplashScreen.resources
 C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.FormQuanLyDichVu.resources
 C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.Button_WOC.resources
+C:\Users\ASUS\Downloads\KLTN_2020\DOAN\DOAN\obj\Debug\DOAN.UCDanhSachPhong2.resources

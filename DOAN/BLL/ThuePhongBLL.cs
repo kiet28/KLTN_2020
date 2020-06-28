@@ -28,8 +28,8 @@ namespace BLL
                 tp.MaKhachHang = item.maKhachHang;
                 tp.NgayThue = Convert.ToDateTime(item.ngayThuePhong);
                 tp.NgayTra = Convert.ToDateTime(item.ngayTraPhong);
-                tp.GioThue = item.gioThue;
-                tp.GioTra = item.gioTra;
+                tp.TienCoc = Convert.ToDecimal(item.tienCoc);
+                tp.TrangThai = item.trangThai;
                 dstp.Add(tp);
             }
             return dstp;
@@ -45,8 +45,8 @@ namespace BLL
             tptemp.maKhachHang = tpmoi.MaKhachHang;
             tptemp.ngayThuePhong = tpmoi.NgayThue;
             tptemp.ngayTraPhong = tpmoi.NgayTra;
-            tptemp.gioThue = tpmoi.GioThue;
-            tptemp.gioTra = tpmoi.GioTra;
+            tptemp.tienCoc = tpmoi.TienCoc;
+            tptemp.trangThai = tpmoi.TrangThai;
             ks.ThuePhongs.InsertOnSubmit(tptemp);
             ks.SubmitChanges();
             return 1;

@@ -13,8 +13,8 @@ namespace Entities
         public string MaKhachHang { get; set; }
         public DateTime NgayThue { get; set; }
         public DateTime NgayTra { get; set; }
-        public string GioThue { get; set; }
-        public string GioTra { get; set; }
+        public decimal TienCoc { get; set; }
+        public string TrangThai { get; set; }
 
         public eThuePhong()
         {
@@ -23,19 +23,19 @@ namespace Entities
             this.MaKhachHang = "";
             this.NgayThue = DateTime.Now;
             this.NgayTra = DateTime.Now;
-            this.GioThue = "14h";
-            this.GioTra = "12h";
+            this.TienCoc = 0m;
+            this.TrangThai = "";
         }
 
-        public eThuePhong(string mtp, string mnv, string mkh, DateTime nt, DateTime ntr, string gt, string gtr)
+        public eThuePhong(string mtp, string mnv, string mkh, DateTime nt, DateTime ntr, decimal tc, string tt)
         {
             this.MaThuePhong = mtp;
             this.MaNhanVien = mnv;
             this.MaKhachHang = mkh;
             this.NgayThue = nt;
             this.NgayTra = ntr;
-            this.GioThue = gt;
-            this.GioTra = gtr;
+            this.TienCoc = tc;
+            this.TrangThai = tt;
         }
     }
 }

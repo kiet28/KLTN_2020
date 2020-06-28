@@ -26,12 +26,12 @@ namespace DOAN
         List<eQuanLy> dsQL;
         public FormDangNhap()
         {
-            Thread th = new Thread(new ThreadStart(formRun));
-            th.Start();
-            Thread.Sleep(3520);
+            //Thread th = new Thread(new ThreadStart(formRun));
+            //th.Start();
+            //Thread.Sleep(3520);
 
             InitializeComponent();
-            th.Abort();
+            //th.Abort();
 
             myList = new List<int>();
             dsQL = new List<eQuanLy>();
@@ -92,9 +92,8 @@ namespace DOAN
 
                     tc.lblMa.Text = maNV.ToString();
                     tc.lblTenDangNhap.Text = tenNV.ToString();//tạo label vào form bán hàng để hiển thị tên lên form
-                    tc.btnQuanLiPhong.Enabled = false;
-                    tc.btnQuanLiNhanVien.Enabled = false;
-                    tc.btnQuanLiKhachHang.Enabled = false;
+                    tc.btnQuanLy.Enabled = false;
+                    tc.btnQuanLy.Enabled = false;
                     UCDanhSachDichVu dv = new UCDanhSachDichVu();
                     dv.btnQuanLyDichVu.Enabled = false;
                     tc.Show();
@@ -113,9 +112,8 @@ namespace DOAN
 
                     tc.lblMa.Text = maQL.ToString();
                     tc.lblTenDangNhap.Text = tenQL.ToString(); //tạo label vào form quản lý để hiển thị tên lên form
-                    tc.btnQuanLiPhong.Enabled = true;
-                    tc.btnQuanLiNhanVien.Enabled = true;
-                    tc.btnQuanLiKhachHang.Enabled = true;
+                    tc.btnQuanLy.Enabled = true;
+                    tc.btnQuanLy.Enabled = true;
                     UCDanhSachDichVu dv = new UCDanhSachDichVu();
                     dv.btnQuanLyDichVu.Enabled = false;
                     tc.Show();

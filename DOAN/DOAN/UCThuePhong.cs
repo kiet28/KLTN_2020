@@ -54,14 +54,14 @@ namespace DOAN
             var gridviewInfo = dsP
                 .Where(x => x.TrangThai.ToString().Contains(1.ToString()))
                 .Select(dt => new
-            {
-                MaPhong = dt.MaP,
-                TenPhong = dt.TenP,
-                //TrangThai = dt.TrangThai,
-                LoaiPhong = dt.LoaiPhong,
-                GiaPhong = dt.GiaPhong,
-                GhiChu = dt.GhiChu,
-            }).ToList();
+                {
+                    MaPhong = dt.MaP,
+                    TenPhong = dt.TenP,
+                    //TrangThai = dt.TrangThai,
+                    LoaiPhong = dt.LoaiPhong,
+                    GiaPhong = dt.GiaPhong,
+                    GhiChu = dt.GhiChu,
+                }).ToList();
             bs.DataSource = gridviewInfo;
             gridDanhSachPhong.DataSource = bs;
             gridDanhSachPhong.Columns[0].HeaderText = "Mã phòng";
@@ -153,8 +153,32 @@ namespace DOAN
                 MessageBox.Show("Vui lòng nhập số CMND");
                 return false;
             }
-
-
+            TimeSpan oneday = new System.TimeSpan(1, 0, 0, 0);
+            if (Convert.ToDateTime(dateNgayNhanPhong.Text) < DateTime.Now.Subtract(oneday))
+            {
+                MessageBox.Show("Ngày không được nhỏ hơn ngày hiện tại");
+                return false;
+            }
+            //if(gridPhongDaChon.Rows.Count < 1)
+            //{
+            //    MessageBox.Show("Vui lòng chọn phòng");
+            //    return false;
+            //}
+            if (Convert.ToDateTime(dateNgayNhanPhong.Text) >= Convert.ToDateTime(dateNgayTraPhong.Text))
+            {
+                MessageBox.Show("Ngày nhận không được lớn hơn ngày trả");
+                return false;
+            }
+            if (cboTrangThai.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn trạng thái");
+                return false;
+            }
+            if (cboTrangThai.Text.Contains("Đặt phòng") && Convert.ToDateTime(dateNgayNhanPhong.Text) <= DateTime.Now)
+            {
+                MessageBox.Show("Vui lòng chọn lại ngày nhận");
+                return false;
+            }
             return true;
         }
         private void KhaiBao()
@@ -233,52 +257,54 @@ namespace DOAN
         private void gridPhongDaChon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnHuyChon.Enabled = true;
+            int index = gridDanhSachPhong.CurrentRow.Index;
+            gridDanhSachPhong.Rows[index].Selected = true;
         }
 
-        private void btnChonPhong_Click(object sender, EventArgs e)
-        {
-            string maPhong = gridDanhSachPhong.CurrentRow.Cells[0].Value.ToString();
-            dsP = pBLL.LayThongTinPhong();
+        //private void btnChonPhong_Click(object sender, EventArgs e)
+        //{
+        //    string maPhong = gridDanhSachPhong.CurrentRow.Cells[0].Value.ToString();
+        //    dsP = pBLL.LayThongTinPhong();
 
-            if (gridDanhSachPhong.CurrentRow.Index >= 0)
-            {
-                var gridviewInfo = dsP
-                    .Where(x => x.TrangThai.ToString().Contains(1.ToString()))
-                    .Select(x2 => new
-                    {
-                        MaPhong = x2.MaP,
-                        TenPhong = x2.TenP,
-                        //TrangThai = dt.TrangThai,
-                        LoaiPhong = x2.LoaiPhong,
-                        GiaPhong = x2.GiaPhong,
-                        GhiChu = x2.GhiChu,
-                    }).ToList();
-                bsPhongDaChon.Add(bs.Current);
-                gridPhongDaChon.DataSource = bsPhongDaChon;
-                //foreach (var item in gridviewInfo)
-                //{
-                //    gridPhongDaChon.Rows[gridPhongDaChon.Rows.Count - 1].Cells["donvicol"].Value = item.DVT;
-                //}
-                gridPhongDaChon.Columns[0].DisplayIndex = 1;
-                gridPhongDaChon.Columns[1].DisplayIndex = 2;
-                gridPhongDaChon.Columns[2].DisplayIndex = 3;
-                gridPhongDaChon.Columns[3].DisplayIndex = 4;
-                //gridPhongDaChon.Columns[5].HeaderText = "Loại phòng";
-                //gridPhongDaChon.Columns[6].HeaderText = "Giá phòng";
+        //    if (gridDanhSachPhong.CurrentRow.Index >= 0)
+        //    {
+        //        var gridviewInfo = dsP
+        //            .Where(x => x.TrangThai.ToString().Contains(1.ToString()))
+        //            .Select(x2 => new
+        //            {
+        //                MaPhong = x2.MaP,
+        //                TenPhong = x2.TenP,
+        //                //TrangThai = dt.TrangThai,
+        //                LoaiPhong = x2.LoaiPhong,
+        //                GiaPhong = x2.GiaPhong,
+        //                GhiChu = x2.GhiChu,
+        //            }).ToList();
+        //        bsPhongDaChon.Add(bs.Current);
+        //        gridPhongDaChon.DataSource = bsPhongDaChon;
+        //        //foreach (var item in gridviewInfo)
+        //        //{
+        //        //    gridPhongDaChon.Rows[gridPhongDaChon.Rows.Count - 1].Cells["donvicol"].Value = item.DVT;
+        //        //}
+        //        gridPhongDaChon.Columns[0].DisplayIndex = 1;
+        //        gridPhongDaChon.Columns[1].DisplayIndex = 2;
+        //        gridPhongDaChon.Columns[2].DisplayIndex = 3;
+        //        gridPhongDaChon.Columns[3].DisplayIndex = 4;
+        //        //gridPhongDaChon.Columns[5].HeaderText = "Loại phòng";
+        //        //gridPhongDaChon.Columns[6].HeaderText = "Giá phòng";
 
-                //gridPhongDaChon.Columns[1].Visible = false;
-                //gridPhongDaChon.Columns[5].Visible = false;
-                //gridPhongDaChon.Columns[6].Visible = false;
+        //        //gridPhongDaChon.Columns[1].Visible = false;
+        //        //gridPhongDaChon.Columns[5].Visible = false;
+        //        //gridPhongDaChon.Columns[6].Visible = false;
 
-                //gridPhongDaChon.Rows[gridPhongDaChon.Rows.Count - 1].Cells[1].Value = maPhong;
-                //gridPhongDaChon.Rows[gridPhongDaChon.Rows.Count - 1].Cells[2].Value = "3 viên/1 ngày";
-                bs.RemoveCurrent();
-            }
+        //        //gridPhongDaChon.Rows[gridPhongDaChon.Rows.Count - 1].Cells[1].Value = maPhong;
+        //        //gridPhongDaChon.Rows[gridPhongDaChon.Rows.Count - 1].Cells[2].Value = "3 viên/1 ngày";
+        //        bs.RemoveCurrent();
+        //    }
 
-            btnChonPhong.Enabled = false;
-            gridDanhSachPhong.ClearSelection();
-            gridPhongDaChon.ClearSelection();
-        }
+        //    btnChonPhong.Enabled = false;
+        //    gridDanhSachPhong.ClearSelection();
+        //    gridPhongDaChon.ClearSelection();
+        //}
 
         private void btnThuePhong_Click(object sender, EventArgs e)
         {
@@ -325,26 +351,28 @@ namespace DOAN
                     tpmoi1.MaNhanVien = ((FormTrangChinh)f).lblMa.Text;
                     tpmoi1.NgayThue = Convert.ToDateTime(dateNgayNhanPhong.Text);
                     tpmoi1.NgayTra = Convert.ToDateTime(dateNgayTraPhong.Text);
-                    tpmoi1.GioThue = txtGioNhan.Text;
-                    tpmoi1.GioTra = txtGioTra.Text;
+                    tpmoi1.TienCoc = Convert.ToDecimal(txtTienCoc.Text);
+                    tpmoi1.TrangThai = cboTrangThai.Text;
                     //-----------------------------------//
                     int kq = tpBLL.InsertThuePhong(tpmoi1);
                     if (kq == 1)
                     {
                         //Lưu vào csdl CTThuePhong
-                        int countCTTP = gridPhongDaChon.Rows.Count;
-                        for (int i = 0; i <= countCTTP - 1; i++)
+                        //int countCTTP = gridPhongDaChon.Rows.Count;
+                        //for (int i = 0; i <= countCTTP - 1; i++)
+                        //{
+                        cttpmoi1.MaPhong = gridDanhSachPhong.CurrentRow.Cells[0].Value.ToString();
+                        cttpmoi1.MaThuePhong = tpmoi1.MaThuePhong;
+                        if (tpmoi1.TrangThai.Contains("Thuê phòng"))
                         {
-                            cttpmoi1.MaPhong = gridPhongDaChon.Rows[i].Cells[0].Value.ToString();
-                            cttpmoi1.MaThuePhong = tpmoi1.MaThuePhong;
-
                             pBLL.CapNhatTrangThaiPhong(cttpmoi1.MaPhong, 2);
-                            cttpBLL.InsertCTThuePhong(cttpmoi1);
                         }
+                        cttpBLL.InsertCTThuePhong(cttpmoi1);
+                        //}
                         //-----------------------------------
                         MessageBox.Show("Thuê phòng thành công !");
-                        pBLL.CapNhatTrangThaiPhong(cttpmoi1.MaPhong, 2);
-                        gridPhongDaChon.Rows.Clear();
+                        //pBLL.CapNhatTrangThaiPhong(cttpmoi1.MaPhong, 2);
+                        // gridPhongDaChon.Rows.Clear();
                         txtTenKhachHang.Clear();
                         txtSoCMND.Clear();
                         txtSoDienThoai.Clear();
@@ -367,7 +395,7 @@ namespace DOAN
             DialogResult DR = MessageBox.Show("Bạn có muốn tạo lại hay không ?", "Tạo lại", MessageBoxButtons.OKCancel);
             if (DialogResult.OK == DR)
             {
-                gridPhongDaChon.Rows.Clear();
+                //gridPhongDaChon.Rows.Clear();
                 txtTenKhachHang.Clear();
                 txtTenKhachHang.Enabled = true;
                 txtSoCMND.Clear();
@@ -391,22 +419,36 @@ namespace DOAN
             gridDanhSachPhong.ClearSelection();
         }
 
-        private void btnHuyChon_Click(object sender, EventArgs e)
+        private void gridDanhSachPhong_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (gridPhongDaChon.CurrentRow.Index >= 0)
+            try
             {
-                bs.Add(bsPhongDaChon.Current);
-                gridDanhSachPhong.DataSource = bs;
-                bsPhongDaChon.RemoveCurrent();
-                if (gridPhongDaChon.Rows.Count == 0)
-                {
-                    btnHuyChon.Enabled = false;
-                    HienThiThongTinPhong();
-                }
+                int index = gridDanhSachPhong.CurrentRow.Index;
+                gridDanhSachPhong.Rows[index].Selected = true;
             }
-            btnHuyChon.Enabled = false;
-            gridPhongDaChon.ClearSelection();
+            catch (ArgumentOutOfRangeException)
+            {
+
+                MessageBox.Show("Nhấn một lần thôi");
+            }
         }
+
+        //private void btnHuyChon_Click(object sender, EventArgs e)
+        //{
+        //    if (gridPhongDaChon.CurrentRow.Index >= 0)
+        //    {
+        //        bs.Add(bsPhongDaChon.Current);
+        //        gridDanhSachPhong.DataSource = bs;
+        //        bsPhongDaChon.RemoveCurrent();
+        //        if (gridPhongDaChon.Rows.Count == 0)
+        //        {
+        //            btnHuyChon.Enabled = false;
+        //            HienThiThongTinPhong();
+        //        }
+        //    }
+        //    btnHuyChon.Enabled = false;
+        //    gridPhongDaChon.ClearSelection();
+        //}
     }
 
 }
