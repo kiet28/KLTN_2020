@@ -43,7 +43,7 @@ namespace DOAN
         }
 
         private void btnQuanLyDichVu_Click(object sender, EventArgs e)
-        {
+        {           
             using (FormQuanLyDichVu qldv = new FormQuanLyDichVu())
             {
                 qldv.ShowDialog();

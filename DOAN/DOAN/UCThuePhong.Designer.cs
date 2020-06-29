@@ -52,12 +52,12 @@
             this.gridDanhSachPhong = new System.Windows.Forms.DataGridView();
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.cboTrangThai = new MetroFramework.Controls.MetroComboBox();
             this.btnTaoLai = new DOAN.Button_WOC();
             this.btnHuyChon = new DOAN.Button_WOC();
             this.btnChonPhong = new DOAN.Button_WOC();
             this.btnThuePhong = new DOAN.Button_WOC();
             this.btnDanhSachKhachHang = new DOAN.Button_WOC();
-            this.cboTrangThai = new MetroFramework.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDanhSachPhong)).BeginInit();
             this.SuspendLayout();
@@ -173,6 +173,7 @@
             this.dateNgayNhanPhong.Name = "dateNgayNhanPhong";
             this.dateNgayNhanPhong.Size = new System.Drawing.Size(395, 30);
             this.dateNgayNhanPhong.TabIndex = 48;
+            this.dateNgayNhanPhong.ValueChanged += new System.EventHandler(this.dateNgayNhanPhong_ValueChanged);
             // 
             // dateNgayTraPhong
             // 
@@ -290,11 +291,16 @@
             // 
             // gridDanhSachPhong
             // 
+            this.gridDanhSachPhong.AllowUserToResizeColumns = false;
+            this.gridDanhSachPhong.AllowUserToResizeRows = false;
             this.gridDanhSachPhong.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.gridDanhSachPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridDanhSachPhong.ColumnHeadersHeight = 29;
+            this.gridDanhSachPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridDanhSachPhong.Location = new System.Drawing.Point(222, 321);
+            this.gridDanhSachPhong.MultiSelect = false;
             this.gridDanhSachPhong.Name = "gridDanhSachPhong";
             this.gridDanhSachPhong.RowHeadersWidth = 51;
+            this.gridDanhSachPhong.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gridDanhSachPhong.RowTemplate.Height = 24;
             this.gridDanhSachPhong.Size = new System.Drawing.Size(1007, 274);
             this.gridDanhSachPhong.TabIndex = 72;
@@ -327,6 +333,19 @@
             this.label4.Size = new System.Drawing.Size(153, 25);
             this.label4.TabIndex = 76;
             this.label4.Text = "Mã khách hàng:";
+            // 
+            // cboTrangThai
+            // 
+            this.cboTrangThai.FormattingEnabled = true;
+            this.cboTrangThai.ItemHeight = 24;
+            this.cboTrangThai.Items.AddRange(new object[] {
+            "Thuê phòng",
+            "Đặt phòng"});
+            this.cboTrangThai.Location = new System.Drawing.Point(819, 274);
+            this.cboTrangThai.Name = "cboTrangThai";
+            this.cboTrangThai.Size = new System.Drawing.Size(410, 30);
+            this.cboTrangThai.TabIndex = 79;
+            this.cboTrangThai.UseSelectable = true;
             // 
             // btnTaoLai
             // 
@@ -371,7 +390,6 @@
             this.btnHuyChon.Text = "<< Hủy chọn";
             this.btnHuyChon.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnHuyChon.UseVisualStyleBackColor = true;
-            //this.btnHuyChon.Click += new System.EventHandler(this.btnHuyChon_Click);
             // 
             // btnChonPhong
             // 
@@ -393,7 +411,6 @@
             this.btnChonPhong.Text = "Chọn phòng >>";
             this.btnChonPhong.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnChonPhong.UseVisualStyleBackColor = true;
-            //this.btnChonPhong.Click += new System.EventHandler(this.btnChonPhong_Click);
             // 
             // btnThuePhong
             // 
@@ -440,19 +457,6 @@
             this.btnDanhSachKhachHang.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnDanhSachKhachHang.UseVisualStyleBackColor = true;
             this.btnDanhSachKhachHang.Click += new System.EventHandler(this.btnThemKhachHang_Click);
-            // 
-            // cboTrangThai
-            // 
-            this.cboTrangThai.FormattingEnabled = true;
-            this.cboTrangThai.ItemHeight = 24;
-            this.cboTrangThai.Items.AddRange(new object[] {
-            "Thuê phòng",
-            "Đặt phòng"});
-            this.cboTrangThai.Location = new System.Drawing.Point(819, 274);
-            this.cboTrangThai.Name = "cboTrangThai";
-            this.cboTrangThai.Size = new System.Drawing.Size(410, 30);
-            this.cboTrangThai.TabIndex = 79;
-            this.cboTrangThai.UseSelectable = true;
             // 
             // UCThuePhong
             // 

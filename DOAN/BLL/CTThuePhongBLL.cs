@@ -57,5 +57,11 @@ namespace BLL
             ks.SubmitChanges();
             return 1;
         }
+        public void DeleteCTThuePhong(string maThuePhong)
+        {
+            CTThuePhongs cttptemp = ks.CTThuePhongs.Where(x => x.maThuePhong == maThuePhong).FirstOrDefault();
+            ks.CTThuePhongs.DeleteOnSubmit(cttptemp);
+            ks.SubmitChanges();
+        }
     }
 }

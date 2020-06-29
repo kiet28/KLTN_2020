@@ -40,10 +40,12 @@ namespace DOAN
             dsKH = new List<eKhachHang>();
             dsP = new List<ePhong>();
             dsTP = tpBLL.LayThongTinThuePhong();
+            dsCTTP = cttpBLL.LayThongTinCTThuePhong();
             dsKH = khBLL.LayThongTinKhachHang();
             dsP = pBLL.LayThongTinPhong();
             System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["FormThuePhong"];
-            HienThiThongTinPhong();
+            DateTime date = DateTime.Now;
+            TimKiemPhongTrong(date);
         }
 
 
@@ -69,7 +71,9 @@ namespace DOAN
             gridDanhSachPhong.Columns[2].HeaderText = "Loại phòng";
             gridDanhSachPhong.Columns[3].HeaderText = "Giá phòng";
             gridDanhSachPhong.Columns[4].HeaderText = "Ghi chú";
-            //gridDanhSachKhachHang.Columns[1].Width = 170;
+            gridDanhSachPhong.Columns[3].Width = 200;
+            gridDanhSachPhong.Columns[4].Width = 200;
+
         }
         private void UCThuePhong_Load(object sender, EventArgs e)
         {
@@ -179,6 +183,12 @@ namespace DOAN
                 MessageBox.Show("Vui lòng chọn lại ngày nhận");
                 return false;
             }
+            if (gridDanhSachPhong.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn phòng");
+                return false;
+            }
+
             return true;
         }
         private void KhaiBao()
@@ -395,6 +405,7 @@ namespace DOAN
             DialogResult DR = MessageBox.Show("Bạn có muốn tạo lại hay không ?", "Tạo lại", MessageBoxButtons.OKCancel);
             if (DialogResult.OK == DR)
             {
+                DateTime date = DateTime.Now;
                 //gridPhongDaChon.Rows.Clear();
                 txtTenKhachHang.Clear();
                 txtTenKhachHang.Enabled = true;
@@ -402,7 +413,7 @@ namespace DOAN
                 txtSoCMND.Enabled = true;
                 txtSoDienThoai.Clear();
                 txtSoDienThoai.Enabled = true;
-                HienThiThongTinPhong();
+                TimKiemPhongTrong(date);
                 rdNam.Checked = true;
                 rdNam.Enabled = true;
                 rdNu.Checked = false;
@@ -417,6 +428,48 @@ namespace DOAN
         private void gridDanhSachPhong_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             gridDanhSachPhong.ClearSelection();
+        }
+
+        public void TimKiemPhongTrong(DateTime date)
+        {
+            var gridviewInfo2 = dsP
+                .Join(dsCTTP, p => p.MaP, ctp => ctp.MaPhong, (p, ctp) => new { p, ctp })
+                .Join(dsTP, _tp => _tp.ctp.MaThuePhong, tp => tp.MaThuePhong, (_tp, tp) => new { _tp, tp })
+                .Where(_dt => Convert.ToDateTime(_dt.tp.NgayTra) > date && _dt.tp.NgayThue <= date)
+                .Select(dt => new
+                {
+                    MaPhong = dt._tp.p.MaP,
+                    TenPhong = dt._tp.p.TenP,
+                    LoaiPhong = dt._tp.p.LoaiPhong,
+                    GiaPhong = dt._tp.p.GiaPhong,
+                    GhiChu = dt._tp.p.GhiChu,
+                }).ToList();
+
+            var gridviewInfo1 = dsP.Select(dt => new
+            {
+                MaPhong = dt.MaP,
+                TenPhong = dt.TenP,
+                LoaiPhong = dt.LoaiPhong,
+                GiaPhong = dt.GiaPhong,
+                GhiChu = dt.GhiChu,
+            }).ToList();
+
+            var pp = gridviewInfo1.Except(gridviewInfo2).ToArray();
+
+            bs.DataSource = pp;
+            gridDanhSachPhong.DataSource = bs;
+            gridDanhSachPhong.Columns[0].HeaderText = "Mã phòng";
+            gridDanhSachPhong.Columns[1].HeaderText = "Tên phòng";
+            gridDanhSachPhong.Columns[2].HeaderText = "Loại phòng";
+            gridDanhSachPhong.Columns[3].HeaderText = "Giá phòng";
+            gridDanhSachPhong.Columns[4].HeaderText = "Ghi chú";
+            gridDanhSachPhong.Columns[3].Width = 200;
+            gridDanhSachPhong.Columns[4].Width = 200;
+        }
+        private void dateNgayNhanPhong_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime date = Convert.ToDateTime(dateNgayNhanPhong.Text);
+            TimKiemPhongTrong(date);
         }
 
         private void gridDanhSachPhong_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
